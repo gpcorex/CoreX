@@ -16,9 +16,11 @@ Description=Android Bridge noVNC proxy
 After=network-online.target android-runtime.service
 Wants=network-online.target
 Requires=android-runtime.service
+PartOf=android-runtime.service
 
 [Service]
 Type=simple
+ExecStartPre=/bin/bash -lc 'for i in $(seq 1 30); do ss -ltn | grep -q ":5901 " && exit 0; sleep 1; done; exit 1'
 ExecStart=/usr/bin/websockify --web=/usr/share/novnc/ 127.0.0.1:6080 127.0.0.1:5901
 Restart=always
 RestartSec=2
@@ -79,7 +81,7 @@ sleep 3
   systemctl is-active android-runtime.service || true
   echo
   echo "[URL]"
-  echo "https://cen-tral.duckdns.org/android-view/vnc.html?path=websockify&autoconnect=true&resize=scale"
+  echo "https://cen-tral.duckdns.org/android-view/vnc.html?path=websockify&autoconnect=true&reconnect=true&resize=scale"
 } >"$OUT"
 
 echo "ANDROID_NOVNC_READY"
