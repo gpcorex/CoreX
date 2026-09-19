@@ -2,41 +2,28 @@
 set -euo pipefail
 
 APP="/srv/apps/android-bridge"
+mkdir -p "$APP/data"
 
-export DEBIAN_FRONTEND=noninteractive
-apt-get update
-apt-get install -y nginx
+# No tocar el puerto 80: ya está ocupado por otro servicio.
+# Android Bridge se publica directamente por 8787.
+if grep -q '127.0.0.1' "$APP/server.py"; then
+  sed -i 's/ThreadingHTTPServer(("127\.0\.0\.1", PORT)/ThreadingHTTPServer(("0.0.0.0", PORT)/' "$APP/server.py"
+fi
 
-cat >/etc/nginx/sites-available/android-bridge <<'NGINX'
-server {
-    listen 80;
-    server_name _;
+systemctl restart android-bridge.service
+sleep 1
 
-    location /android-bridge/ {
-        proxy_pass http://127.0.0.1:8787/;
-        proxy_http_version 1.1;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-NGINX
+curl -fsS http://127.0.0.1:8787/api/status >"$APP/data/public_status.json"
 
-ln -sf /etc/nginx/sites-available/android-bridge /etc/nginx/sites-enabled/android-bridge
-rm -f /etc/nginx/sites-enabled/default
+# Limpiar la configuración nginx fallida de Android Bridge, sin tocar otros sitios.
+rm -f /etc/nginx/sites-enabled/android-bridge 2>/dev/null || true
+rm -f /etc/nginx/sites-available/android-bridge 2>/dev/null || true
 
-nginx -t
-systemctl enable --now nginx
-systemctl restart nginx
-
-curl -fsS http://127.0.0.1/android-bridge/api/status >"$APP/data/public_status.json"
-
-IP="$(hostname -I | awk '{print $1}')"
-cat >"$APP/data/access.txt" <<EOF
+cat >"$APP/data/access.txt" <<'EOF'
 ANDROID_BRIDGE_PUBLIC_READY
-local_url=http://$IP/android-bridge/
-api_url=http://$IP/android-bridge/api/status
+port=8787
+path=/
+api_path=/api/status
 EOF
 
 echo "ANDROID_BRIDGE_PUBLIC_READY"
