@@ -7,7 +7,7 @@ chmod 755 "$APP"
 
 cat >"$APP/server.py" <<'PY'
 #!/usr/bin/env python3
-import json, os, platform, shutil, socket, subprocess
+import json, os, platform, socket
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse
 
@@ -59,7 +59,7 @@ class Handler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     os.chdir(WWW)
-    ThreadingHTTPServer(("127.0.0.1", PORT), Handler).serve_forever()
+    ThreadingHTTPServer(("0.0.0.0", PORT), Handler).serve_forever()
 PY
 
 cat >"$APP/www/index.html" <<'HTML'
@@ -99,7 +99,7 @@ small{color:#aaa}
 <script>
 async function load(){
   try{
-    const s=await (await fetch('/api/status')).json();
+    const s=await (await fetch('api/status')).json();
     document.getElementById('status').innerHTML =
       '<span class="ok">● Online</span><br>'+
       'Host: <code>'+s.host+'</code><br>'+
@@ -107,7 +107,7 @@ async function load(){
       'CPU: <code>'+s.cpus+'</code><br>'+
       'KVM: <code>'+(s.kvm?'Sí':'No')+'</code><br>'+
       'Runtime Android: <code>'+(s.android_runtime?'Activo':'Pendiente')+'</code>';
-    const a=await (await fetch('/api/apks')).json();
+    const a=await (await fetch('api/apks')).json();
     document.getElementById('apps').textContent = a.items.length ? a.items.join(', ') : 'Todavía no hay APK cargados.';
   }catch(e){
     document.getElementById('status').textContent='Sin conexión con el servicio';
@@ -143,6 +143,7 @@ chmod 755 "$APP/server.py"
 
 systemctl daemon-reload
 systemctl enable --now android-bridge.service
+systemctl restart android-bridge.service
 
 sleep 1
 curl -fsS http://127.0.0.1:8787/api/status >"$APP/data/status.json"
