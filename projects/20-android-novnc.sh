@@ -31,6 +31,7 @@ UNIT
 
 systemctl daemon-reload
 systemctl enable --now android-novnc.service
+systemctl restart android-novnc.service
 
 cp -a "$CADDY" "$BACKUP"
 
@@ -78,7 +79,7 @@ sleep 3
   systemctl is-active android-runtime.service || true
   echo
   echo "[URL]"
-  echo "https://cen-tral.duckdns.org/android-view/vnc.html?path=android-view/websockify&autoconnect=true&resize=scale"
+  echo "https://cen-tral.duckdns.org/android-view/vnc.html?path=websockify&autoconnect=true&resize=scale"
 } >"$OUT"
 
 echo "ANDROID_NOVNC_READY"
