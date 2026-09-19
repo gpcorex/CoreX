@@ -3,8 +3,8 @@ set -euo pipefail
 
 REPO_URL="https://github.com/gpcorex/CoreX.git"
 BASE="/opt/corex"
-STATE="/var/lib/corex"
-LOG="/var/log/corex"
+STATE="/var/lib/conector"
+LOG="/var/log/conector"
 ETC="/etc/corex"
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -27,13 +27,13 @@ else
   git -C "$BASE/repo" reset --hard origin/main
 fi
 
-cat >/usr/local/sbin/corex-sync <<'EOF'
+cat >/usr/local/sbin/conector-sync <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 
 BASE="/opt/corex/repo"
-LOCK="/run/corex-sync.lock"
-LOG="/var/log/corex/sync.log"
+LOCK="/run/conector-sync.lock"
+LOG="/var/log/conector/sync.log"
 
 exec 9>"$LOCK"
 flock -n 9 || exit 0
@@ -60,27 +60,27 @@ mkdir -p "$(dirname "$LOG")"
     bash "$BASE/deploy.sh"
   fi
 
-  echo "$REMOTE" >/var/lib/corex/last_deployed_commit
+  echo "$REMOTE" >/var/lib/conector/last_deployed_commit
   echo "Deploy OK."
 } >>"$LOG" 2>&1
 EOF
 
-chmod 755 /usr/local/sbin/corex-sync
+chmod 755 /usr/local/sbin/conector-sync
 
-cat >/etc/systemd/system/corex-sync.service <<'EOF'
+cat >/etc/systemd/system/conector-sync.service <<'EOF'
 [Unit]
-Description=CoreX deployment sync
+Description=Conector deployment sync
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/sbin/corex-sync
+ExecStart=/usr/local/sbin/conector-sync
 EOF
 
-cat >/etc/systemd/system/corex-sync.timer <<'EOF'
+cat >/etc/systemd/system/conector-sync.timer <<'EOF'
 [Unit]
-Description=Run CoreX sync every minute
+Description=Run Conector sync every minute
 
 [Timer]
 OnBootSec=30
@@ -93,12 +93,12 @@ WantedBy=timers.target
 EOF
 
 systemctl daemon-reload
-systemctl enable --now corex-sync.timer
+systemctl enable --now conector-sync.timer
 
 echo
-echo "COREX_BOOTSTRAP_OK"
+echo "CONECTOR_BOOTSTRAP_OK"
 echo "Repo: $BASE/repo"
 echo "Apps: /srv/apps"
 echo "Secrets: $ETC"
 echo "Log: $LOG/sync.log"
-systemctl --no-pager status corex-sync.timer || true
+systemctl --no-pager status conector-sync.timer || true
