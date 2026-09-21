@@ -45,6 +45,26 @@ def save_job(job: dict):
     d.mkdir(parents=True, exist_ok=True)
     write_json(d/"job.json", job)
 
+def is_fast_task(task: str) -> bool:
+    t=(task or "").lower().strip()
+    if len(t) > 500:
+        return False
+    simple=(
+        "creá /tmp/","crea /tmp/","crear /tmp/",
+        "creá un archivo","crea un archivo","crear un archivo",
+        "escribí ","escribe ","guardar texto","guardá ",
+        "reiniciá el servicio","reinicia el servicio",
+        "mostrá el estado","muestra el estado","verificá que",
+        "verifica que","leé ","lee "
+    )
+    risky=(
+        "arquitectura","migración","migracion","base de datos",
+        "firewall","iptables","ufw","usuario","permisos",
+        "borrar /","rm -rf","formatear","partición","particion",
+        "caddyfile","nginx","systemd unit","producción","produccion"
+    )
+    return any(x in t for x in simple) and not any(x in t for x in risky)
+
 def run_job(job_id: str):
     job=load_job(job_id)
     if not job:
@@ -56,27 +76,50 @@ def run_job(job_id: str):
     d=STATE/job_id
     workspace=WORKROOT/job_id
     workspace.mkdir(parents=True, exist_ok=True)
-    payload={
-        "id":"TASK-EXEC-NICO-001",
-        "trabajo":job_id,
-        "jugador":"Nico González",
-        "objetivo":job["task"],
-        "base":"/home/ubuntu",
-        "workspace":str(workspace),
-        "tarea":job["task"],
-        "restricciones":[
-            "Usar el estado real de la VM.",
-            "No rediseñar arquitectura salvo necesidad demostrada.",
-            "Verificar el cambio antes de declarar completado."
-        ],
-        "contexto":{
-            "source":job.get("source","gemini"),
-            "project":job.get("project",""),
-            "conversation_id":job.get("conversation_id","")
-        },
-        "criterio_exito":"La tarea queda ejecutada y verificada; la salida final incluye CENTRAL_STATUS=COMPLETADO.",
-        "timeout":330
-    }
+    fast=is_fast_task(job["task"])
+    job["mode"]="FAST" if fast else "FULL"
+    save_job(job)
+
+    if fast:
+        payload={
+            "id":"TASK-EXEC-NICO-FAST-001",
+            "trabajo":job_id,
+            "jugador":"Nico González",
+            "objetivo":job["task"],
+            "base":"/home/ubuntu",
+            "workspace":str(workspace),
+            "tarea":job["task"],
+            "restricciones":[
+                "Ejecutar exactamente la tarea pedida.",
+                "No explorar ni rediseñar.",
+                "Verificar sólo el resultado necesario."
+            ],
+            "contexto":{"source":"gemini","mode":"fast"},
+            "criterio_exito":"Resultado verificado y salida CENTRAL_STATUS=COMPLETADO.",
+            "timeout":120
+        }
+    else:
+        payload={
+            "id":"TASK-EXEC-NICO-001",
+            "trabajo":job_id,
+            "jugador":"Nico González",
+            "objetivo":job["task"],
+            "base":"/home/ubuntu",
+            "workspace":str(workspace),
+            "tarea":job["task"],
+            "restricciones":[
+                "Usar el estado real de la VM.",
+                "No rediseñar arquitectura salvo necesidad demostrada.",
+                "Verificar el cambio antes de declarar completado."
+            ],
+            "contexto":{
+                "source":job.get("source","gemini"),
+                "project":job.get("project",""),
+                "conversation_id":job.get("conversation_id","")
+            },
+            "criterio_exito":"La tarea queda ejecutada y verificada; la salida final incluye CENTRAL_STATUS=COMPLETADO.",
+            "timeout":330
+        }
     task_path=d/"task.json"
     write_json(task_path,payload)
 
@@ -112,6 +155,7 @@ def run_job(job_id: str):
         job["result"]=parsed if parsed is not None else raw
         job["stderr_tail"]=(cp.stderr or "")[-4000:]
         job["finished_at"]=now()
+        job["duration_sec"]=max(0, job["finished_at"]-job.get("started_at",job["finished_at"]))
         job["status"]="COMPLETADA" if ok else "ERROR"
         save_job(job)
     except Exception as e:
