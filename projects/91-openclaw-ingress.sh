@@ -17,20 +17,13 @@ export DEBIAN_FRONTEND=noninteractive
 mkdir -p "$ENV_DIR"
 chmod 700 "$ENV_DIR"
 
-if ! command -v openclaw >/dev/null 2>&1; then
-  TMP="$(mktemp)"
-  curl -fsSL https://openclaw.ai/install.sh -o "$TMP"
-  bash "$TMP"
-  rm -f "$TMP"
-fi
-
 OPENCLAW_BIN="$(command -v openclaw || true)"
 if [ -z "$OPENCLAW_BIN" ]; then
-  for p in /usr/local/bin/openclaw /usr/bin/openclaw /home/ubuntu/.local/bin/openclaw; do
+  for p in /home/ubuntu/.npm-global/bin/openclaw /usr/local/bin/openclaw /usr/bin/openclaw /home/ubuntu/.local/bin/openclaw; do
     [ -x "$p" ] && OPENCLAW_BIN="$p" && break
   done
 fi
-[ -n "$OPENCLAW_BIN" ] || { echo "OPENCLAW_BIN_NOT_FOUND"; exit 1; }
+[ -n "$OPENCLAW_BIN" ] || { echo "OPENCLAW_BIN_NOT_FOUND_NO_INSTALL"; exit 1; }
 
 if [ ! -s "$ENV_FILE" ]; then
   TOKEN="$(openssl rand -hex 32)"
