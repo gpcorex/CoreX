@@ -164,16 +164,12 @@ if "_looks_like_programming_request(message)" not in s[idx:idx+20000]:
         }
 
 '''
-    # place after cid/message/file_ids initialization by finding file_ids line block end
-    window = s[body_start:body_start+6000]
-    anchor = "    previous_history = _direct_history(cid)"
-    rel = window.find(anchor)
-    if rel < 0:
-        anchor = "    history = _direct_history(cid)"
-        rel = window.find(anchor)
-    if rel < 0:
-        raise SystemExit("DIRECT_HISTORY_ANCHOR_NOT_FOUND")
-    abspos = body_start + rel
+    # Insert after the user message/file association path, immediately
+    # before direct provider processing. This anchor exists in the live endpoint.
+    anchor = "    file_rows = _direct_file_rows("
+    abspos = s.find(anchor, body_start)
+    if abspos < 0:
+        raise SystemExit("DIRECT_FILE_ROWS_ANCHOR_NOT_FOUND")
     s = s[:abspos] + injection + s[abspos:]
 
 p.write_text(s, encoding="utf-8")
