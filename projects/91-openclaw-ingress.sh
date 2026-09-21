@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Deploy runs non-interactively; OpenClaw expects HOME to exist.
+export HOME="/home/ubuntu"
+
 OPENCLAW_USER="ubuntu"
 OPENCLAW_HOME="/home/ubuntu"
 CONF_DIR="$OPENCLAW_HOME/.openclaw"
