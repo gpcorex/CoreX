@@ -11,7 +11,7 @@ chown -R ubuntu:ubuntu "$STATE" /home/ubuntu/Central/work
 cat >"$APP" <<'PY'
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, os, subprocess, threading, time, uuid
+import json, os, re, subprocess, threading, time, uuid
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse
@@ -45,6 +45,40 @@ def save_job(job: dict):
     d.mkdir(parents=True, exist_ok=True)
     write_json(d/"job.json", job)
 
+def direct_safe_task(task: str):
+    """Execute only narrowly defined, low-risk operations without OpenClaw."""
+    t=(task or "").strip()
+
+    # Create/write a plain-text file under /tmp and verify exact contents.
+    # Accepted examples:
+    #   Creá /tmp/test.txt con el texto HOLA
+    #   Crea /tmp/test.txt con el texto "HOLA"
+    m=re.search(
+        r'(?is)\b(?:creá|crea|crear)\s+(/tmp/[A-Za-z0-9._-]+)\s+con\s+el\s+texto\s+(.+?)(?:\s+y\s+verific(?:á|a|ar)|$)',
+        t
+    )
+    if m:
+        path=Path(m.group(1))
+        text=m.group(2).strip()
+        if len(text) >= 2 and text[0] == text[-1] and text[0] in ('"', "'"):
+            text=text[1:-1]
+        if len(text.encode("utf-8")) > 65536:
+            return None
+        path.write_text(text, encoding="utf-8")
+        actual=path.read_text(encoding="utf-8")
+        if actual != text:
+            raise RuntimeError("DIRECT_VERIFY_FAILED")
+        return {
+            "action":"write_text_file",
+            "path":str(path),
+            "verified":True,
+            "text":text,
+            "resultado":"CENTRAL_STATUS=COMPLETADO",
+            "message":f"Listo. Creé {path} y verifiqué su contenido."
+        }
+
+    return None
+
 def is_fast_task(task: str) -> bool:
     t=(task or "").lower().strip()
     if len(t) > 500:
@@ -72,6 +106,32 @@ def run_job(job_id: str):
     job["status"]="EJECUTANDO"
     job["started_at"]=now()
     save_job(job)
+
+    # Ultra-fast safe path: Central executes a tiny allow-listed action directly.
+    try:
+        t0=time.monotonic()
+        direct=direct_safe_task(job["task"])
+        if direct is not None:
+            job=load_job(job_id) or job
+            job["mode"]="DIRECT"
+            job["executor"]="central"
+            job["result"]=direct
+            job["returncode"]=0
+            job["finished_at"]=now()
+            job["duration_sec"]=round(time.monotonic()-t0,3)
+            job["status"]="COMPLETADA"
+            save_job(job)
+            return
+    except Exception as e:
+        job=load_job(job_id) or job
+        job["mode"]="DIRECT"
+        job["executor"]="central"
+        job["status"]="ERROR"
+        job["error"]=str(e)
+        job["finished_at"]=now()
+        job["duration_sec"]=0
+        save_job(job)
+        return
 
     d=STATE/job_id
     workspace=WORKROOT/job_id
