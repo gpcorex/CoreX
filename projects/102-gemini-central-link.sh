@@ -178,38 +178,16 @@ PY
 
 python3 -m py_compile "$MAIN"
 
-sudo systemctl restart gemini-backend.service
-
-for i in $(seq 1 30); do
-  if curl -fsS --max-time 2 http://127.0.0.1:8791/api/health >/tmp/gem-health.json 2>/dev/null; then
-    break
-  fi
-  sleep 1
-done
+# The link is already installed. Do not restart Gemini or run a long
+# execution test during every deploy; that made the public PWA drop.
+if ! systemctl is-active --quiet gemini-backend.service; then
+  systemctl start gemini-backend.service
+fi
 
 echo "=== GEMINI HEALTH ==="
-cat /tmp/gem-health.json
-
+curl -fsS --max-time 3 http://127.0.0.1:8791/api/health
 echo
 echo "=== CENTRAL JOBS HEALTH ==="
 curl -fsS --max-time 3 http://127.0.0.1:8091/api/health
-
 echo
-echo "=== END-TO-END WRITE TEST ==="
-set +e
-RESP=$(curl -sS --max-time 420   -H 'Content-Type: application/json'   -d '{"message":"Creá /tmp/gemini-central-e2e.txt con el texto GEMINI_CENTRAL_E2E_OK","conversation_id":"central-e2e-test"}'   http://127.0.0.1:8791/api/chat/direct)
-RC=$?
-set -e
-printf '%s\n' "$RESP"
-echo "curl_rc=$RC"
-
-echo
-echo "=== FILE VERIFY ==="
-if [ -f /tmp/gemini-central-e2e.txt ]; then
-  cat /tmp/gemini-central-e2e.txt
-else
-  echo FILE_NOT_CREATED
-fi
-
-echo
-echo GEMINI_CENTRAL_LINK_TEST_DONE
+echo GEMINI_CENTRAL_LINK_READY
