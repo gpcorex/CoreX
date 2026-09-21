@@ -11,11 +11,12 @@ cp -a "$INDEX" "$BACKUP/index.html"
 
 cat > "$WEB/manifest.webmanifest" <<'EOF'
 {
+  "id": "/gemini/",
   "name": "Gemini",
   "short_name": "Gemini",
   "description": "Gemini conectado a Central",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/gemini/?source=pwa",
+  "scope": "/gemini/",
   "display": "standalone",
   "background_color": "#0f1115",
   "theme_color": "#0f1115",
@@ -150,7 +151,7 @@ p=Path("/home/ubuntu/Gemini/web/index.html")
 s=p.read_text(encoding="utf-8")
 
 head_bits = '''
-  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="manifest" href="/gemini/manifest.webmanifest">
   <meta name="theme-color" content="#0f1115">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -169,7 +170,7 @@ reg = '''
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
+    navigator.serviceWorker.register('/gemini/sw.js', { scope: '/gemini/' }).catch(() => {});
   });
 }
 </script>
