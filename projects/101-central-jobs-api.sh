@@ -307,7 +307,8 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl enable --now central-jobs-api.service
+systemctl enable central-jobs-api.service
+systemctl restart central-jobs-api.service
 
 for i in $(seq 1 20); do
   if curl -fsS --max-time 2 http://127.0.0.1:8091/api/health >/tmp/central-jobs-health.json 2>/dev/null; then
