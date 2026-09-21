@@ -196,12 +196,20 @@ curl -fsS --max-time 3 http://127.0.0.1:8091/api/health
 
 echo
 echo "=== END-TO-END WRITE TEST ==="
+set +e
 RESP=$(curl -sS --max-time 420   -H 'Content-Type: application/json'   -d '{"message":"Creá /tmp/gemini-central-e2e.txt con el texto GEMINI_CENTRAL_E2E_OK","conversation_id":"central-e2e-test"}'   http://127.0.0.1:8791/api/chat/direct)
+RC=$?
+set -e
 printf '%s\n' "$RESP"
+echo "curl_rc=$RC"
 
 echo
 echo "=== FILE VERIFY ==="
-cat /tmp/gemini-central-e2e.txt
+if [ -f /tmp/gemini-central-e2e.txt ]; then
+  cat /tmp/gemini-central-e2e.txt
+else
+  echo FILE_NOT_CREATED
+fi
 
 echo
-echo GEMINI_CENTRAL_LINK_READY
+echo GEMINI_CENTRAL_LINK_TEST_DONE
