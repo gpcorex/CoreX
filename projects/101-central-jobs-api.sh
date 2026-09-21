@@ -6,6 +6,7 @@ STATE=/home/ubuntu/Central/data/api-jobs
 SERVICE=/etc/systemd/system/central-jobs-api.service
 
 mkdir -p "$(dirname "$APP")" "$STATE" /home/ubuntu/Central/work
+chown -R ubuntu:ubuntu "$STATE" /home/ubuntu/Central/work
 
 cat >"$APP" <<'PY'
 #!/usr/bin/env python3
@@ -166,9 +167,12 @@ class H(BaseHTTPRequestHandler):
             "conversation_id":str(body.get("conversation_id") or ""),
             "task":task,
         }
-        save_job(job)
-        threading.Thread(target=run_job,args=(job_id,),daemon=True).start()
-        return self._json(202,{"ok":True,"job_id":job_id,"status":"RECIBIDA"})
+        try:
+            save_job(job)
+            threading.Thread(target=run_job,args=(job_id,),daemon=True).start()
+            return self._json(202,{"ok":True,"job_id":job_id,"status":"RECIBIDA"})
+        except Exception as e:
+            return self._json(500,{"ok":False,"error":"JOB_CREATE_FAILED","detail":str(e)})
 
     def log_message(self, fmt, *args):
         pass
