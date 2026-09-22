@@ -18,6 +18,22 @@ cp -a "$OENV" "$BACKUP/openclaw.env" 2>/dev/null || true
 
 test -x "$OPENCLAW" || { echo "OPENCLAW_NOT_FOUND"; exit 1; }
 
+UBUNTU_UID="$(id -u ubuntu)"
+OC() {
+  runuser -u ubuntu -- env \
+    HOME=/home/ubuntu \
+    XDG_RUNTIME_DIR="/run/user/$UBUNTU_UID" \
+    PATH="/home/ubuntu/.npm-global/bin:/usr/local/bin:/usr/bin:/bin" \
+    "$OPENCLAW" "$@"
+}
+USYSTEMCTL() {
+  runuser -u ubuntu -- env \
+    HOME=/home/ubuntu \
+    XDG_RUNTIME_DIR="/run/user/$UBUNTU_UID" \
+    PATH="/home/ubuntu/.npm-global/bin:/usr/local/bin:/usr/bin:/bin" \
+    systemctl --user "$@"
+}
+
 echo "=== 1. PERSIST PROVIDER KEYS FOR OPENCLAW ==="
 python3 - <<'PY'
 from pathlib import Path
@@ -51,6 +67,7 @@ env_path.write_text(
 env_path.chmod(0o600)
 print("OPENCLAW_ENV_READY", ",".join(k for k in pairs if k in existing))
 PY
+chown ubuntu:ubuntu "$OENV"
 
 echo "=== 2. REMOVE FIXED MODEL FROM CENTRAL EXECUTOR ==="
 python3 - <<'PY'
@@ -103,13 +120,13 @@ for ref in seen[:2]:
 PY
 )
 
-"$OPENCLAW" models set groq/openai/gpt-oss-120b
-"$OPENCLAW" models fallbacks clear
-"$OPENCLAW" models fallbacks add openrouter/openrouter/free
+OC models set groq/openai/gpt-oss-120b
+OC models fallbacks clear
+OC models fallbacks add openrouter/openrouter/free
 
 while IFS= read -r ref; do
   [ -n "$ref" ] || continue
-  "$OPENCLAW" models fallbacks add "$ref" || true
+  OC models fallbacks add "$ref" || true
 done <<< "$HF_FALLBACKS"
 
 echo "=== 4. RESTORE GEMINI PROGRAMMING VIA CENTRAL/OPENCLAW ==="
@@ -141,7 +158,7 @@ PY
 python3 -m py_compile "$MAIN"
 
 echo "=== 5. RESTART SERVICES ==="
-systemctl --user restart openclaw-gateway.service
+USYSTEMCTL restart openclaw-gateway.service
 
 for i in $(seq 1 70); do
   if ss -ltn 2>/dev/null | grep -q ':18789 '; then
@@ -159,10 +176,10 @@ done
 
 echo "=== 6. VERIFY ==="
 echo "--- OpenClaw model status ---"
-"$OPENCLAW" models status || true
+OC models status || true
 
 echo "--- OpenClaw fallbacks ---"
-"$OPENCLAW" models fallbacks list --plain || true
+OC models fallbacks list --plain || true
 
 echo "--- Executor has fixed --model? ---"
 if grep -n -- '"--model"' "$EXEC"; then
@@ -173,7 +190,7 @@ else
 fi
 
 echo "--- Gateway ---"
-systemctl --user is-active openclaw-gateway.service
+USYSTEMCTL is-active openclaw-gateway.service
 ss -ltnp | grep 18789 || { echo "OPENCLAW_PORT_NOT_READY"; exit 1; }
 
 echo "--- Gemini ---"
