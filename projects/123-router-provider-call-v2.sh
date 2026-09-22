@@ -17,8 +17,7 @@ marker="# CANONICAL_PROVIDER_CALL_V2"
 if marker in s:
     print("CANONICAL_PROVIDER_CALL_V2_PRESENT")
 else:
-    anchor="async def routed_answer(messages):
-"
+    anchor="async def routed_answer(messages):\\n"
     pos=s.find(anchor)
     if pos < 0:
         raise SystemExit("ROUTED_ANSWER_NOT_FOUND")
