@@ -1,0 +1,177 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SERVER=/home/ubuntu/Interfaz/server.py
+STAMP=$(date +%Y%m%d-%H%M%S)
+BACKUP=/home/ubuntu/Central/backups/job-error-diagnosis-$STAMP
+mkdir -p "$BACKUP"
+cp -a "$SERVER" "$BACKUP/server.py"
+
+echo "=== 1. ADD JOB FAILURE DIAGNOSIS ENDPOINT ==="
+python3 - <<'PY'
+from pathlib import Path
+p=Path("/home/ubuntu/Interfaz/server.py")
+s=p.read_text(encoding="utf-8")
+
+# Helper before handler class.
+anchor='''class H(BaseHTTPRequestHandler):
+'''
+helper='''def diagnose_job_failure(job):
+    payload={
+        "messages":[{
+            "role":"user",
+            "content":(
+                "Analizá este trabajo fallido de Central. Explicá la causa concreta en lenguaje claro, "
+                "y proponé la solución más directa y segura. No inventes datos que no estén en el job. "
+                "Si falta información, decí exactamente qué falta. No ejecutes cambios.\n\n"
+                "JOB FALLIDO:\n"+json.dumps(job,ensure_ascii=False)[:14000]
+            )
+        }]
+    }
+    env=dict(os.environ)
+    env["PYTHONPATH"]="/home/ubuntu/Central/native_v1"
+    cp=subprocess.run(
+        ["/usr/bin/python3","/home/ubuntu/Central/native_v1/native_chat.py"],
+        input=json.dumps(payload,ensure_ascii=False),
+        text=True,capture_output=True,timeout=120,env=env
+    )
+    if cp.returncode!=0:
+        raise RuntimeError("JOB_DIAGNOSIS_FAILED:"+(cp.stderr or cp.stdout)[-800:])
+    out=json.loads(cp.stdout)
+    if not out.get("ok"):
+        raise RuntimeError(str(out.get("error") or "JOB_DIAGNOSIS_FAILED"))
+    return str(out.get("answer") or "").strip()
+
+class H(BaseHTTPRequestHandler):
+'''
+if 'def diagnose_job_failure(' not in s:
+    if anchor not in s: raise SystemExit("HANDLER_ANCHOR_NOT_FOUND")
+    s=s.replace(anchor,helper,1)
+
+# POST endpoint before /api/message
+post_anchor='''        if p=="/api/message":
+            try:
+'''
+post_insert='''        if p=="/api/job-diagnose":
+            try:
+                b=self.read_json()
+                jid=str(b.get("job_id") or "").strip()
+                if not jid:
+                    return self.send_json(400,{"ok":False,"error":"JOB_ID_REQUIRED"})
+                out=http_json(CENTRAL+"/api/jobs/"+jid,timeout=12)
+                job=out.get("job") or out
+                if str(job.get("status") or "")!="ERROR":
+                    return self.send_json(400,{"ok":False,"error":"JOB_NOT_IN_ERROR"})
+                diagnosis=diagnose_job_failure(job)
+                return self.send_json(200,{
+                    "ok":True,
+                    "job_id":jid,
+                    "error":job.get("error"),
+                    "result":job.get("result"),
+                    "diagnosis":diagnosis
+                })
+            except Exception as e:
+                return self.send_json(500,{"ok":False,"error":"JOB_DIAGNOSIS_FAILED","detail":str(e)})
+        if p=="/api/message":
+            try:
+'''
+if 'JOB_NOT_IN_ERROR' not in s:
+    if post_anchor not in s: raise SystemExit("POST_MESSAGE_ANCHOR_NOT_FOUND")
+    s=s.replace(post_anchor,post_insert,1)
+
+p.write_text(s,encoding="utf-8")
+PY
+
+python3 -m py_compile "$SERVER"
+echo JOB_FAILURE_DIAGNOSIS_ENDPOINT_OK
+
+echo "=== 2. ENHANCE JOB ERROR CARD ==="
+python3 - <<'PY'
+from pathlib import Path
+p=Path("/home/ubuntu/Interfaz/server.py")
+s=p.read_text(encoding="utf-8")
+
+# CSS for details.
+css_anchor='''.job .meta{font-size:12px;color:var(--muted)}'''
+css_new='''.job .meta{font-size:12px;color:var(--muted)}
+.jobErrorDetail{margin-top:10px;padding:10px;border-radius:10px;background:#23191b;border:1px solid #573238;white-space:pre-wrap;font-size:13px}
+.jobDiagnosis{margin-top:10px;padding:10px;border-radius:10px;background:var(--panel2);border:1px solid var(--line);white-space:pre-wrap;font-size:13px;line-height:1.45}
+.jobDiagTitle{font-weight:700;margin-bottom:6px}.jobDiagWait{color:var(--muted);font-size:12px;margin-top:8px}'''
+if '.jobErrorDetail{' not in s:
+    if css_anchor not in s: raise SystemExit("JOB_CSS_ANCHOR_NOT_FOUND")
+    s=s.replace(css_anchor,css_new,1)
+
+old='''       if(el){
+         let txt=''
+         if(j.status==='COMPLETADA'){
+           if(j.result&&j.result.message) txt=j.result.message
+           else if(typeof j.result==='string') txt=j.result
+           else txt='Trabajo completado y verificado.'
+         } else txt='El trabajo terminó con error'+(j.error?': '+j.error:'')
+         const r=document.createElement('div');r.style.marginTop='10px';r.textContent=txt;el.appendChild(r)
+       }
+       break
+'''
+new=r'''       if(el){
+         if(j.status==='COMPLETADA'){
+           let txt=''
+           if(j.result&&j.result.message) txt=j.result.message
+           else if(typeof j.result==='string') txt=j.result
+           else txt='Trabajo completado y verificado.'
+           const r=document.createElement('div');r.style.marginTop='10px';r.textContent=txt;el.appendChild(r)
+         } else {
+           const detail=document.createElement('div');detail.className='jobErrorDetail'
+           let rawError=j.error||''
+           if(!rawError&&j.result){
+             try{
+               const n=j.result.native||j.result
+               rawError=n.error||n.detail||n.message||''
+             }catch(e){}
+           }
+           detail.textContent=rawError?('Error real:\n'+rawError):'El trabajo terminó con error, pero Central Jobs no devolvió un detalle explícito.'
+           el.appendChild(detail)
+           const wait=document.createElement('div');wait.className='jobDiagWait';wait.textContent='Analizando causa y buscando una solución…';el.appendChild(wait)
+           try{
+             const dx=await api('api/job-diagnose',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({job_id:jid})})
+             wait.remove()
+             const box=document.createElement('div');box.className='jobDiagnosis'
+             box.innerHTML='<div class="jobDiagTitle">Diagnóstico y solución sugerida</div>'+esc(dx.diagnosis||'No se pudo generar un diagnóstico.')
+             el.appendChild(box)
+           }catch(e){
+             wait.textContent='No se pudo generar el diagnóstico automático: '+e.message
+           }
+         }
+       }
+       break
+'''
+if 'Analizando causa y buscando una solución' not in s:
+    if old not in s: raise SystemExit("POLL_JOB_ERROR_ANCHOR_NOT_FOUND")
+    s=s.replace(old,new,1)
+
+s=s.replace("central-chat-pwa-v4","central-chat-pwa-v5")
+p.write_text(s,encoding="utf-8")
+PY
+
+python3 -m py_compile "$SERVER"
+echo JOB_ERROR_CARD_DIAGNOSIS_UI_OK
+
+echo "=== 3. RESTART INTERFAZ ==="
+sudo systemctl restart interfaz.service
+for i in $(seq 1 30); do
+  if curl -fsS --max-time 2 http://127.0.0.1:8791/api/health >/tmp/jobdiag-health.json 2>/dev/null; then break; fi
+  sleep 1
+done
+cat /tmp/jobdiag-health.json
+echo
+systemctl is-active interfaz.service
+echo INTERFAZ_JOB_DIAGNOSIS_SERVICE_OK
+
+echo "=== 4. PUBLIC UI MARKERS ==="
+PUB=$(curl -fsS --max-time 20 https://cen-tral.duckdns.org/interfaz/)
+grep -q 'jobErrorDetail' <<<"$PUB"
+grep -q 'Diagnóstico y solución sugerida' <<<"$PUB"
+grep -q 'api/job-diagnose' <<<"$PUB"
+echo JOB_ERROR_DIAGNOSIS_PUBLIC_UI_OK
+
+echo CENTRAL_JOB_ERROR_DIAGNOSIS_V1_READY
+echo "backup=$BACKUP"
