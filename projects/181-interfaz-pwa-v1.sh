@@ -196,7 +196,8 @@ MAN=$(curl -fsS --max-time 10 http://127.0.0.1:8791/manifest.webmanifest)
 MAN_JSON="$MAN" python3 - <<'PY'
 import json,os
 m=json.loads(os.environ["MAN_JSON"])
-assert m["id"]=="/interfaz/",m\nassert m["name"]=="Central Chat",m
+assert m["id"]=="/interfaz/",m
+assert m["name"]=="Central Chat",m
 assert m["display"]=="standalone",m
 assert m["start_url"]=="./",m
 assert m["scope"]=="./",m
