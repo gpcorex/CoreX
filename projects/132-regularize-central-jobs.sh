@@ -108,9 +108,9 @@ for i in $(seq 1 30); do
 done
 
 echo "$OUT"
-python3 - <<'PY' <<<"$OUT"
-import json,sys
-o=json.load(sys.stdin)
+OUT_JSON="$OUT" python3 - <<'PY'
+import json,os
+o=json.loads(os.environ["OUT_JSON"])
 j=o["job"]
 assert j["id"].startswith("TR-CENTRAL-"), j["id"]
 assert j["status"]=="COMPLETADA", j
