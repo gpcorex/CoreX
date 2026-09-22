@@ -81,7 +81,7 @@ PWA_MANIFEST={
     ]
 }
 
-PWA_SW=r"""const CACHE='central-pwa-v1';
+PWA_SW=r"""const CACHE='central-chat-pwa-v1';
 const CORE=['./','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).catch(()=>{}));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
@@ -196,7 +196,7 @@ MAN=$(curl -fsS --max-time 10 http://127.0.0.1:8791/manifest.webmanifest)
 MAN_JSON="$MAN" python3 - <<'PY'
 import json,os
 m=json.loads(os.environ["MAN_JSON"])
-assert m["name"]=="Central",m
+assert m["id"]=="/interfaz/",m\nassert m["name"]=="Central Chat",m
 assert m["display"]=="standalone",m
 assert m["start_url"]=="./",m
 assert m["scope"]=="./",m
@@ -205,7 +205,7 @@ assert {"192x192","512x512"} <= sizes,m
 print("PWA_MANIFEST_VALID_OK")
 PY
 
-curl -fsS --max-time 10 http://127.0.0.1:8791/sw.js | grep -q "central-pwa-v1"
+curl -fsS --max-time 10 http://127.0.0.1:8791/sw.js | grep -q "central-chat-pwa-v1"
 [ "$(curl -fsS --max-time 10 http://127.0.0.1:8791/icons/icon-192.png | wc -c)" -gt 1000 ]
 [ "$(curl -fsS --max-time 10 http://127.0.0.1:8791/icons/icon-512.png | wc -c)" -gt 1000 ]
 echo PWA_LOCAL_ASSETS_OK
@@ -233,7 +233,7 @@ echo PWA_PUBLIC_ASSETS_OK
 
 echo "=== 5. FINAL INSTALLABILITY MARKERS ==="
 echo "HTTPS=https://cen-tral.duckdns.org/interfaz/"
-echo "manifest=yes"
+echo "pwa_id=/interfaz/"\necho "name=Central Chat"\necho "manifest=yes"
 echo "service_worker=yes"
 echo "icon_192=yes"
 echo "icon_512=yes"
