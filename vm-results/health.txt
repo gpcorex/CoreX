@@ -1,7 +1,7 @@
 CONECTOR_HEALTH
-generated_at=2026-09-23T12:51:29+00:00
+generated_at=2026-09-23T12:52:29+00:00
 host=instance-20260918
-repo_head=55e5aee6c9e6fedf59d6e8d7ddb60debeac59eea
+repo_head=dff9a93af768782ecdbc8bc47031ad081ff1efca
 conector_sync=active
 conector_ops=active
 central_backend=inactive
