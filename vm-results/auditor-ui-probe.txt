@@ -1,0 +1,596 @@
+AUDITOR_UI_PROBE_V1
+generated_at=2026-09-23T12:57:24+00:00
+
+[SERVER_RELEVANT]
+1-#!/usr/bin/env python3
+2-from __future__ import annotations
+3-import json, os, re, subprocess, threading, time, uuid
+4-from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+5-from pathlib import Path
+6-from urllib.parse import urlparse
+7-
+8-HOST="127.0.0.1"
+9-PORT=8792
+10-ROOT=Path("/home/ubuntu/Central/auditor_ui_v1")
+11-DATA=ROOT/"data"
+12-INBOX=Path("/home/ubuntu/Central/inbox")
+13:LOGS=Path("/home/ubuntu/Central/logs/auditor")
+14-PIPE=Path("/home/ubuntu/Central/master_pipeline_v1/run_central_extraction.py")
+15-RUNS=DATA/"runs.json"
+16-MAX_UPLOAD=2*1024*1024*1024
+17-
+18-for p in (DATA,INBOX,LOGS): p.mkdir(parents=True,exist_ok=True)
+19-LOCK=threading.Lock()
+20-
+21-def now():
+22-    return int(time.time())
+23-
+24-def load_runs():
+25-    try:
+--
+47-
+48-def get_run(rid):
+49-    for r in load_runs():
+50-        if r.get("id")==rid:return r
+51-    return None
+52-
+53-def safe_filename(name):
+54-    name=Path(name or "app.apk").name
+55-    name=re.sub(r"[^A-Za-z0-9._-]+","_",name)[:180]
+56-    return name or "app.apk"
+57-
+58-def worker(rid, path, kind, display_name):
+59:    logp=LOGS/f"{rid}.log"
+60-    started=now()
+61:    update_run(rid,status="RUNNING",started_at=started,log_path=str(logp))
+62-    cmd=["/usr/bin/python3",str(PIPE),str(path),"--kind",kind,"--name",display_name]
+63:    with logp.open("a",encoding="utf-8",buffering=1) as log:
+64:        log.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] START {rid}\n")
+65:        log.write("source="+str(path)+"\n")
+66:        log.write("kind="+kind+"\n")
+67-        try:
+68-            cp=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
+69-            last_json=None
+70-            assert cp.stdout is not None
+71-            for line in cp.stdout:
+72:                log.write(line)
+73-                line=line.strip()
+74-                if line.startswith("{") and line.endswith("}"):
+75-                    try:
+76-                        evt=json.loads(line)
+77:                        if evt.get("event")=="stage":
+78-                            update_run(
+79-                                rid,
+80:                                stage=evt.get("stage"),
+81:                                stage_total=evt.get("stage_total"),
+82:                                stage_name=evt.get("stage_name"),
+83:                                stage_detail=evt.get("detail")
+84-                            )
+85:                        elif evt.get("event")=="deobf_progress":
+86-                            cur=evt.get("current")
+87-                            total=evt.get("total")
+88-                            phase=evt.get("phase")
+89:                            detail=evt.get("detail")
+90-                            txt=(f"{cur}/{total}" if total else str(cur))
+91:                            if detail:
+92:                                txt += " · "+str(detail)
+93-                            update_run(
+94-                                rid,
+95:                                stage=8,
+96:                                stage_total=10,
+97:                                stage_name="Desofuscación automática",
+98:                                stage_detail=f"{phase}: {txt}"
+99-                            )
+100-                        else:
+101-                            last_json=evt
+102-                    except Exception:
+103-                        pass
+104-            rc=cp.wait()
+105-            if rc==0 and isinstance(last_json,dict) and last_json.get("ok"):
+106-                project_id=last_json.get("project_id")
+107-                update_run(
+108-                    rid,status="COMPLETED",finished_at=now(),returncode=rc,
+109-                    project_id=project_id,result=last_json
+110-                )
+111:                log.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] COMPLETED project_id={project_id}\n")
+112-            else:
+113-                update_run(rid,status="ERROR",finished_at=now(),returncode=rc,result=last_json)
+114:                log.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] ERROR returncode={rc}\n")
+115-        except Exception as e:
+116-            update_run(rid,status="ERROR",finished_at=now(),error=str(e))
+117:            log.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] EXCEPTION {e}\n")
+118-
+119-class H(BaseHTTPRequestHandler):
+120-    protocol_version="HTTP/1.1"
+121-
+122-    def send_bytes(self,code,raw,ctype="application/json; charset=utf-8"):
+123-        if isinstance(raw,str):raw=raw.encode("utf-8")
+124-        self.send_response(code)
+125-        self.send_header("Content-Type",ctype)
+126-        self.send_header("Cache-Control","no-store")
+127-        self.send_header("Content-Length",str(len(raw)))
+128-        self.end_headers()
+129-        self.wfile.write(raw)
+130-
+131-    def send_json(self,code,obj):
+132-        self.send_bytes(code,json.dumps(obj,ensure_ascii=False).encode("utf-8"))
+133-
+134-    def do_GET(self):
+135-        p=urlparse(self.path).path
+136-        if p=="/api/health":
+137-            return self.send_json(200,{"ok":True,"service":"central-auditor-ui","port":PORT})
+138-        if p=="/api/runs":
+139-            rows=load_runs()
+140-            slim=[]
+141-            for r in rows[:50]:
+142:                slim.append({k:r.get(k) for k in ("id","filename","kind","status","created_at","started_at","finished_at","project_id","size","stage","stage_total","stage_name","stage_detail")})
+143-            return self.send_json(200,{"ok":True,"runs":slim})
+144-        m=re.fullmatch(r"/api/runs/([A-Za-z0-9_-]+)",p)
+145-        if m:
+146-            r=get_run(m.group(1))
+147-            if not r:return self.send_json(404,{"ok":False,"error":"RUN_NOT_FOUND"})
+148-            return self.send_json(200,{"ok":True,"run":r})
+149-        m=re.fullmatch(r"/api/runs/([A-Za-z0-9_-]+)/contract/([A-Za-z0-9._-]+)",p)
+150-        if m:
+151-            r=get_run(m.group(1))
+152-            if not r:return self.send_json(404,{"ok":False,"error":"RUN_NOT_FOUND"})
+153-            pid=r.get("project_id")
+154-            if not pid:return self.send_json(409,{"ok":False,"error":"PROJECT_NOT_READY"})
+155-            fp=Path("/home/ubuntu/Central/projects")/pid/"work"/"component-packages"/m.group(2)/"CONTRACT"/"contract.json"
+156-            if not fp.is_file():return self.send_json(404,{"ok":False,"error":"CONTRACT_NOT_READY"})
+157-            try:return self.send_json(200,json.loads(fp.read_text(encoding="utf-8")))
+158:            except Exception as e:return self.send_json(500,{"ok":False,"error":"CONTRACT_READ_FAILED","detail":str(e)})
+159-
+160-        m=re.fullmatch(r"/api/runs/([A-Za-z0-9_-]+)/bundle/([A-Za-z0-9._-]+)",p)
+161-        if m:
+162-            r=get_run(m.group(1))
+163-            if not r:return self.send_json(404,{"ok":False,"error":"RUN_NOT_FOUND"})
+164-            pid=r.get("project_id")
+165-            if not pid:return self.send_json(409,{"ok":False,"error":"PROJECT_NOT_READY"})
+166-            fp=Path("/home/ubuntu/Central/projects")/pid/"work"/"component-packages"/m.group(2)/"manifest.json"
+167-            if not fp.is_file():return self.send_json(404,{"ok":False,"error":"BUNDLE_NOT_READY"})
+168-            try:return self.send_json(200,json.loads(fp.read_text(encoding="utf-8")))
+169:            except Exception as e:return self.send_json(500,{"ok":False,"error":"BUNDLE_READ_FAILED","detail":str(e)})
+170-
+171-        m=re.fullmatch(r"/api/runs/([A-Za-z0-9_-]+)/dependencies",p)
+172-        if m:
+173-            r=get_run(m.group(1))
+174-            if not r:return self.send_json(404,{"ok":False,"error":"RUN_NOT_FOUND"})
+175-            pid=r.get("project_id")
+176-            if not pid:return self.send_json(409,{"ok":False,"error":"PROJECT_NOT_READY"})
+177-            fp=Path("/home/ubuntu/Central/projects")/pid/"work"/"dependencies"/"summary.json"
+178-            if not fp.is_file():return self.send_json(404,{"ok":False,"error":"DEPENDENCIES_NOT_READY"})
+179-            try:return self.send_json(200,json.loads(fp.read_text(encoding="utf-8")))
+180:            except Exception as e:return self.send_json(500,{"ok":False,"error":"DEPENDENCIES_READ_FAILED","detail":str(e)})
+181-
+182-        m=re.fullmatch(r"/api/runs/([A-Za-z0-9_-]+)/components",p)
+183-        if m:
+184-            r=get_run(m.group(1))
+185-            if not r:return self.send_json(404,{"ok":False,"error":"RUN_NOT_FOUND"})
+186-            pid=r.get("project_id")
+187-            if not pid:return self.send_json(409,{"ok":False,"error":"PROJECT_NOT_READY"})
+188-            fp=Path("/home/ubuntu/Central/projects")/pid/"work"/"functional"/"components.json"
+189-            if not fp.is_file():return self.send_json(404,{"ok":False,"error":"COMPONENTS_NOT_READY"})
+190-            try:return self.send_json(200,json.loads(fp.read_text(encoding="utf-8")))
+191:            except Exception as e:return self.send_json(500,{"ok":False,"error":"COMPONENTS_READ_FAILED","detail":str(e)})
+192-
+193:        m=re.fullmatch(r"/api/runs/([A-Za-z0-9_-]+)/log",p)
+194-        if m:
+195-            rid=m.group(1); r=get_run(rid)
+196-            if not r:return self.send_json(404,{"ok":False,"error":"RUN_NOT_FOUND"})
+197:            lp=LOGS/f"{rid}.log"
+198-            txt=lp.read_text(encoding="utf-8",errors="replace")[-200000:] if lp.is_file() else ""
+199-            return self.send_bytes(200,txt,"text/plain; charset=utf-8")
+200-        if p in ("/","/index.html"):
+201-            return self.send_bytes(200,INDEX,"text/html; charset=utf-8")
+202-        return self.send_json(404,{"ok":False,"error":"NOT_FOUND"})
+203-
+204-    def do_POST(self):
+205-        p=urlparse(self.path).path
+206-        if p!="/api/upload":
+207-            return self.send_json(404,{"ok":False,"error":"NOT_FOUND"})
+208-        try:
+209-            n=int(self.headers.get("Content-Length","0") or 0)
+--
+224-            while remaining>0:
+225-                chunk=self.rfile.read(min(1024*1024,remaining))
+226-                if not chunk:break
+227-                f.write(chunk); remaining-=len(chunk)
+228-        actual=dest.stat().st_size if dest.exists() else 0
+229-        if actual!=n:
+230-            dest.unlink(missing_ok=True)
+231-            return self.send_json(400,{"ok":False,"error":"INCOMPLETE_UPLOAD","expected":n,"actual":actual})
+232-
+233-        row={
+234-            "id":rid,"filename":filename,"kind":kind,"status":"QUEUED",
+235-            "created_at":now(),"size":actual,"source_path":str(dest),"project_id":None,
+236:            "stage":1,"stage_total":10,"stage_name":"Archivo recibido","stage_detail":"Archivo guardado en inbox"
+237-        }
+238-        with LOCK:
+239-            rows=load_runs(); rows.insert(0,row); save_runs(rows[:100])
+240-
+241-        t=threading.Thread(target=worker,args=(rid,dest,kind,filename),daemon=True)
+242-        t.start()
+243-        return self.send_json(202,{"ok":True,"run_id":rid,"status":"QUEUED","filename":filename,"size":actual})
+244-
+245:    def log_message(self,fmt,*args):
+246-        pass
+247-
+248-INDEX=r'''<!doctype html>
+249-<html lang="es">
+250-<head>
+251-<meta charset="utf-8">
+252-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+253-<title>Central · Auditor</title>
+254-<style>
+255-:root{color-scheme:dark;--bg:#0d0f13;--panel:#151922;--panel2:#1c2230;--line:#2c3444;--text:#f2f5f8;--muted:#98a4b5;--ok:#76d49b;--warn:#f2c96d;--err:#ef7f7f}
+256-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+257-.wrap{max-width:980px;margin:auto;padding:18px 14px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+258-h1{font-size:22px;margin:0}.sub{font-size:13px;color:var(--muted);margin-top:4px}
+259-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
+260-.drop{border:1px dashed #46536b;border-radius:14px;padding:26px 16px;text-align:center;background:#11151c}
+261-input[type=file]{width:100%;margin-top:14px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:700;background:#edf2f7;color:#111;cursor:pointer}
+262-.btn:disabled{opacity:.45}.meta{margin-top:10px;font-size:13px;color:var(--muted)}
+263-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.status{font-weight:700}.ok{color:var(--ok)}.err{color:var(--err)}.running{color:var(--warn)}
+264:pre{white-space:pre-wrap;word-break:break-word;max-height:420px;overflow:auto;background:#090b0f;border-radius:12px;padding:12px;font-size:12px;line-height:1.45}
+265-.run{padding:12px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.run:first-child{border-top:0}.run small{color:var(--muted)}
+266-.badge{font-size:11px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;height:max-content}
+267:@media(max-width:700px){.grid{grid-template-columns:1fr}.wrap{padding:12px 10px 30px}.card{padding:13px}pre{max-height:360px}}
+268-</style>
+269-</head>
+270-<body>
+271-<div class="wrap">
+272-  <div class="top"><div><h1>Auditor</h1><div class="sub">Central · APK / XAPK · análisis y desofuscación automáticos</div></div><div class="badge" id="health">comprobando…</div></div>
+273-
+274-  <div class="card">
+275-    <div class="drop">
+276-      <strong>Seleccioná una aplicación</strong>
+277:      <div class="sub">Se guarda la entrada, corre el pipeline completo y se registran los logs automáticamente.</div>
+278-      <input id="file" type="file" accept=".apk,.xapk,application/vnd.android.package-archive">
+279-      <div class="meta" id="filemeta">APK o XAPK</div>
+280-      <div style="margin-top:14px"><button class="btn" id="go" disabled>Analizar</button></div>
+281-    </div>
+282-  </div>
+283-
+284-  <div class="grid">
+285-    <div class="card">
+286-      <div class="status" id="state">Sin análisis activo</div>
+287:      <div class="meta" id="detail">—</div>
+288-    </div>
+289-    <div class="card">
+290-      <strong>Proyecto</strong>
+291-      <div class="meta" id="project">Todavía no generado</div>
+292-    </div>
+293-  </div>
+294-
+295-  <div class="card">
+296-    <strong>Componentes detectados</strong>
+297-    <div id="components" class="meta">Se mostrarán al terminar el análisis.</div>
+298-  </div>
+299-
+300-  <div class="card">
+301-    <strong>Piezas y dependencias</strong>
+302-    <div id="dependencies" class="meta">Se calcularán al terminar el análisis.</div>
+303-  </div>
+304-
+305-  <div class="card">
+306-    <strong>Log en vivo</strong>
+307:    <pre id="log">Esperando un análisis…</pre>
+308-  </div>
+309-
+310-  <div class="card">
+311:    <strong>Últimos análisis</strong>
+312-    <div id="runs" class="meta">Cargando…</div>
+313-  </div>
+314-</div>
+315-<script>
+316-const $=s=>document.querySelector(s)
+317-let active=null,timer=null
+318-function fmtBytes(n){if(!n)return '0 B';const u=['B','KB','MB','GB'];let i=0,v=n;while(v>=1024&&i<u.length-1){v/=1024;i++}return v.toFixed(i?1:0)+' '+u[i]}
+319-function fmtTime(t){return t?new Date(t*1000).toLocaleString():'—'}
+320-async function fetchTimed(url,opt={},timeoutMs=2500){
+321- const c=new AbortController()
+322- const t=setTimeout(()=>c.abort(),timeoutMs)
+323- try{return await fetch(url,{...opt,signal:c.signal})}
+--
+334- $('#health').textContent='comprobando…';$('#health').className='badge'
+335- try{
+336-   await api('api/health',{},2000)
+337-   $('#health').textContent='online';$('#health').className='badge ok'
+338- }catch{
+339-   $('#health').textContent='sin conexión';$('#health').className='badge err'
+340-   setTimeout(health,5000)
+341- }
+342-}
+343-$('#file').onchange=()=>{const f=$('#file').files[0];$('#go').disabled=!f;$('#filemeta').textContent=f?f.name+' · '+fmtBytes(f.size):'APK o XAPK'}
+344-$('#go').onclick=async()=>{
+345- const f=$('#file').files[0];if(!f)return
+346: $('#go').disabled=true;$('#state').textContent='Subiendo…';$('#state').className='status running';$('#detail').textContent=f.name+' · '+fmtBytes(f.size)
+347- try{
+348-   const kind=f.name.toLowerCase().endsWith('.xapk')?'xapk':'apk'
+349-   const r=await fetch('api/upload',{method:'POST',headers:{'Content-Type':'application/octet-stream','X-Filename':encodeURIComponent(f.name),'X-Kind':kind},body:f})
+350-   const j=await r.json();if(!r.ok)throw new Error(j.error||r.status)
+351-   active=j.run_id;watch();loadRuns()
+352: }catch(e){$('#state').textContent='Error';$('#state').className='status err';$('#detail').textContent=e.message;$('#go').disabled=false}
+353-}
+354-async function loadContract(rid,role){
+355- try{
+356-   const x=await api('api/runs/'+rid+'/contract/'+role,{},4000)
+357-   const sm=x.summary||{},n=x.network||{}
+358-   const ps=(x.permissions||[]).filter(p=>p.status==='supported_by_core').map(p=>p.permission)
+359-   const lines=[
+360-     (x.name||role),
+361-     'Entradas '+(sm.observed_input_type_count||0),
+362-     'Salidas '+(sm.observed_output_type_count||0),
+363-     'Llamadas externas '+(sm.external_call_count||0),
+364-     'Red '+(n.uses_network_indicators?'sí':'no'),
+--
+422-   }
+423- }catch(e){
+424-   box.textContent='Componentes todavía no disponibles.'
+425- }
+426-}
+427-async function watch(){
+428- if(!active)return
+429- clearTimeout(timer)
+430- try{
+431-   const x=await api('api/runs/'+active);const r=x.run
+432-   $('#state').textContent=r.status||'—'
+433-   $('#state').className='status '+(r.status==='COMPLETED'?'ok':r.status==='ERROR'?'err':'running')
+434:   const st=(r.stage&&r.stage_total)?('Etapa '+r.stage+'/'+r.stage_total+' · '+(r.stage_name||'')):''
+435:   $('#detail').textContent=(st?st+'\n':'')+r.filename+' · '+fmtBytes(r.size)+' · '+fmtTime(r.started_at||r.created_at)+(r.stage_detail?'\n'+r.stage_detail:'')
+436:   $('#detail').style.whiteSpace='pre-line'
+437-   $('#project').textContent=r.project_id||'Esperando al pipeline…'
+438:   try{const lr=await fetch('api/runs/'+active+'/log');$('#log').textContent=await lr.text();$('#log').scrollTop=$('#log').scrollHeight}catch{}
+439-   if(r.status==='COMPLETED'||r.status==='ERROR'){
+440-     $('#go').disabled=false
+441-     if(r.status==='COMPLETED'){loadComponents(active);loadDependencies(active)}
+442-     loadRuns();return
+443-   }
+444: }catch(e){$('#detail').textContent=e.message}
+445- timer=setTimeout(watch,1500)
+446-}
+447-async function loadRuns(){
+448- const box=$('#runs')
+449- box.textContent='Cargando…'
+450- try{
+451-  const x=await api('api/runs',{},2500);box.innerHTML=''
+452-  if(!x.runs.length){box.textContent='Todavía no hay análisis.';return}
+453-  for(const r of x.runs){
+454-   const d=document.createElement('div');d.className='run'
+455:   const l=document.createElement('div');const stageTxt=(r.stage&&r.stage_total)?(' · Etapa '+r.stage+'/'+r.stage_total+' · '+(r.stage_name||'')):''
+456:   l.innerHTML='<div>'+r.filename+'</div><small>'+fmtTime(r.created_at)+(r.project_id?' · '+r.project_id:'')+stageTxt+'</small>'
+457-   const b=document.createElement('button');b.className='badge';b.textContent=r.status||'—';b.onclick=()=>{active=r.id;watch();if(r.status==='COMPLETED'){loadComponents(r.id);loadDependencies(r.id)}}
+458-   d.append(l,b);box.appendChild(d)
+459-  }
+460- }catch(e){
+461-   box.textContent='No se pudo cargar el historial.'
+462-   setTimeout(loadRuns,5000)
+463- }
+464-}
+465-document.documentElement.dataset.auditorBoot='AUDITOR_UI_CLIENT_BOOT_V1'
+466-health()
+467-loadRuns()
+468-</script>
+
+[SCAFFOLD_FULL]
+     1	#!/usr/bin/env python3
+     2	from __future__ import annotations
+     3	import argparse, json, re, textwrap
+     4	from pathlib import Path
+     5	
+     6	PROJECTS=Path("/home/ubuntu/Central/projects")
+     7	
+     8	def kt_type(t:str)->str:
+     9	    m={
+    10	      "long":"Long","String":"String","String?":"String?",
+    11	      "Repository":"RepositoryModel","List<URL>":"List<MirrorModel>",
+    12	      "AppVersion":"VersionModel","FileV1":"VersionFileModel"
+    13	    }
+    14	    return m.get(t,t)
+    15	
+    16	def safe_ident(name:str)->str:
+    17	    return re.sub(r'[^A-Za-z0-9_]','_',name)
+    18	
+    19	def main():
+    20	    ap=argparse.ArgumentParser()
+    21	    ap.add_argument("project_id")
+    22	    ap.add_argument("role")
+    23	    args=ap.parse_args()
+    24	
+    25	    root=PROJECTS/args.project_id
+    26	    iface_path=root/"work"/"component-packages"/args.role/"INTERFACE"/"interface.json"
+    27	    if not iface_path.is_file():
+    28	        raise SystemExit("INTERFACE_NOT_FOUND")
+    29	
+    30	    iface=json.load(open(iface_path,encoding="utf-8"))
+    31	    ops=iface.get("operations") or []
+    32	    if not ops:
+    33	        raise SystemExit("NO_INTERFACE_OPERATIONS")
+    34	
+    35	    out=root/"work"/"component-packages"/args.role/"CLEAN_ADAPTER"
+    36	    (out/"adapter").mkdir(parents=True,exist_ok=True)
+    37	    (out/"models").mkdir(parents=True,exist_ok=True)
+    38	    (out/"tests").mkdir(parents=True,exist_ok=True)
+    39	    (out/"contracts").mkdir(parents=True,exist_ok=True)
+    40	
+    41	    # Contract snapshot
+    42	    (out/"contracts"/"interface.json").write_text(json.dumps(iface,ensure_ascii=False,indent=2)+chr(10),encoding="utf-8")
+    43	
+    44	    # Models
+    45	    models = """package central.clean.detailmetadata.models
+    46	
+    47	data class RepositoryModel(
+    48	    val repoId: Long,
+    49	    val address: String? = null,
+    50	    val username: String? = null,
+    51	    val password: String? = null,
+    52	    val certificate: String? = null
+    53	)
+    54	
+    55	data class MirrorModel(
+    56	    val url: String
+    57	)
+    58	
+    59	data class VersionModel(
+    60	    val repoId: Long,
+    61	    val versionCode: Long? = null,
+    62	    val versionName: String? = null
+    63	)
+    64	
+    65	data class VersionFileModel(
+    66	    val name: String? = null,
+    67	    val url: String? = null,
+    68	    val size: Long? = null
+    69	)
+    70	"""
+    71	    (out/"models"/"Models.kt").write_text(models,encoding="utf-8")
+    72	
+    73	    # Interface generated only from synthesized operations.
+    74	    lines=[
+    75	      "package central.clean.detailmetadata.adapter",
+    76	      "",
+    77	      "import central.clean.detailmetadata.models.*",
+    78	      "",
+    79	      "interface RepositoryService {"
+    80	    ]
+    81	    for op in ops:
+    82	        params=", ".join(f"{safe_ident(x['name'])}: {kt_type(x['type'])}" for x in op.get("inputs",[]))
+    83	        outs=op.get("outputs") or []
+    84	        if len(outs)==1:
+    85	            ret=kt_type(outs[0]["type"])
+    86	        else:
+    87	            ret="Map<String, Any?>"
+    88	        lines.append(f"    suspend fun {safe_ident(op['name'])}({params}): {ret}")
+    89	    lines.append("}")
+    90	    (out/"adapter"/"RepositoryService.kt").write_text("\n".join(lines)+chr(10),encoding="utf-8")
+    91	
+    92	    # Backend boundary keeps original implementation details out of public contract.
+    93	    backend = """package central.clean.detailmetadata.adapter
+    94	
+    95	import central.clean.detailmetadata.models.*
+    96	
+    97	interface RepositoryBackend {
+    98	    suspend fun loadRepositoryById(repoId: Long): RepositoryModel
+    99	    suspend fun listMirrors(repoId: Long): List<MirrorModel>
+   100	    suspend fun repositoryAddress(repoId: Long): String
+   101	    suspend fun repositoryCredentials(repoId: Long): Map<String, String?>
+   102	    suspend fun repositoryForVersion(version: VersionModel): RepositoryModel
+   103	    suspend fun versionFile(version: VersionModel): VersionFileModel
+   104	}
+   105	"""
+   106	    (out/"adapter"/"RepositoryBackend.kt").write_text(backend,encoding="utf-8")
+   107	
+   108	    impl = """package central.clean.detailmetadata.adapter
+   109	
+   110	import central.clean.detailmetadata.models.*
+   111	
+   112	class RepositoryServiceAdapter(
+   113	    private val backend: RepositoryBackend
+   114	) : RepositoryService {
+   115	
+   116	    override suspend fun loadRepository(repoId: Long): RepositoryModel =
+   117	        backend.loadRepositoryById(repoId)
+   118	
+   119	    override suspend fun getRepositoryMirrors(repoId: Long): List<MirrorModel> =
+   120	        backend.listMirrors(repoId)
+   121	
+   122	    override suspend fun getRepositoryAddress(repoId: Long): String =
+   123	        backend.repositoryAddress(repoId)
+   124	
+   125	    override suspend fun getRepositoryCredentials(repoId: Long): Map<String, Any?> =
+   126	        backend.repositoryCredentials(repoId)
+   127	
+   128	    override suspend fun getRepositoryForVersion(version: VersionModel): RepositoryModel =
+   129	        backend.repositoryForVersion(version)
+   130	
+   131	    override suspend fun getAppVersionFile(version: VersionModel): VersionFileModel =
+   132	        backend.versionFile(version)
+   133	}
+   134	"""
+   135	    (out/"adapter"/"RepositoryServiceAdapter.kt").write_text(impl,encoding="utf-8")
+   136	
+   137	    fake = """package central.clean.detailmetadata.tests
+   138	
+   139	import central.clean.detailmetadata.adapter.RepositoryBackend
+   140	import central.clean.detailmetadata.models.*
+   141	
+   142	class FakeRepositoryBackend : RepositoryBackend {
+   143	    override suspend fun loadRepositoryById(repoId: Long) =
+   144	        RepositoryModel(repoId = repoId, address = "https://example.invalid")
+   145	
+   146	    override suspend fun listMirrors(repoId: Long) =
+   147	        listOf(MirrorModel("https://mirror.example.invalid/$repoId"))
+   148	
+   149	    override suspend fun repositoryAddress(repoId: Long) =
+   150	        "https://example.invalid/$repoId"
+   151	
+   152	    override suspend fun repositoryCredentials(repoId: Long) =
+   153	        mapOf("username" to null, "password" to null, "certificate" to null)
+   154	
+   155	    override suspend fun repositoryForVersion(version: VersionModel) =
+   156	        RepositoryModel(repoId = version.repoId)
+   157	
+   158	    override suspend fun versionFile(version: VersionModel) =
+   159	        VersionFileModel(name = version.versionName)
+   160	}
+   161	"""
+   162	    (out/"tests"/"FakeRepositoryBackend.kt").write_text(fake,encoding="utf-8")
+   163	
+   164	    test = """package central.clean.detailmetadata.tests
+   165	
+   166	import central.clean.detailmetadata.adapter.RepositoryServiceAdapter
+   167	import central.clean.detailmetadata.models.VersionModel
+   168	import kotlinx.coroutines.runBlocking
+   169	
+   170	object SmokeTest {
+   171	    @JvmStatic
+   172	    fun main(args: Array<String>) = runBlocking {
+   173	        val service = RepositoryServiceAdapter(FakeRepositoryBackend())
+   174	        check(service.loadRepository(1).repoId == 1L)
+   175	        check(service.getRepositoryMirrors(1).isNotEmpty())
+   176	        check(service.getRepositoryAddress(1).isNotBlank())
+   177	        check(service.getRepositoryCredentials(1).isNotEmpty())
+   178	        check(service.getRepositoryForVersion(VersionModel(1)).repoId == 1L)
+   179	        service.getAppVersionFile(VersionModel(1))
+   180	        println("CLEAN_ADAPTER_SMOKE_OK")
+   181	    }
+   182	}
+   183	"""
+   184	    (out/"tests"/"SmokeTest.kt").write_text(test,encoding="utf-8")
+   185	
+   186	    # Build plan deliberately keeps runtime connection unresolved.
+   187	    plan={
+   188	      "schema_version":"central.clean-adapter-plan.v1",
+   189	      "project_id":args.project_id,
+   190	      "role":args.role,
+   191	      "source_interface":str(iface_path),
+   192	      "operation_count":len(ops),
+   193	      "implementation_status":"SCAFFOLDED_NOT_CONNECTED",
+   194	      "runtime_backend_required":True,
+   195	      "operations":[
+   196	        {
+   197	          "name":op["name"],
+   198	          "confidence":op["confidence"],
+   199	          "evidence_count":len(op.get("evidence") or [])
+   200	        } for op in ops
+   201	      ],
+   202	      "next_step":"Implement RepositoryBackend against a clean data source and validate each operation with fixtures."
+   203	    }
+   204	    (out/"build-plan.json").write_text(json.dumps(plan,ensure_ascii=False,indent=2)+chr(10),encoding="utf-8")
+   205	
+   206	    readme=f"""# Clean Adapter Scaffold — {args.role}
+   207	
+   208	This scaffold was generated from the synthesized clean interface.
+   209	
+   210	## Status
+   211	SCAFFOLDED_NOT_CONNECTED
+   212	
+   213	## Structure
+   214	- adapter/RepositoryService.kt — public clean contract
+   215	- adapter/RepositoryBackend.kt — backend boundary
+   216	- adapter/RepositoryServiceAdapter.kt — adapter implementation
+   217	- models/Models.kt — clean DTOs
+   218	- tests/ — fake backend + smoke test
+   219	- contracts/interface.json — source interface evidence
+   220	- build-plan.json — implementation state
