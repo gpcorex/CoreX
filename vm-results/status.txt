@@ -1,0 +1,77 @@
+CONECTOR_STATUS_V2
+generated_at=2026-09-23T12:47:45+00:00
+host=instance-20260918
+repo_head=78d22ad7f016efb1db4a44426b724e05fff5e9d8
+write_authority=openclaw
+
+[CONECTOR]
+conector-sync.timer=active
+conector-sync.service=inactive
+conector-central-ops.timer=active
+conector-central-ops.service=inactive
+conector-api.service=active
+openclaw-gateway.service=failed
+caddy=active
+central-backend=inactive
+
+[LEGACY_TIMERS]
+corex-sync.timer=active
+corex-central-ops.timer=active
+
+[OPENCLAW]
+LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*          
+LISTEN 0      511            [::1]:18789         [::]:*          
+
+[CENTRAL]
+/srv/apps/central=present
+/opt/corex/repo=present
+/var/lib/conector=present
+/var/log/conector=present
+
+[PROVIDER_KEY_FILES]
+__init__.cpython-312.pyc
+__init__.py
+cloudflare
+cloudflare-account-id
+cloudflare.cpython-312.pyc
+cloudflare.py
+cloudflare.yaml
+cohere.cpython-312.pyc
+cohere.py
+gemini.cpython-312.pyc
+gemini.py
+gemini.yaml
+generic_openai.cpython-312.pyc
+generic_openai.py
+groq.cpython-312.pyc
+groq.py
+groq.yaml
+huggingface
+huggingface.cpython-312.pyc
+huggingface.py
+manifiestos.cpython-312.pyc
+manifiestos.py
+openrouter
+openrouter.cpython-312.pyc
+openrouter.py
+openrouter.yaml
+registro.cpython-312.pyc
+registro.py
+samanovanova.cpython-312.pyc
+samanovanova.py
+sambanova.cpython-312.pyc
+sambanova.py
+simulado.cpython-312.pyc
+simulado.py
+simulado.yaml
+
+[LISTENING]
+LISTEN 0      5          127.0.0.1:8790       0.0.0.0:*          
+LISTEN 0      511        127.0.0.1:8090       0.0.0.0:*          
+LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*          
+LISTEN 0      4096               *:80               *:*          
+LISTEN 0      511            [::1]:18789         [::]:*          
+LISTEN 0      4096               *:443              *:*          
+
+[RECENT_ERRORS]
+-- No entries --
