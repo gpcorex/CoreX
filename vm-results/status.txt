@@ -1,12 +1,12 @@
 CONECTOR_STATUS_V2
-generated_at=2026-09-24T17:12:58+00:00
+generated_at=2026-09-24T17:13:58+00:00
 host=instance-20260918
 repo_head=b8812276f13e1f4c4159a239e65aa557185fbb7d
 write_authority=openclaw
 
 [CONECTOR]
 conector-sync.timer=active
-conector-sync.service=failed
+conector-sync.service=inactive
 conector-central-ops.timer=active
 conector-central-ops.service=inactive
 conector-api.service=active
@@ -74,8 +74,6 @@ LISTEN 0      511            [::1]:18789         [::]:*
 LISTEN 0      4096               *:443              *:*          
 
 [RECENT_ERRORS]
-Sep 24 16:58:41 instance-20260918 systemd[1]: conector-sync.service: Failed with result 'exit-code'.
-Sep 24 16:58:41 instance-20260918 systemd[1]: Failed to start conector-sync.service - Conector deployment sync.
 Sep 24 17:00:07 instance-20260918 systemd[1]: conector-sync.service: Failed with result 'exit-code'.
 Sep 24 17:00:07 instance-20260918 systemd[1]: Failed to start conector-sync.service - Conector deployment sync.
 Sep 24 17:00:07 instance-20260918 systemd[1]: conector-central-ops.service: Main process exited, code=killed, status=15/TERM
