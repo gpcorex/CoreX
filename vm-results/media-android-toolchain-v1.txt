@@ -1,0 +1,8 @@
+MEDIA_ANDROID_TOOLCHAIN_V1_READY
+java=openjdk version "21.0.12.1" 2026-08-18
+gradle=to
+android_sdk=/opt/android-sdk
+sdkmanager=12.0
+platform_android_35=yes
+build_tools_35=yes
+gradlew=/home/ubuntu/Central/media_center/android/CentroMultimedia/gradlew
