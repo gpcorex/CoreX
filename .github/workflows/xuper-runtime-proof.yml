@@ -1,0 +1,77 @@
+name: Xuper Runtime Proof
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-xuper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Xuper test APK from private release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p xuper-input
+          gh release download xuper-runtime-input             --repo "${GITHUB_REPOSITORY}"             --pattern "XuperTv-N0F4C3-v6.73.0.apk"             --dir xuper-input
+          ls -lh xuper-input
+          sha256sum xuper-input/*.apk
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"'             | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm || true
+          ls -l /dev/kvm || true
+
+      - name: Run original Xuper APK
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: default
+          arch: x86_64
+          profile: pixel_2
+          cores: 2
+          ram-size: 2048M
+          heap-size: 512M
+          disk-size: 4096M
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: |
+            set -u
+            mkdir -p xuper-proof
+
+            echo "=== APK INFO ===" | tee xuper-proof/status.txt
+            adb shell getprop ro.product.cpu.abi | tee -a xuper-proof/status.txt
+            adb install -r xuper-input/XuperTv-N0F4C3-v6.73.0.apk 2>&1 | tee -a xuper-proof/status.txt
+            adb shell pm list packages | grep 'com.android.mgstxNF' | tee -a xuper-proof/status.txt || true
+
+            adb logcat -c
+            adb shell monkey -p com.android.mgstxNF -c android.intent.category.LAUNCHER 1               2>&1 | tee -a xuper-proof/status.txt || true
+
+            for n in 10 25 45 75; do
+              sleep "$n"
+              adb exec-out screencap -p > "xuper-proof/screen-${n}s.png" || true
+              adb shell uiautomator dump "/sdcard/window-${n}s.xml" >/dev/null 2>&1 || true
+              adb pull "/sdcard/window-${n}s.xml" "xuper-proof/window-${n}s.xml" >/dev/null 2>&1 || true
+              adb shell dumpsys activity activities | head -160 > "xuper-proof/activity-${n}s.txt" || true
+            done
+
+            adb logcat -d -v threadtime > xuper-proof/logcat.txt || true
+            adb shell dumpsys package com.android.mgstxNF > xuper-proof/package.txt || true
+
+      - name: Upload runtime proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xuper-runtime-proof
+          path: xuper-proof/
+          if-no-files-found: warn
+          retention-days: 7
