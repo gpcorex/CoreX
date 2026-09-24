@@ -1,0 +1,25 @@
+MEDIA_AMIGONLY_DASH_PROBE
+timestamp=2026-09-24T18:19:46+00:00
+
+URL=https://chromecast.cvattv.com.ar/live/c6eds/Viajar/SA_Live_dash_cenc/Viajar.mpd
+http=000
+content_type=
+bytes=0
+mpd=no
+sample=
+
+URL=https://cdn-py.cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc/TELEFUTURO_C4.mpd
+http=000
+content_type=
+bytes=0
+mpd=no
+sample=
+
+URL=https://cdn-py.cvattv.com.ar/live/c6eds/EWTN/SA_Live_dash_enc/EWTN.mpd
+http=000
+content_type=
+bytes=0
+mpd=no
+sample=
+
+NOTE=read-only reachability/manifest inspection; no credentials, tokens, or license requests
