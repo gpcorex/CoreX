@@ -1,0 +1,7 @@
+MEDIA_PWA_DETAIL_PLAY_V1_READY
+timestamp=2026-09-24T17:28:51+00:00
+local_http=200
+public_http=200
+test_item=Prueba técnica PWA
+url=https://cen-tral.duckdns.org/multimedia/
+NOTE=click a real catalog card to resolve and play its browser-direct source
