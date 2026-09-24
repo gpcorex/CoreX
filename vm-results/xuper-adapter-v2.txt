@@ -1,0 +1,13 @@
+XUPER_ADAPTER_V2_READY
+first_import={"provider": "xuper", "found": 4, "inserted": 4, "updated": 0, "images": 3, "tags": 4, "episodes": 2, "db": "/tmp/xuper-adapter-v2-test.db"}
+second_import={"provider": "xuper", "found": 4, "inserted": 0, "updated": 4, "images": 3, "tags": 0, "episodes": 2, "db": "/tmp/xuper-adapter-v2-test.db"}
+video_item_count=4
+image_count=3
+tag_count=4
+video_item_tag_count=4
+season_count=1
+episode_count=2
+foreign_key_check=OK
+episodes:
+1|1|Episodio 1
+1|2|Episodio 2
