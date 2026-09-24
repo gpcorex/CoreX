@@ -1,0 +1,12 @@
+MEDIA_XUPER_INBOX_V1_FIX_READY
+path_status=active
+test_result={"ok": true, "processed": 2, "db": "/tmp/xuper-inbox-v1-fix-test.db", "results": [{"file": "test-live.json", "ok": true, "moved_to": "/home/ubuntu/Central/media_center/processed/xuper/20260924T140950334484Z-test-live.json", "result": "{\"ok\": true, \"source\": \"/home/ubuntu/Central/media_center/inbox/xuper/test-live.json\", \"classified_as\": [\"live\"], \"results\": [{\"kind\": \"live\", \"result\": {\"provider\": \"xuper\", \"channels\": 2, \"live_sources\": 3, \"epg_programs\": 3, \"db\": \"/tmp/xuper-inbox-v1-fix-test.db\"}}], \"archived\": \"/home/ubuntu/Central/media_center/archive/xuper/20260924T140950Z-test-live.json\"}"}, {"file": "test-vod.json", "ok": true, "moved_to": "/home/ubuntu/Central/media_center/processed/xuper/20260924T140950653663Z-test-vod.json", "result": "{\"ok\": true, \"source\": \"/home/ubuntu/Central/media_center/inbox/xuper/test-vod.json\", \"classified_as\": [\"vod\"], \"results\": [{\"kind\": \"vod\", \"result\": {\"provider\": \"xuper\", \"found\": 2, \"inserted\": 2, \"updated\": 0, \"images\": 3, \"tags\": 4, \"episodes\": 2, \"db\": \"/tmp/xuper-inbox-v1-fix-test.db\"}}], \"archived\": \"/home/ubuntu/Central/media_center/archive/xuper/20260924T140950Z-test-vod.json\"}"}]}
+test_video_item_count=2
+test_episode_count=2
+test_live_channel_count=2
+test_epg_program_count=3
+foreign_key_check=OK
+real_health={"ok": true, "video_items": 0, "live_channels": 0}
+inbox=/home/ubuntu/Central/media_center/inbox/xuper
+processed=/home/ubuntu/Central/media_center/processed/xuper
+failed=/home/ubuntu/Central/media_center/failed/xuper
