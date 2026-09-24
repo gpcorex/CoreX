@@ -1,0 +1,9 @@
+MEDIA_PWA_CATALOG_PLAYBACK_TEST_READY
+timestamp=2026-09-24T17:26:49+00:00
+item_id=test:pwa-direct-001
+source_id=test:pwa-direct-source-001
+api_health={"ok": true, "video_items": 1, "live_channels": 0}
+item={"id": "test:pwa-direct-001", "kind": "movie", "title": "Prueba técnica PWA", "original_title": "Prueba técnica PWA", "description": "Item técnico para validar catálogo → fuente → resolver → reproducción en la PWA.", "release_date": null, "country": null, "original_language": null, "duration_seconds": 15, "score": 0.0, "restricted": 0, "status": "active", "created_at": "2026-09-24T17:26:48.755798+00:00", "updated_at": "2026-09-24T17:26:48.755798+00:00", "images": [], "tags": [], "seasons": []}
+playback={"type": "item", "id": "test:pwa-direct-001", "sources": [{"id": "test:pwa-direct-source-001", "playable_type": "item", "playable_id": "test:pwa-direct-001", "provider": "test", "provider_media_code": null, "quality": "SD", "language": "und", "format": "mp4", "priority": 100, "weight": 100, "resolver_key": "direct_url", "resolver_ref": "https://samplefile.com/samples/download/video/mp4/mp4_15s_sample_file_868KB.mp4/", "drm_hint": null, "playable_url": "https://samplefile.com/samples/download/video/mp4/mp4_15s_sample_file_868KB.mp4/", "browser_direct": true}], "count": 1}
+player=https://cen-tral.duckdns.org/multimedia/player-test.html
+NOTE=test item/source only; provider=test, not Xuper
