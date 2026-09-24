@@ -1,0 +1,98 @@
+XUPER_RUNTIME_START
+timestamp=2026-09-24T19:23:35+00:00
+
+=== START SERVICES ===
+Failed to start android-runtime.service: Unit android-runtime.service not found.
+Failed to start android-novnc.service: Unit android-novnc.service not found.
+
+=== SERVICE STATE ===
+inactive
+inactive
+
+=== UNIT EXECSTART ===
+
+=== LISTEN PORTS ===
+
+=== QEMU PROCESS ===
+
+=== RECENT RUNTIME LOG ===
+Sep 19 22:06:55 instance-20260918 qemu-system-x86_64[49512]: qemu-system-x86_64: terminating on signal 15 from pid 1 (/usr/lib/systemd/systemd)
+Sep 19 22:06:55 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 19 22:06:55 instance-20260918 systemd[1]: Stopped android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 19 22:06:55 instance-20260918 systemd[1]: android-runtime.service: Consumed 4min 57.665s CPU time, 321.0M memory peak, 158.4M memory swap peak.
+Sep 19 22:06:55 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 19 22:06:56 instance-20260918 qemu-system-x86_64[50327]: pw.conf: can't load config client.conf: No such file or directory
+Sep 19 22:06:56 instance-20260918 qemu-system-x86_64[50327]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 06:16:34 instance-20260918 systemd[1]: Stopping android-runtime.service - Android Bridge Android-x86 runtime...
+Sep 22 06:16:34 instance-20260918 qemu-system-x86_64[50327]: qemu-system-x86_64: terminating on signal 15 from pid 1 (/usr/lib/systemd/systemd)
+Sep 22 06:16:35 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 06:16:35 instance-20260918 systemd[1]: Stopped android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 06:16:35 instance-20260918 systemd[1]: android-runtime.service: Consumed 2min 17.930s CPU time, 202.8M memory peak, 85.4M memory swap peak.
+Sep 22 06:16:35 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 06:16:35 instance-20260918 qemu-system-x86_64[353522]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 06:16:35 instance-20260918 qemu-system-x86_64[353522]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 06:39:00 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 06:39:00 instance-20260918 systemd[1]: android-runtime.service: Consumed 18min 20.920s CPU time, 62.9M memory peak, 0B memory swap peak.
+Sep 22 06:39:06 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 1.
+Sep 22 06:39:08 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 06:39:08 instance-20260918 qemu-system-x86_64[356870]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 06:39:08 instance-20260918 qemu-system-x86_64[356870]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 07:27:45 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 07:27:45 instance-20260918 systemd[1]: android-runtime.service: Consumed 41min 22.060s CPU time.
+Sep 22 07:27:50 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 2.
+Sep 22 07:27:52 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 07:27:53 instance-20260918 qemu-system-x86_64[362998]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 07:27:53 instance-20260918 qemu-system-x86_64[362998]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 07:50:31 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 07:50:31 instance-20260918 systemd[1]: android-runtime.service: Consumed 18min 30.784s CPU time.
+Sep 22 07:50:36 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 3.
+Sep 22 07:50:38 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 07:50:39 instance-20260918 qemu-system-x86_64[366025]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 07:50:39 instance-20260918 qemu-system-x86_64[366025]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 08:57:03 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 08:57:03 instance-20260918 systemd[1]: android-runtime.service: Consumed 40min 42.461s CPU time, 552.7M memory peak, 373.6M memory swap peak.
+Sep 22 08:57:08 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 4.
+Sep 22 08:57:10 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 08:57:11 instance-20260918 qemu-system-x86_64[377803]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 08:57:11 instance-20260918 qemu-system-x86_64[377803]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 10:06:20 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 10:06:20 instance-20260918 systemd[1]: android-runtime.service: Consumed 41min 22.616s CPU time, 568.1M memory peak, 420.6M memory swap peak.
+Sep 22 10:06:26 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 5.
+Sep 22 10:06:32 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 10:06:33 instance-20260918 qemu-system-x86_64[389098]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 10:06:33 instance-20260918 qemu-system-x86_64[389098]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 10:36:38 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 10:36:38 instance-20260918 systemd[1]: android-runtime.service: Consumed 26min 27.755s CPU time.
+Sep 22 10:36:43 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 6.
+Sep 22 10:36:45 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 10:36:45 instance-20260918 qemu-system-x86_64[392982]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 10:36:45 instance-20260918 qemu-system-x86_64[392982]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 11:47:14 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 11:47:14 instance-20260918 systemd[1]: android-runtime.service: Consumed 56min 35.438s CPU time, 571.9M memory peak, 178.8M memory swap peak.
+Sep 22 11:47:19 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 7.
+Sep 22 11:47:22 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 11:47:22 instance-20260918 qemu-system-x86_64[402868]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 11:47:22 instance-20260918 qemu-system-x86_64[402868]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 12:18:41 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 12:18:41 instance-20260918 systemd[1]: android-runtime.service: Consumed 21min 23.319s CPU time.
+Sep 22 12:18:46 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 8.
+Sep 22 12:18:48 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 12:18:49 instance-20260918 qemu-system-x86_64[407237]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 12:18:49 instance-20260918 qemu-system-x86_64[407237]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 12:49:17 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 12:49:17 instance-20260918 systemd[1]: android-runtime.service: Consumed 22min 56.898s CPU time, 547.0M memory peak, 323.6M memory swap peak.
+Sep 22 12:49:23 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 9.
+Sep 22 12:49:26 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 12:49:27 instance-20260918 qemu-system-x86_64[411856]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 12:49:27 instance-20260918 qemu-system-x86_64[411856]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 14:24:48 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 14:24:48 instance-20260918 systemd[1]: android-runtime.service: Consumed 1h 21min 10.412s CPU time.
+Sep 22 14:24:53 instance-20260918 systemd[1]: android-runtime.service: Scheduled restart job, restart counter is at 10.
+Sep 22 14:24:55 instance-20260918 systemd[1]: Started android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 14:24:56 instance-20260918 qemu-system-x86_64[424015]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 14:24:56 instance-20260918 qemu-system-x86_64[424015]: pw.conf: can't load config client.conf: No such file or directory
+Sep 22 14:35:12 instance-20260918 systemd[1]: Stopping android-runtime.service - Android Bridge Android-x86 runtime...
+Sep 22 14:35:13 instance-20260918 qemu-system-x86_64[424015]: qemu-system-x86_64: terminating on signal 15 from pid 1 (/usr/lib/systemd/systemd)
+Sep 22 14:35:14 instance-20260918 systemd[1]: android-runtime.service: Deactivated successfully.
+Sep 22 14:35:14 instance-20260918 systemd[1]: Stopped android-runtime.service - Android Bridge Android-x86 runtime.
+Sep 22 14:35:14 instance-20260918 systemd[1]: android-runtime.service: Consumed 6min 7.335s CPU time, 529.1M memory peak, 324.1M memory swap peak.
