@@ -1,0 +1,5374 @@
+XUPER_PLAYBACK_CORE_EXTRACT
+timestamp=2026-09-24T19:00:19+00:00
+
+===== FILE smali_classes3/ud/n1.smali =====
+MISSING
+
+===== FILE smali_classes3/ud/n1$y.smali =====
+
+--- METHOD smali_classes3/ud/n1$y.smali :: .method public c(ILcom/module/bean/AudioInfoBean;)V ---
+.method public c(ILcom/module/bean/AudioInfoBean;)V
+    .locals 6
+
+    .line 1
+    iget-object p2, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 2
+    .line 3
+    invoke-virtual {p2}, Lud/n1;->Wb()Lcom/module/bean/DefinitionBean;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p2
+
+    .line 7
+    if-eqz p2, :cond_8
+
+    .line 8
+    .line 9
+    invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSourceIndex()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    const-string v1, "mVideoView"
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    const/4 v3, 0x0
+
+    .line 17
+    if-eq v0, p1, :cond_4
+
+    .line 18
+    .line 19
+    invoke-virtual {p2, p1}, Lcom/module/bean/DefinitionBean;->setSelectSourceIndex(I)V
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p1
+
+    .line 26
+    iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 27
+    .line 28
+    invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v4
+
+    .line 32
+    invoke-virtual {v4}, Lcom/module/bean/SourceBean;->getSelectAduio()Lcom/module/bean/AudioInfoBean;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object v4
+
+    .line 36
+    if-eqz v4, :cond_0
+
+    .line 37
+    .line 38
+    invoke-virtual {v4}, Lcom/module/bean/AudioInfoBean;->getLanguage()Ljava/lang/String;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v4
+
+    .line 42
+    if-nez v4, :cond_1
+
+    .line 43
+    .line 44
+    :cond_0
+    const-string v4, ""
+
+    .line 45
+    .line 46
+    :cond_1
+    invoke-static {v0, v4}, Lud/n1;->kb(Lud/n1;Ljava/lang/String;)V
+
+    .line 47
+    .line 48
+    .line 49
+    iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 50
+    .line 51
+    const/4 v4, 0x1
+
+    .line 52
+    invoke-static {v0, v2, v4, v3}, Lud/n1;->Qc(Lud/n1;ZILjava/lang/Object;)V
+
+    .line 53
+    .line 54
+    .line 55
+    iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 56
+    .line 57
+    sget v5, Lcom/vod/R$id;->mInfoBar:I
+
+    .line 58
+    .line 59
+    invoke-virtual {v0, v5}, Lud/n1;->ua(I)Landroid/view/View;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object v0
+
+    .line 63
+    check-cast v0, Lcom/module/view/MFInfoBar;
+
+    .line 64
+    .line 65
+    if-eqz v0, :cond_2
+
+    .line 66
+    .line 67
+    invoke-virtual {v0, v4}, Lcom/module/view/MFInfoBar;->setStatus(I)V
+
+    .line 68
+    .line 69
+    .line 70
+    :cond_2
+    iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 71
+    .line 72
+    invoke-static {v0, v4}, Lud/n1;->Cb(Lud/n1;Z)V
+
+    .line 73
+    .line 74
+    .line 75
+    iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 76
+    .line 77
+    invoke-static {v0}, Lud/n1;->Ua(Lud/n1;)Led/d;
+
+    .line 78
+    .line 79
+    .line 80
+    move-result-object v0
+
+    .line 81
+    if-nez v0, :cond_3
+
+    .line 82
+    .line 83
+    invoke-static {v1}, Lne/k;->r(Ljava/lang/String;)V
+
+    .line 84
+    .line 85
+    .line 86
+    goto :goto_0
+
+    .line 87
+    :cond_3
+    move-object v3, v0
+
+    .line 88
+    :goto_0
+    invoke-virtual {p1}, Lcom/module/bean/SourceBean;->getContentId()Ljava/lang/String;
+
+    .line 89
+    .line 90
+    .line 91
+    move-result-object p1
+
+    .line 92
+    invoke-virtual {v3, p1}, Led/e;->setMedia(Ljava/lang/String;)V
+
+    .line 93
+    .line 94
+    .line 95
+    goto :goto_3
+
+    .line 96
+    :cond_4
+    invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+
+    .line 97
+    .line 98
+    .line 99
+    move-result-object p1
+
+    .line 100
+    invoke-virtual {p1}, Lcom/module/bean/SourceBean;->getSelectAduio()Lcom/module/bean/AudioInfoBean;
+
+    .line 101
+    .line 102
+    .line 103
+    move-result-object p1
+
+    .line 104
+    if-eqz p1, :cond_5
+
+    .line 105
+    .line 106
+    invoke-virtual {p1}, Lcom/module/bean/AudioInfoBean;->getLanguage()Ljava/lang/String;
+
+    .line 107
+    .line 108
+    .line 109
+    move-result-object p1
+
+    .line 110
+    goto :goto_1
+
+    .line 111
+    :cond_5
+    move-object p1, v3
+
+    .line 112
+    :goto_1
+    invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+
+    .line 113
+    .line 114
+    .line 115
+    move-result-object v0
+
+    .line 116
+    invoke-virtual {v0}, Lcom/module/bean/SourceBean;->getSelectAudio()I
+
+    .line 117
+    .line 118
+    .line 119
+    move-result v0
+
+    .line 120
+    iget-object v4, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 121
+    .line 122
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 123
+    .line 124
+    .line 125
+    move-result-object v5
+
+    .line 126
+    invoke-static {v4, v5}, Lud/n1;->kb(Lud/n1;Ljava/lang/String;)V
+
+    .line 127
+    .line 128
+    .line 129
+    invoke-static {p1}, Lrb/a;->g(Ljava/lang/String;)Z
+
+    .line 130
+    .line 131
+    .line 132
+    move-result v4
+
+    .line 133
+    if-eqz v4, :cond_7
+
+    .line 134
+    .line 135
+    iget-object v4, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 136
+    .line 137
+    invoke-static {v4}, Lud/n1;->Ua(Lud/n1;)Led/d;
+
+    .line 138
+    .line 139
+    .line 140
+    move-result-object v4
+
+    .line 141
+    if-nez v4, :cond_6
+
+    .line 142
+    .line 143
+    invoke-static {v1}, Lne/k;->r(Ljava/lang/String;)V
+
+    .line 144
+    .line 145
+    .line 146
+    goto :goto_2
+
+    .line 147
+    :cond_6
+    move-object v3, v4
+
+    .line 148
+    :goto_2
+    invoke-static {p1}, Lne/k;->c(Ljava/lang/Object;)V
+
+    .line 149
+    .line 150
+    .line 151
+    invoke-virtual {v3, p1, v0}, Led/e;->x(Ljava/lang/String;I)Z
+
+    .line 152
+    .line 153
+    .line 154
+    :cond_7
+    :goto_3
+    sget-object p1, Lcom/module/bean/AudioInfoUtil;->INSTANCE:Lcom/module/bean/AudioInfoUtil;
+
+    .line 155
+    .line 156
+    iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 157
+    .line 158
+    invoke-static {v0}, Lud/n1;->Ga(Lud/n1;)Ljava/lang/String;
+
+    .line 159
+    .line 160
+    .line 161
+    move-result-object v0
+
+    .line 162
+    iget-object v1, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 163
+    .line 164
+    invoke-static {v1}, Lud/n1;->Ba(Lud/n1;)Ljava/lang/String;
+
+    .line 165
+    .line 166
+    .line 167
+    move-result-object v1
+
+    .line 168
+    invoke-virtual {p1, v0, v1}, Lcom/module/bean/AudioInfoUtil;->putRealAudioMap(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 169
+    .line 170
+    .line 171
+    iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 172
+    .line 173
+    invoke-static {v0}, Lud/n1;->Ga(Lud/n1;)Ljava/lang/String;
+
+    .line 174
+    .line 175
+    .line 176
+    move-result-object v0
+
+    .line 177
+    invoke-virtual {p1, v0, p2}, Lcom/module/bean/AudioInfoUtil;->putAduioRecord(Ljava/lang/String;Lcom/module/bean/DefinitionBean;)V
+
+    .line 178
+    .line 179
+    .line 180
+    iget-object p1, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 181
+    .line 182
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->J6()Landroid/content/Context;
+
+    .line 183
+    .line 184
+    .line 185
+    move-result-object p1
+
+    .line 186
+    iget-object p2, p0, Lud/n1$y;->a:Lud/n1;
+
+    .line 187
+    .line 188
+    sget v0, Lcom/vod/R$string;->switching_audio_tip:I
+
+    .line 189
+    .line 190
+    invoke-virtual {p2, v0}, Landroidx/fragment/app/Fragment;->j7(I)Ljava/lang/String;
+
+    .line 191
+    .line 192
+    .line 193
+    move-result-object p2
+
+    .line 194
+    new-array v0, v2, [I
+
+    .line 195
+    .line 196
+    invoke-static {p1, p2, v0}, Lxa/p1;->f(Landroid/content/Context;Ljava/lang/String;[I)V
+
+    .line 197
+    .line 198
+    .line 199
+    :cond_8
+    return-void
+.end method
+
+METHODS_SHOWN=1
+
+===== FILE smali_classes2/com/module/bean/SourceBean.smali =====
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZI)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZI)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/module/bean/AudioInfoBean;",
+            ">;ZI)V"
+        }
+    .end annotation
+
+    const-string v0, "contentId"
+
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "audioTag"
+
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "audioInfoList"
+
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    .line 2
+    iput-object p2, p0, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    .line 3
+    iput-object p3, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    .line 4
+    iput-boolean p4, p0, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    .line 5
+    iput p5, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZIILne/g;)V ---
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZIILne/g;)V
+    .locals 6
+
+    and-int/lit8 p7, p6, 0x8
+
+    if-eqz p7, :cond_0
+
+    const/4 p4, 0x1
+
+    const/4 v4, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move v4, p4
+
+    :goto_0
+    and-int/lit8 p4, p6, 0x10
+
+    if-eqz p4, :cond_1
+
+    const/4 p5, 0x0
+
+    const/4 v5, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    move v5, p5
+
+    :goto_1
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    .line 6
+    invoke-direct/range {v0 .. v5}, Lcom/module/bean/SourceBean;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZI)V
+
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public static synthetic copy$default(Lcom/module/bean/SourceBean;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZIILjava/lang/Object;)Lcom/module/bean/SourceBean; ---
+.method public static synthetic copy$default(Lcom/module/bean/SourceBean;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZIILjava/lang/Object;)Lcom/module/bean/SourceBean;
+    .locals 3
+
+    and-int/lit8 p7, p6, 0x1
+
+    if-eqz p7, :cond_0
+
+    iget-object p1, p0, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    :cond_0
+    and-int/lit8 p7, p6, 0x2
+
+    if-eqz p7, :cond_1
+
+    iget-object p2, p0, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    :cond_1
+    move-object p7, p2
+
+    and-int/lit8 p2, p6, 0x4
+
+    if-eqz p2, :cond_2
+
+    iget-object p3, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    :cond_2
+    move-object v0, p3
+
+    and-int/lit8 p2, p6, 0x8
+
+    if-eqz p2, :cond_3
+
+    iget-boolean p4, p0, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    :cond_3
+    move v1, p4
+
+    and-int/lit8 p2, p6, 0x10
+
+    if-eqz p2, :cond_4
+
+    iget p5, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    :cond_4
+    move v2, p5
+
+    move-object p2, p0
+
+    move-object p3, p1
+
+    move-object p4, p7
+
+    move-object p5, v0
+
+    move p6, v1
+
+    move p7, v2
+
+    invoke-virtual/range {p2 .. p7}, Lcom/module/bean/SourceBean;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZI)Lcom/module/bean/SourceBean;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final component1()Ljava/lang/String; ---
+.method public final component1()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final component2()Ljava/lang/String; ---
+.method public final component2()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final component3()Ljava/util/List; ---
+.method public final component3()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/module/bean/AudioInfoBean;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final component4()Z ---
+.method public final component4()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final component5()I ---
+.method public final component5()I
+    .locals 1
+
+    iget v0, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZI)Lcom/module/bean/SourceBean; ---
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZI)Lcom/module/bean/SourceBean;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/module/bean/AudioInfoBean;",
+            ">;ZI)",
+            "Lcom/module/bean/SourceBean;"
+        }
+    .end annotation
+
+    const-string v0, "contentId"
+
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "audioTag"
+
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "audioInfoList"
+
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/module/bean/SourceBean;
+
+    move-object v1, v0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move v5, p4
+
+    move v6, p5
+
+    invoke-direct/range {v1 .. v6}, Lcom/module/bean/SourceBean;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZI)V
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public equals(Ljava/lang/Object;)Z ---
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/module/bean/SourceBean;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lcom/module/bean/SourceBean;
+
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    iget-object v3, p1, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-boolean v1, p0, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    iget-boolean v3, p1, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    if-eq v1, v3, :cond_5
+
+    return v2
+
+    :cond_5
+    iget v1, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    iget p1, p1, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    if-eq v1, p1, :cond_6
+
+    return v2
+
+    :cond_6
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final getAllLangStr()Ljava/lang/String; ---
+.method public final getAllLangStr()Ljava/lang/String;
+    .locals 5
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    .line 7
+    .line 8
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v2
+
+    .line 12
+    add-int/lit8 v2, v2, -0x1
+
+    .line 13
+    .line 14
+    if-ltz v2, :cond_1
+
+    .line 15
+    .line 16
+    const/4 v3, 0x0
+
+    .line 17
+    :goto_0
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v4
+
+    .line 21
+    check-cast v4, Lcom/module/bean/AudioInfoBean;
+
+    .line 22
+    .line 23
+    invoke-virtual {v4}, Lcom/module/bean/AudioInfoBean;->getTransLanguage()Ljava/lang/String;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v4
+
+    .line 27
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 28
+    .line 29
+    .line 30
+    iget-object v4, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    .line 31
+    .line 32
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v4
+
+    .line 36
+    add-int/lit8 v4, v4, -0x1
+
+    .line 37
+    .line 38
+    if-ge v3, v4, :cond_0
+
+    .line 39
+    .line 40
+    const-string v4, " "
+
+    .line 41
+    .line 42
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 43
+    .line 44
+    .line 45
+    :cond_0
+    if-eq v3, v2, :cond_1
+
+    .line 46
+    .line 47
+    add-int/lit8 v3, v3, 0x1
+
+    .line 48
+    .line 49
+    goto :goto_0
+
+    .line 50
+    :cond_1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-object v0
+
+    .line 54
+    const-string v1, "sb.toString()"
+
+    .line 55
+    .line 56
+    invoke-static {v0, v1}, Lne/k;->e(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 57
+    .line 58
+    .line 59
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final getAudioInfoList()Ljava/util/List; ---
+.method public final getAudioInfoList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/module/bean/AudioInfoBean;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final getAudioTag()Ljava/lang/String; ---
+.method public final getAudioTag()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final getContentId()Ljava/lang/String; ---
+.method public final getContentId()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final getHasLicense()Z ---
+.method public final getHasLicense()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final getSelectAduio()Lcom/module/bean/AudioInfoBean; ---
+.method public final getSelectAduio()Lcom/module/bean/AudioInfoBean;
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    .line 2
+    .line 3
+    if-ltz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    .line 6
+    .line 7
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v1
+
+    .line 11
+    if-ge v0, v1, :cond_0
+
+    .line 12
+    .line 13
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    .line 14
+    .line 15
+    iget v1, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    .line 16
+    .line 17
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    check-cast v0, Lcom/module/bean/AudioInfoBean;
+
+    .line 22
+    .line 23
+    return-object v0
+
+    .line 24
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 25
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final getSelectAudio()I ---
+.method public final getSelectAudio()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public hashCode()I ---
+.method public hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public final setSelectAudio(I)V ---
+.method public final setSelectAudio(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/SourceBean.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "SourceBean(contentId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->contentId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", audioTag="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioTag:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", audioInfoList="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/module/bean/SourceBean;->audioInfoList:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", hasLicense="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lcom/module/bean/SourceBean;->hasLicense:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", selectAudio="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lcom/module/bean/SourceBean;->selectAudio:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+METHODS_SHOWN=20
+
+===== FILE smali_classes2/com/module/bean/DefinitionBean.smali =====
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/util/List;I)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/util/List;I)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/module/bean/SourceBean;",
+            ">;I)V"
+        }
+    .end annotation
+
+    const-string v0, "quality"
+
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "sourceList"
+
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    .line 2
+    iput-object p2, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    iput p3, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public synthetic constructor <init>(Ljava/lang/String;Ljava/util/List;IILne/g;)V ---
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/util/List;IILne/g;)V
+    .locals 0
+
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_0
+
+    const/4 p3, 0x0
+
+    .line 3
+    :cond_0
+    invoke-direct {p0, p1, p2, p3}, Lcom/module/bean/DefinitionBean;-><init>(Ljava/lang/String;Ljava/util/List;I)V
+
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public static synthetic copy$default(Lcom/module/bean/DefinitionBean;Ljava/lang/String;Ljava/util/List;IILjava/lang/Object;)Lcom/module/bean/DefinitionBean; ---
+.method public static synthetic copy$default(Lcom/module/bean/DefinitionBean;Ljava/lang/String;Ljava/util/List;IILjava/lang/Object;)Lcom/module/bean/DefinitionBean;
+    .locals 0
+
+    and-int/lit8 p5, p4, 0x1
+
+    if-eqz p5, :cond_0
+
+    iget-object p1, p0, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    :cond_0
+    and-int/lit8 p5, p4, 0x2
+
+    if-eqz p5, :cond_1
+
+    iget-object p2, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    :cond_1
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_2
+
+    iget p3, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    :cond_2
+    invoke-virtual {p0, p1, p2, p3}, Lcom/module/bean/DefinitionBean;->copy(Ljava/lang/String;Ljava/util/List;I)Lcom/module/bean/DefinitionBean;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final component1()Ljava/lang/String; ---
+.method public final component1()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final component2()Ljava/util/List; ---
+.method public final component2()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/module/bean/SourceBean;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final component3()I ---
+.method public final component3()I
+    .locals 1
+
+    iget v0, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final copy(Ljava/lang/String;Ljava/util/List;I)Lcom/module/bean/DefinitionBean; ---
+.method public final copy(Ljava/lang/String;Ljava/util/List;I)Lcom/module/bean/DefinitionBean;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/module/bean/SourceBean;",
+            ">;I)",
+            "Lcom/module/bean/DefinitionBean;"
+        }
+    .end annotation
+
+    const-string v0, "quality"
+
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "sourceList"
+
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/module/bean/DefinitionBean;
+
+    invoke-direct {v0, p1, p2, p3}, Lcom/module/bean/DefinitionBean;-><init>(Ljava/lang/String;Ljava/util/List;I)V
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public equals(Ljava/lang/Object;)Z ---
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/module/bean/DefinitionBean;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lcom/module/bean/DefinitionBean;
+
+    iget-object v1, p0, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    iget-object v3, p1, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget v1, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    iget p1, p1, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    if-eq v1, p1, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final getQuality()Ljava/lang/String; ---
+.method public final getQuality()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final getSelectSource()Lcom/module/bean/SourceBean; ---
+.method public final getSelectSource()Lcom/module/bean/SourceBean;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    .line 2
+    .line 3
+    iget v1, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    .line 4
+    .line 5
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    check-cast v0, Lcom/module/bean/SourceBean;
+
+    .line 10
+    .line 11
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final getSelectSourceIndex()I ---
+.method public final getSelectSourceIndex()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final getSourceList()Ljava/util/List; ---
+.method public final getSourceList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/module/bean/SourceBean;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public hashCode()I ---
+.method public hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public final setSelectSourceIndex(I)V ---
+.method public final setSelectSourceIndex(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/DefinitionBean.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "DefinitionBean(quality="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/module/bean/DefinitionBean;->quality:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", sourceList="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/module/bean/DefinitionBean;->sourceList:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", selectSourceIndex="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lcom/module/bean/DefinitionBean;->selectSourceIndex:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+METHODS_SHOWN=15
+
+===== FILE smali_classes2/com/module/bean/PipVideoInfo.smali =====
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcc/h0$a;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/Channel;Ljava/lang/Boolean;I)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcc/h0$a;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/Channel;Ljava/lang/Boolean;I)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p2, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+
+    .line 3
+    iput-object p3, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+
+    .line 4
+    iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+
+    .line 5
+    iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+
+    .line 6
+    iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+
+    .line 7
+    iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+
+    .line 8
+    iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+
+    .line 9
+    iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+
+    .line 10
+    iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+
+    .line 11
+    iput-object p9, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+
+    .line 12
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+
+    .line 13
+    iput-object p12, p0, Lcom/module/bean/PipVideoInfo;->mPipChannel:Lcom/request/result/Channel;
+
+    .line 14
+    invoke-virtual {p13}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lcom/module/bean/PipVideoInfo;->isUrlExpired:Z
+
+    .line 15
+    iput p14, p0, Lcom/module/bean/PipVideoInfo;->programIndex:I
+
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getAddressLicense()Ljava/lang/String; ---
+.method public getAddressLicense()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getChannelCode()Ljava/lang/String; ---
+.method public getChannelCode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getFrom()Ljava/lang/String; ---
+.method public getFrom()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getMultiQuality()Ljava/lang/Boolean; ---
+.method public getMultiQuality()Ljava/lang/Boolean;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getPipProgramInfoJson()Ljava/lang/String; ---
+.method public getPipProgramInfoJson()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getPipQuality()Ljava/lang/String; ---
+.method public getPipQuality()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getPlayType()Lcc/h0$a; ---
+.method public getPlayType()Lcc/h0$a;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getPlayUrl()Ljava/lang/String; ---
+.method public getPlayUrl()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->playUrl:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getProgramIndex()I ---
+.method public getProgramIndex()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/module/bean/PipVideoInfo;->programIndex:I
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getProgramInfoJson()Ljava/lang/String; ---
+.method public getProgramInfoJson()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getProgramName()Ljava/lang/String; ---
+.method public getProgramName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getProgramNo()Ljava/lang/String; ---
+.method public getProgramNo()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getQuality()Ljava/lang/String; ---
+.method public getQuality()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public getmPipChannel()Lcom/request/result/Channel; ---
+.method public getmPipChannel()Lcom/request/result/Channel;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->mPipChannel:Lcom/request/result/Channel;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public isUrlExpired()Z ---
+.method public isUrlExpired()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lcom/module/bean/PipVideoInfo;->isUrlExpired:Z
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setAddressLicense(Ljava/lang/String;)V ---
+.method public setAddressLicense(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setChannelCode(Ljava/lang/String;)V ---
+.method public setChannelCode(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setFrom(Ljava/lang/String;)V ---
+.method public setFrom(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setMultiQuality(Ljava/lang/Boolean;)V ---
+.method public setMultiQuality(Ljava/lang/Boolean;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setPipProgramInfoJson(Ljava/lang/String;)V ---
+.method public setPipProgramInfoJson(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setPipQuality(Ljava/lang/String;)V ---
+.method public setPipQuality(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setPlayType(Lcc/h0$a;)V ---
+.method public setPlayType(Lcc/h0$a;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setPlayUrl(Ljava/lang/String;)V ---
+.method public setPlayUrl(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->playUrl:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setProgramIndex(I)V ---
+.method public setProgramIndex(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/module/bean/PipVideoInfo;->programIndex:I
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setProgramInfoJson(Ljava/lang/String;)V ---
+.method public setProgramInfoJson(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setProgramName(Ljava/lang/String;)V ---
+.method public setProgramName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setProgramNo(Ljava/lang/String;)V ---
+.method public setProgramNo(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setQuality(Ljava/lang/String;)V ---
+.method public setQuality(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setUrlExpired(Z)V ---
+.method public setUrlExpired(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/module/bean/PipVideoInfo;->isUrlExpired:Z
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public setmPipChannel(Lcom/request/result/Channel;)V ---
+.method public setmPipChannel(Lcom/request/result/Channel;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->mPipChannel:Lcom/request/result/Channel;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/module/bean/PipVideoInfo.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    const-string v1, "PipVideoInfo{programNo=\'"
+
+    .line 7
+    .line 8
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 9
+    .line 10
+    .line 11
+    iget-object v1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+
+    .line 12
+    .line 13
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 14
+    .line 15
+    .line 16
+    const/16 v1, 0x27
+
+    .line 17
+    .line 18
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 19
+    .line 20
+    .line 21
+    const-string v2, "channelCode=\'"
+
+    .line 22
+    .line 23
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 24
+    .line 25
+    .line 26
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+
+    .line 27
+    .line 28
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 29
+    .line 30
+    .line 31
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 32
+    .line 33
+    .line 34
+    const-string v2, ", playType="
+
+    .line 35
+    .line 36
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 37
+    .line 38
+    .line 39
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+
+    .line 40
+    .line 41
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 42
+    .line 43
+    .line 44
+    const-string v2, ", programInfoJson=\'"
+
+    .line 45
+    .line 46
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 47
+    .line 48
+    .line 49
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+
+    .line 50
+    .line 51
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 52
+    .line 53
+    .line 54
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 55
+    .line 56
+    .line 57
+    const-string v2, ", addressLicense=\'"
+
+    .line 58
+    .line 59
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 60
+    .line 61
+    .line 62
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+
+    .line 63
+    .line 64
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 65
+    .line 66
+    .line 67
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 68
+    .line 69
+    .line 70
+    const-string v2, ", from=\'"
+
+    .line 71
+    .line 72
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 73
+    .line 74
+    .line 75
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+
+    .line 76
+    .line 77
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 78
+    .line 79
+    .line 80
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 81
+    .line 82
+    .line 83
+    const-string v2, ", quality=\'"
+
+    .line 84
+    .line 85
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 86
+    .line 87
+    .line 88
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+
+    .line 89
+    .line 90
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 91
+    .line 92
+    .line 93
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 94
+    .line 95
+    .line 96
+    const-string v2, ", programeName=\'"
+
+    .line 97
+    .line 98
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 99
+    .line 100
+    .line 101
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+
+    .line 102
+    .line 103
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 104
+    .line 105
+    .line 106
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 107
+    .line 108
+    .line 109
+    const-string v2, ", playUrl=\'"
+
+    .line 110
+    .line 111
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 112
+    .line 113
+    .line 114
+    iget-object v2, p0, Lcom/module/bean/PipVideoInfo;->playUrl:Ljava/lang/String;
+
+    .line 115
+    .line 116
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 117
+    .line 118
+    .line 119
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 120
+    .line 121
+    .line 122
+    const-string v1, ", isMultiQuality="
+
+    .line 123
+    .line 124
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 125
+    .line 126
+    .line 127
+    iget-object v1, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+
+    .line 128
+    .line 129
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 130
+    .line 131
+    .line 132
+    const-string v1, ", isUrlExpired="
+
+    .line 133
+    .line 134
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 135
+    .line 136
+    .line 137
+    iget-boolean v1, p0, Lcom/module/bean/PipVideoInfo;->isUrlExpired:Z
+
+    .line 138
+    .line 139
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    .line 140
+    .line 141
+    .line 142
+    const/16 v1, 0x7d
+
+    .line 143
+    .line 144
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 145
+    .line 146
+    .line 147
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 148
+    .line 149
+    .line 150
+    move-result-object v0
+
+    .line 151
+    return-object v0
+.end method
+
+METHODS_SHOWN=32
+
+===== FILE smali/com/request/result/StartPlayVODResult.smali =====
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "returnCode"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    const-string v0, "data"
+
+    .line 7
+    .line 8
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
+    iput-object p1, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    .line 15
+    .line 16
+    iput-object p2, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    .line 17
+    .line 18
+    iput-object p3, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    .line 19
+    .line 20
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public static synthetic copy$default(Lcom/request/result/StartPlayVODResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;ILjava/lang/Object;)Lcom/request/result/StartPlayVODResult; ---
+.method public static synthetic copy$default(Lcom/request/result/StartPlayVODResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;ILjava/lang/Object;)Lcom/request/result/StartPlayVODResult;
+    .locals 0
+
+    and-int/lit8 p5, p4, 0x1
+
+    if-eqz p5, :cond_0
+
+    iget-object p1, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    :cond_0
+    and-int/lit8 p5, p4, 0x2
+
+    if-eqz p5, :cond_1
+
+    iget-object p2, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    :cond_1
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_2
+
+    iget-object p3, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    :cond_2
+    invoke-virtual {p0, p1, p2, p3}, Lcom/request/result/StartPlayVODResult;->copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;)Lcom/request/result/StartPlayVODResult;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final component1()Ljava/lang/String; ---
+.method public final component1()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final component2()Ljava/lang/String; ---
+.method public final component2()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final component3()Lcom/request/result/StartPlayVODResultData; ---
+.method public final component3()Lcom/request/result/StartPlayVODResultData;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;)Lcom/request/result/StartPlayVODResult; ---
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;)Lcom/request/result/StartPlayVODResult;
+    .locals 1
+
+    const-string v0, "returnCode"
+
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "data"
+
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/request/result/StartPlayVODResult;
+
+    invoke-direct {v0, p1, p2, p3}, Lcom/request/result/StartPlayVODResult;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayVODResultData;)V
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public equals(Ljava/lang/Object;)Z ---
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/request/result/StartPlayVODResult;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lcom/request/result/StartPlayVODResult;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    iget-object p1, p1, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    invoke-static {v1, p1}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final getData()Lcom/request/result/StartPlayVODResultData; ---
+.method public final getData()Lcom/request/result/StartPlayVODResultData;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final getErrorMessage()Ljava/lang/String; ---
+.method public final getErrorMessage()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final getReturnCode()Ljava/lang/String; ---
+.method public final getReturnCode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public hashCode()I ---
+.method public hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    invoke-virtual {v1}, Lcom/request/result/StartPlayVODResultData;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final setData(Lcom/request/result/StartPlayVODResultData;)V ---
+.method public final setData(Lcom/request/result/StartPlayVODResultData;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final setErrorMessage(Ljava/lang/String;)V ---
+.method public final setErrorMessage(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public final setReturnCode(Ljava/lang/String;)V ---
+.method public final setReturnCode(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayVODResult.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "StartPlayVODResult(returnCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->returnCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", errorMessage="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->errorMessage:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", data="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayVODResult;->data:Lcom/request/result/StartPlayVODResultData;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+METHODS_SHOWN=15
+
+===== FILE smali/com/request/result/StartPlayLiveResult.smali =====
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public static synthetic copy$default(Lcom/request/result/StartPlayLiveResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;ILjava/lang/Object;)Lcom/request/result/StartPlayLiveResult; ---
+.method public static synthetic copy$default(Lcom/request/result/StartPlayLiveResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;ILjava/lang/Object;)Lcom/request/result/StartPlayLiveResult;
+    .locals 0
+
+    and-int/lit8 p5, p4, 0x1
+
+    if-eqz p5, :cond_0
+
+    iget-object p1, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    :cond_0
+    and-int/lit8 p5, p4, 0x2
+
+    if-eqz p5, :cond_1
+
+    iget-object p2, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    :cond_1
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_2
+
+    iget-object p3, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    :cond_2
+    invoke-virtual {p0, p1, p2, p3}, Lcom/request/result/StartPlayLiveResult;->copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)Lcom/request/result/StartPlayLiveResult;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final component1()Ljava/lang/String; ---
+.method public final component1()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final component2()Ljava/lang/String; ---
+.method public final component2()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final component3()Lcom/request/result/StartPlayLiveResultData; ---
+.method public final component3()Lcom/request/result/StartPlayLiveResultData;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)Lcom/request/result/StartPlayLiveResult; ---
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)Lcom/request/result/StartPlayLiveResult;
+    .locals 1
+
+    new-instance v0, Lcom/request/result/StartPlayLiveResult;
+
+    invoke-direct {v0, p1, p2, p3}, Lcom/request/result/StartPlayLiveResult;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)V
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public equals(Ljava/lang/Object;)Z ---
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/request/result/StartPlayLiveResult;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lcom/request/result/StartPlayLiveResult;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    iget-object p1, p1, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    invoke-static {v1, p1}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final getData()Lcom/request/result/StartPlayLiveResultData; ---
+.method public final getData()Lcom/request/result/StartPlayLiveResultData;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final getErrorMessage()Ljava/lang/String; ---
+.method public final getErrorMessage()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final getReturnCode()Ljava/lang/String; ---
+.method public final getReturnCode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public hashCode()I ---
+.method public hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    if-nez v2, :cond_1
+
+    const/4 v2, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    if-nez v2, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v2}, Lcom/request/result/StartPlayLiveResultData;->hashCode()I
+
+    move-result v1
+
+    :goto_2
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final setData(Lcom/request/result/StartPlayLiveResultData;)V ---
+.method public final setData(Lcom/request/result/StartPlayLiveResultData;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final setErrorMessage(Ljava/lang/String;)V ---
+.method public final setErrorMessage(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public final setReturnCode(Ljava/lang/String;)V ---
+.method public final setReturnCode(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/StartPlayLiveResult.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "StartPlayLiveResult(returnCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", errorMessage="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayLiveResult;->errorMessage:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", data="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/StartPlayLiveResult;->data:Lcom/request/result/StartPlayLiveResultData;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+METHODS_SHOWN=15
+
+===== FILE smali/com/request/result/LiveAddress.smali =====
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "license"
+
+    .line 2
+    .line 3
+    invoke-static {p4, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    const-string v0, "tag"
+
+    .line 7
+    .line 8
+    invoke-static {p6, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
+    iput-object p1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    .line 15
+    .line 16
+    iput-object p2, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    .line 17
+    .line 18
+    iput-object p3, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    .line 19
+    .line 20
+    iput-object p4, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    .line 21
+    .line 22
+    iput-object p5, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    .line 23
+    .line 24
+    iput-object p6, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    .line 25
+    .line 26
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public static synthetic copy$default(Lcom/request/result/LiveAddress;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/LiveAddress; ---
+.method public static synthetic copy$default(Lcom/request/result/LiveAddress;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/LiveAddress;
+    .locals 4
+
+    and-int/lit8 p8, p7, 0x1
+
+    if-eqz p8, :cond_0
+
+    iget-object p1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    :cond_0
+    and-int/lit8 p8, p7, 0x2
+
+    if-eqz p8, :cond_1
+
+    iget-object p2, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    :cond_1
+    move-object p8, p2
+
+    and-int/lit8 p2, p7, 0x4
+
+    if-eqz p2, :cond_2
+
+    iget-object p3, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    :cond_2
+    move-object v0, p3
+
+    and-int/lit8 p2, p7, 0x8
+
+    if-eqz p2, :cond_3
+
+    iget-object p4, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    :cond_3
+    move-object v1, p4
+
+    and-int/lit8 p2, p7, 0x10
+
+    if-eqz p2, :cond_4
+
+    iget-object p5, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    :cond_4
+    move-object v2, p5
+
+    and-int/lit8 p2, p7, 0x20
+
+    if-eqz p2, :cond_5
+
+    iget-object p6, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    :cond_5
+    move-object v3, p6
+
+    move-object p2, p0
+
+    move-object p3, p1
+
+    move-object p4, p8
+
+    move-object p5, v0
+
+    move-object p6, v1
+
+    move-object p7, v2
+
+    move-object p8, v3
+
+    invoke-virtual/range {p2 .. p8}, Lcom/request/result/LiveAddress;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/LiveAddress;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final component1()Ljava/lang/String; ---
+.method public final component1()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final component2()Ljava/lang/String; ---
+.method public final component2()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final component3()Ljava/lang/String; ---
+.method public final component3()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final component4()Ljava/lang/String; ---
+.method public final component4()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final component5()Ljava/lang/String; ---
+.method public final component5()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final component6()Ljava/lang/String; ---
+.method public final component6()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/LiveAddress; ---
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/LiveAddress;
+    .locals 8
+
+    const-string v0, "license"
+
+    invoke-static {p4, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "tag"
+
+    invoke-static {p6, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/request/result/LiveAddress;
+
+    move-object v1, v0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v1 .. v7}, Lcom/request/result/LiveAddress;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public equals(Ljava/lang/Object;)Z ---
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/request/result/LiveAddress;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lcom/request/result/LiveAddress;
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    iget-object p1, p1, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    invoke-static {v1, p1}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_7
+
+    return v2
+
+    :cond_7
+    return v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final getAVFormat()Ljava/lang/String; ---
+.method public final getAVFormat()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final getCdnType()Ljava/lang/String; ---
+.method public final getCdnType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final getLicense()Ljava/lang/String; ---
+.method public final getLicense()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final getPlayCode()Ljava/lang/String; ---
+.method public final getPlayCode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final getQuality()Ljava/lang/String; ---
+.method public final getQuality()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final getTag()Ljava/lang/String; ---
+.method public final getTag()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public hashCode()I ---
+.method public hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    if-nez v2, :cond_1
+
+    const/4 v2, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    if-nez v2, :cond_2
+
+    const/4 v2, 0x0
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    if-nez v2, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :goto_3
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final setAVFormat(Ljava/lang/String;)V ---
+.method public final setAVFormat(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final setCdnType(Ljava/lang/String;)V ---
+.method public final setCdnType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final setLicense(Ljava/lang/String;)V ---
+.method public final setLicense(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final setPlayCode(Ljava/lang/String;)V ---
+.method public final setPlayCode(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final setQuality(Ljava/lang/String;)V ---
+.method public final setQuality(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public final setTag(Ljava/lang/String;)V ---
+.method public final setTag(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali/com/request/result/LiveAddress.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "LiveAddress(playCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", cdnType="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", quality="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", license="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", AVFormat="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", tag="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+METHODS_SHOWN=24
+
+===== FILE smali_classes2/com/request/bean/StartPlayVODBean.smali =====
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[I)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[I)V
+    .locals 1
+
+    .line 1
+    const-string v0, "userToken"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    const-string v0, "userId"
+
+    .line 7
+    .line 8
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 9
+    .line 10
+    .line 11
+    const-string v0, "portalCode"
+
+    .line 12
+    .line 13
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 14
+    .line 15
+    .line 16
+    const-string v0, "contentId"
+
+    .line 17
+    .line 18
+    invoke-static {p5, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 19
+    .line 20
+    .line 21
+    const-string v0, "type"
+
+    .line 22
+    .line 23
+    invoke-static {p7, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 27
+    .line 28
+    .line 29
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    .line 30
+    .line 31
+    iput-object p2, p0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    .line 32
+    .line 33
+    iput-object p3, p0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    .line 34
+    .line 35
+    iput-object p4, p0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    .line 36
+    .line 37
+    iput-object p5, p0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    .line 38
+    .line 39
+    iput-object p6, p0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    .line 40
+    .line 41
+    iput-object p7, p0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    .line 42
+    .line 43
+    iput p8, p0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    .line 44
+    .line 45
+    iput-object p9, p0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    .line 46
+    .line 47
+    iput-object p10, p0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    .line 48
+    .line 49
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public static synthetic copy$default(Lcom/request/bean/StartPlayVODBean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[IILjava/lang/Object;)Lcom/request/bean/StartPlayVODBean; ---
+.method public static synthetic copy$default(Lcom/request/bean/StartPlayVODBean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[IILjava/lang/Object;)Lcom/request/bean/StartPlayVODBean;
+    .locals 11
+
+    move-object v0, p0
+
+    move/from16 v1, p11
+
+    and-int/lit8 v2, v1, 0x1
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, v0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_0
+    move-object v2, p1
+
+    :goto_0
+    and-int/lit8 v3, v1, 0x2
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, v0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    goto :goto_1
+
+    :cond_1
+    move-object v3, p2
+
+    :goto_1
+    and-int/lit8 v4, v1, 0x4
+
+    if-eqz v4, :cond_2
+
+    iget-object v4, v0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    goto :goto_2
+
+    :cond_2
+    move-object v4, p3
+
+    :goto_2
+    and-int/lit8 v5, v1, 0x8
+
+    if-eqz v5, :cond_3
+
+    iget-object v5, v0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    goto :goto_3
+
+    :cond_3
+    move-object v5, p4
+
+    :goto_3
+    and-int/lit8 v6, v1, 0x10
+
+    if-eqz v6, :cond_4
+
+    iget-object v6, v0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    goto :goto_4
+
+    :cond_4
+    move-object/from16 v6, p5
+
+    :goto_4
+    and-int/lit8 v7, v1, 0x20
+
+    if-eqz v7, :cond_5
+
+    iget-object v7, v0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    goto :goto_5
+
+    :cond_5
+    move-object/from16 v7, p6
+
+    :goto_5
+    and-int/lit8 v8, v1, 0x40
+
+    if-eqz v8, :cond_6
+
+    iget-object v8, v0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    goto :goto_6
+
+    :cond_6
+    move-object/from16 v8, p7
+
+    :goto_6
+    and-int/lit16 v9, v1, 0x80
+
+    if-eqz v9, :cond_7
+
+    iget v9, v0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    goto :goto_7
+
+    :cond_7
+    move/from16 v9, p8
+
+    :goto_7
+    and-int/lit16 v10, v1, 0x100
+
+    if-eqz v10, :cond_8
+
+    iget-object v10, v0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    goto :goto_8
+
+    :cond_8
+    move-object/from16 v10, p9
+
+    :goto_8
+    and-int/lit16 v1, v1, 0x200
+
+    if-eqz v1, :cond_9
+
+    iget-object v1, v0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    goto :goto_9
+
+    :cond_9
+    move-object/from16 v1, p10
+
+    :goto_9
+    move-object p1, v2
+
+    move-object p2, v3
+
+    move-object p3, v4
+
+    move-object p4, v5
+
+    move-object/from16 p5, v6
+
+    move-object/from16 p6, v7
+
+    move-object/from16 p7, v8
+
+    move/from16 p8, v9
+
+    move-object/from16 p9, v10
+
+    move-object/from16 p10, v1
+
+    invoke-virtual/range {p0 .. p10}, Lcom/request/bean/StartPlayVODBean;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[I)Lcom/request/bean/StartPlayVODBean;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component1()Ljava/lang/String; ---
+.method public final component1()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component10()[I ---
+.method public final component10()[I
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component2()Ljava/lang/String; ---
+.method public final component2()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component3()Ljava/lang/String; ---
+.method public final component3()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component4()Ljava/lang/Integer; ---
+.method public final component4()Ljava/lang/Integer;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component5()Ljava/lang/String; ---
+.method public final component5()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component6()Ljava/lang/String; ---
+.method public final component6()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component7()Ljava/lang/String; ---
+.method public final component7()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component8()I ---
+.method public final component8()I
+    .locals 1
+
+    iget v0, p0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final component9()Ljava/lang/String; ---
+.method public final component9()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[I)Lcom/request/bean/StartPlayVODBean; ---
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[I)Lcom/request/bean/StartPlayVODBean;
+    .locals 12
+
+    const-string v0, "userToken"
+
+    move-object v2, p1
+
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "userId"
+
+    move-object v3, p2
+
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "portalCode"
+
+    move-object v4, p3
+
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "contentId"
+
+    move-object/from16 v6, p5
+
+    invoke-static {v6, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "type"
+
+    move-object/from16 v8, p7
+
+    invoke-static {v8, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/request/bean/StartPlayVODBean;
+
+    move-object v1, v0
+
+    move-object/from16 v5, p4
+
+    move-object/from16 v7, p6
+
+    move/from16 v9, p8
+
+    move-object/from16 v10, p9
+
+    move-object/from16 v11, p10
+
+    invoke-direct/range {v1 .. v11}, Lcom/request/bean/StartPlayVODBean;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;[I)V
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public equals(Ljava/lang/Object;)Z ---
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/request/bean/StartPlayVODBean;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lcom/request/bean/StartPlayVODBean;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_8
+
+    return v2
+
+    :cond_8
+    iget v1, p0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    iget v3, p1, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    if-eq v1, v3, :cond_9
+
+    return v2
+
+    :cond_9
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_a
+
+    return v2
+
+    :cond_a
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    iget-object p1, p1, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    invoke-static {v1, p1}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_b
+
+    return v2
+
+    :cond_b
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getAuthType()Ljava/lang/String; ---
+.method public final getAuthType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getColumnId()Ljava/lang/Integer; ---
+.method public final getColumnId()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getContentId()Ljava/lang/String; ---
+.method public final getContentId()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getEpisodeNumberList()[I ---
+.method public final getEpisodeNumberList()[I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getPortalCode()Ljava/lang/String; ---
+.method public final getPortalCode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getSeriesContentId()Ljava/lang/String; ---
+.method public final getSeriesContentId()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getStartTime()I ---
+.method public final getStartTime()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getType()Ljava/lang/String; ---
+.method public final getType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getUserId()Ljava/lang/String; ---
+.method public final getUserId()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final getUserToken()Ljava/lang/String; ---
+.method public final getUserToken()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public hashCode()I ---
+.method public hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :goto_1
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    if-nez v1, :cond_2
+
+    const/4 v1, 0x0
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :goto_2
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    if-nez v1, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    invoke-static {v1}, Ljava/util/Arrays;->hashCode([I)I
+
+    move-result v2
+
+    :goto_3
+    add-int/2addr v0, v2
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setAuthType(Ljava/lang/String;)V ---
+.method public final setAuthType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setColumnId(Ljava/lang/Integer;)V ---
+.method public final setColumnId(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setContentId(Ljava/lang/String;)V ---
+.method public final setContentId(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setEpisodeNumberList([I)V ---
+.method public final setEpisodeNumberList([I)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setPortalCode(Ljava/lang/String;)V ---
+.method public final setPortalCode(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setSeriesContentId(Ljava/lang/String;)V ---
+.method public final setSeriesContentId(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setStartTime(I)V ---
+.method public final setStartTime(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setType(Ljava/lang/String;)V ---
+.method public final setType(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setUserId(Ljava/lang/String;)V ---
+.method public final setUserId(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public final setUserToken(Ljava/lang/String;)V ---
+.method public final setUserToken(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayVODBean.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "StartPlayVODBean(userToken="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->userToken:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", userId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->userId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", portalCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->portalCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", columnId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->columnId:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", contentId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->contentId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", seriesContentId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->seriesContentId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", type="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->type:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", startTime="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lcom/request/bean/StartPlayVODBean;->startTime:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", authType="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->authType:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", episodeNumberList="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayVODBean;->episodeNumberList:[I
+
+    invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+METHODS_SHOWN=36
+
+===== FILE smali_classes2/com/request/bean/StartPlayLiveBean.smali =====
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)V ---
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "userToken"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    const-string v0, "userId"
+
+    .line 7
+    .line 8
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 9
+    .line 10
+    .line 11
+    const-string v0, "portalCode"
+
+    .line 12
+    .line 13
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 14
+    .line 15
+    .line 16
+    const-string v0, "type"
+
+    .line 17
+    .line 18
+    invoke-static {p4, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 19
+    .line 20
+    .line 21
+    const-string v0, "channelCode"
+
+    .line 22
+    .line 23
+    invoke-static {p6, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 27
+    .line 28
+    .line 29
+    iput-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    .line 30
+    .line 31
+    iput-object p2, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    .line 32
+    .line 33
+    iput-object p3, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    .line 34
+    .line 35
+    iput-object p4, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    .line 36
+    .line 37
+    iput-object p5, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    .line 38
+    .line 39
+    iput-object p6, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    .line 40
+    .line 41
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public static synthetic copy$default(Lcom/request/bean/StartPlayLiveBean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/bean/StartPlayLiveBean; ---
+.method public static synthetic copy$default(Lcom/request/bean/StartPlayLiveBean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/bean/StartPlayLiveBean;
+    .locals 4
+
+    and-int/lit8 p8, p7, 0x1
+
+    if-eqz p8, :cond_0
+
+    iget-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    :cond_0
+    and-int/lit8 p8, p7, 0x2
+
+    if-eqz p8, :cond_1
+
+    iget-object p2, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    :cond_1
+    move-object p8, p2
+
+    and-int/lit8 p2, p7, 0x4
+
+    if-eqz p2, :cond_2
+
+    iget-object p3, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    :cond_2
+    move-object v0, p3
+
+    and-int/lit8 p2, p7, 0x8
+
+    if-eqz p2, :cond_3
+
+    iget-object p4, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    :cond_3
+    move-object v1, p4
+
+    and-int/lit8 p2, p7, 0x10
+
+    if-eqz p2, :cond_4
+
+    iget-object p5, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    :cond_4
+    move-object v2, p5
+
+    and-int/lit8 p2, p7, 0x20
+
+    if-eqz p2, :cond_5
+
+    iget-object p6, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    :cond_5
+    move-object v3, p6
+
+    move-object p2, p0
+
+    move-object p3, p1
+
+    move-object p4, p8
+
+    move-object p5, v0
+
+    move-object p6, v1
+
+    move-object p7, v2
+
+    move-object p8, v3
+
+    invoke-virtual/range {p2 .. p8}, Lcom/request/bean/StartPlayLiveBean;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)Lcom/request/bean/StartPlayLiveBean;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final component1()Ljava/lang/String; ---
+.method public final component1()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final component2()Ljava/lang/String; ---
+.method public final component2()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final component3()Ljava/lang/String; ---
+.method public final component3()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final component4()Ljava/lang/String; ---
+.method public final component4()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final component5()Ljava/lang/Integer; ---
+.method public final component5()Ljava/lang/Integer;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final component6()Ljava/lang/String; ---
+.method public final component6()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)Lcom/request/bean/StartPlayLiveBean; ---
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)Lcom/request/bean/StartPlayLiveBean;
+    .locals 8
+
+    const-string v0, "userToken"
+
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "userId"
+
+    invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "portalCode"
+
+    invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "type"
+
+    invoke-static {p4, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "channelCode"
+
+    invoke-static {p6, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/request/bean/StartPlayLiveBean;
+
+    move-object v1, v0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v1 .. v7}, Lcom/request/bean/StartPlayLiveBean;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public equals(Ljava/lang/Object;)Z ---
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/request/bean/StartPlayLiveBean;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lcom/request/bean/StartPlayLiveBean;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    invoke-static {v1, v3}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    iget-object p1, p1, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    invoke-static {v1, p1}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_7
+
+    return v2
+
+    :cond_7
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final getChannelCode()Ljava/lang/String; ---
+.method public final getChannelCode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final getColumnId()Ljava/lang/Integer; ---
+.method public final getColumnId()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final getPortalCode()Ljava/lang/String; ---
+.method public final getPortalCode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final getType()Ljava/lang/String; ---
+.method public final getType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final getUserId()Ljava/lang/String; ---
+.method public final getUserId()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final getUserToken()Ljava/lang/String; ---
+.method public final getUserToken()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public hashCode()I ---
+.method public hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final setChannelCode(Ljava/lang/String;)V ---
+.method public final setChannelCode(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final setColumnId(Ljava/lang/Integer;)V ---
+.method public final setColumnId(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final setPortalCode(Ljava/lang/String;)V ---
+.method public final setPortalCode(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final setType(Ljava/lang/String;)V ---
+.method public final setType(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final setUserId(Ljava/lang/String;)V ---
+.method public final setUserId(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public final setUserToken(Ljava/lang/String;)V ---
+.method public final setUserToken(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "<set-?>"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+--- METHOD smali_classes2/com/request/bean/StartPlayLiveBean.smali :: .method public toString()Ljava/lang/String; ---
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "StartPlayLiveBean(userToken="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->userToken:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", userId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->userId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", portalCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->portalCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", type="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->type:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", columnId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->columnId:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", channelCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/request/bean/StartPlayLiveBean;->channelCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+METHODS_SHOWN=24
+
+===== GLOBAL EXACT REFERENCES =====
+
+### startPlayVOD
+smali/ud/n1.smali:19532:const-string v4, "/startPlayVOD"
+smali_classes2/sb/b.smali:611:value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+smali_classes2/sb/b.smali:1295:value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+COUNT_SHOWN=3
+
+### startPlayLive
+smali_classes2/sb/b.smali:337:value = "{agreement}://{ip}/api/portalCore/v4/startPlayLive"
+COUNT_SHOWN=1
+
+### setMedia(
+smali_classes3/yc/e.smali:6682:invoke-virtual {v0, p2}, Lcom/titan/ranger/bean/Program;->setMedia(Ljava/lang/String;)V
+smali_classes3/ed/e.smali:3456:.method public final setMedia(Ljava/lang/String;)V
+smali_classes3/ud/n1$y.smali:480:invoke-virtual {v3, p1}, Led/e;->setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/Status.smali:294:.method public setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/bean/MediaFile.smali:583:.method public final setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/bean/Program.smali:878:.method public final setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/bean/report/PlayError.smali:848:.method public setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/bean/report/PlayMedia.smali:980:.method public setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/bean/report/SwitchPlayer.smali:317:.method public setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/bean/report/PlayReq.smali:483:.method public setMedia(Ljava/lang/String;)V
+smali_classes3/com/titan/ranger/bean/report/PlayFile.smali:469:.method public setMedia(Ljava/lang/String;)V
+smali_classes3/com/titans/entity/PlayInfo.smali:1569:.method public setMedia(Ljava/lang/String;)V
+smali/com/bigbee/bean/request/PlayError.smali:865:.method public setMedia(Ljava/lang/String;)V
+smali/com/bigbee/bean/request/PlayMedia.smali:1010:.method public setMedia(Ljava/lang/String;)V
+smali/com/bigbee/bean/request/SwitchPlayer.smali:321:.method public setMedia(Ljava/lang/String;)V
+smali/com/bigbee/bean/request/CastPlay.smali:1591:.method public final setMedia(Ljava/lang/String;)V
+smali/com/bigbee/bean/request/PlayFile.smali:486:.method public setMedia(Ljava/lang/String;)V
+smali/com/bigbee/bean/request/ProtocolExchange.smali:378:.method public setMedia(Ljava/lang/String;)V
+COUNT_SHOWN=18
+
+### setVideoPath
+smali_classes3/tv/danmaku/ijk/media/player/widget/IjkVideoView.smali:3322:.method public setVideoPath(Ljava/lang/String;)V
+smali/com/download/activity/LocalPlayActivity.smali:1307:invoke-virtual {v2, v3}, Ltv/danmaku/ijk/media/player/widget/IjkVideoView;->setVideoPath(Ljava/lang/String;)V
+smali_classes2/eb/g.smali:1188:invoke-virtual {v0, v1}, Ltv/danmaku/ijk/media/player/widget/IjkVideoView;->setVideoPath(Ljava/lang/String;)V
+COUNT_SHOWN=3
+
+### setAddressLicense
+smali_classes2/com/module/bean/PipVideoInfo.smali:273:.method public setAddressLicense(Ljava/lang/String;)V
+COUNT_SHOWN=1
+
+### setPlayUrl
+smali/com/request/result/PcdnMediaInfoResult.smali:1210:.method public final setPlayUrl(Ljava/lang/String;)V
+smali_classes2/com/module/bean/PipVideoInfo.smali:350:.method public setPlayUrl(Ljava/lang/String;)V
+smali_classes2/com/live/db/LiveAddressList.smali:281:.method public final setPlayUrl(Ljava/lang/String;)V
+smali_classes2/com/live/db/LiveAddressList.smali:292:.method public final setPlayUrlList(Ljava/util/List;)V
+COUNT_SHOWN=4
+
+### getPlayUrl
+smali/com/request/result/PcdnMediaInfoResult.smali:773:.method public final getPlayUrl()Ljava/lang/String;
+smali_classes2/com/module/bean/PipVideoInfo.smali:185:.method public getPlayUrl()Ljava/lang/String;
+smali_classes2/com/live/db/LiveAddressList.smali:163:.method public final getPlayUrl()Ljava/lang/String;
+smali_classes2/com/live/db/LiveAddressList.smali:174:.method public final getPlayUrlList()Ljava/util/List;
+COUNT_SHOWN=4
+
+### getAddressLicense
+smali_classes2/com/module/bean/PipVideoInfo.smali:108:.method public getAddressLicense()Ljava/lang/String;
+COUNT_SHOWN=1
+
+NOTE=focused static extraction only; no live auth/session material collected
