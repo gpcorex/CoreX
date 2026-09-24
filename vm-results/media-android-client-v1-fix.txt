@@ -1,0 +1,9 @@
+MEDIA_ANDROID_CLIENT_V1_FIX_READY
+project=/home/ubuntu/Central/media_center/android/CentroMultimedia
+api_base=https://cen-tral.duckdns.org/media-api
+java=/usr/bin/java
+gradle=missing
+android_sdk=missing
+main=/home/ubuntu/Central/media_center/android/CentroMultimedia/app/src/main/java/org/central/media/MainActivity.kt
+client=/home/ubuntu/Central/media_center/android/CentroMultimedia/app/src/main/java/org/central/media/ApiClient.kt
+manifest=/home/ubuntu/Central/media_center/android/CentroMultimedia/app/src/main/AndroidManifest.xml
