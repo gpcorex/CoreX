@@ -1,0 +1,477 @@
+XUPER_STARTPLAY_METHODS
+timestamp=2026-09-24T19:08:27+00:00
+
+===== FILE smali/ud/n1.smali =====
+
+--- METHOD line 19419 ---
+.method public V(Ljava/lang/String;I)V
+    .locals 9
+
+    .line 1
+    const-string p2, "errCode"
+
+    .line 2
+    .line 3
+    invoke-static {p1, p2}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-boolean p2, p0, Lud/n1;->b1:Z
+
+    .line 7
+    .line 8
+    if-nez p2, :cond_3
+
+    .line 9
+    .line 10
+    invoke-virtual {p0}, Lud/n1;->W3()V
+
+    .line 11
+    .line 12
+    .line 13
+    sget p2, Lcom/vod/R$id;->mInfoBar:I
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, p2}, Lud/n1;->ua(I)Landroid/view/View;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p2
+
+    .line 19
+    check-cast p2, Lcom/module/view/MFInfoBar;
+
+    .line 20
+    .line 21
+    const/4 v0, -0x1
+
+    .line 22
+    invoke-virtual {p2, v0}, Lcom/module/view/MFInfoBar;->setStatus(I)V
+
+    .line 23
+    .line 24
+    .line 25
+    const-string p2, "portal100006"
+
+    .line 26
+    .line 27
+    invoke-static {p2, p1}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 28
+    .line 29
+    .line 30
+    move-result p2
+
+    .line 31
+    if-nez p2, :cond_3
+
+    .line 32
+    .line 33
+    const-string p2, "portal100008"
+
+    .line 34
+    .line 35
+    invoke-static {p2, p1}, Lne/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 36
+    .line 37
+    .line 38
+    move-result p2
+
+    .line 39
+    if-eqz p2, :cond_0
+
+    .line 40
+    .line 41
+    goto :goto_0
+
+    .line 42
+    :cond_0
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->C6()Landroidx/fragment/app/e;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object p2
+
+    .line 46
+    const-string v0, "null cannot be cast to non-null type com.module.basemvp.BaseMVPActivity<*>"
+
+    .line 47
+    .line 48
+    invoke-static {p2, v0}, Lne/k;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 49
+    .line 50
+    .line 51
+    move-object v1, p2
+
+    .line 52
+    check-cast v1, Lcom/module/basemvp/a;
+
+    .line 53
+    .line 54
+    const/4 v3, 0x0
+
+    .line 55
+    const-string v4, "/startPlayVOD"
+
+    .line 56
+    .line 57
+    const-string v5, "vod"
+
+    .line 58
+    .line 59
+    iget-object v6, p0, Lud/n1;->D0:Ljava/lang/String;
+
+    .line 60
+    .line 61
+    iget-object p2, p0, Lud/n1;->A0:Lcom/request/result/AssetData;
+
+    .line 62
+    .line 63
+    if-eqz p2, :cond_1
+
+    .line 64
+    .line 65
+    invoke-virtual {p2}, Lcom/request/result/AssetData;->getName()Ljava/lang/String;
+
+    .line 66
+    .line 67
+    .line 68
+    move-result-object p2
+
+    .line 69
+    if-nez p2, :cond_2
+
+    .line 70
+    .line 71
+    :cond_1
+    const-string p2, ""
+
+    .line 72
+    .line 73
+    :cond_2
+    move-object v7, p2
+
+    .line 74
+    const-string v8, ""
+
+    .line 75
+    .line 76
+    move-object v2, p1
+
+    .line 77
+    invoke-virtual/range {v1 .. v8}, Lcom/module/basemvp/a;->U5(Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 78
+    .line 79
+    .line 80
+    nop
+
+    .line 81
+    :cond_3
+    :goto_0
+    return-void
+.end method
+
+===== FILE smali_classes2/sb/b.smali =====
+
+--- METHOD line 302 ---
+.method public abstract D0(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+    .param p1    # Ljava/lang/String;
+        .annotation runtime Lmf/s;
+            value = "agreement"
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation runtime Lmf/s;
+            value = "ip"
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation runtime Lmf/a;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/request/result/StartPlayLiveResult;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Lmf/k;
+        value = {
+            "Content-Type:application/json;charset=utf-8"
+        }
+    .end annotation
+
+    .annotation runtime Lmf/o;
+        value = "{agreement}://{ip}/api/portalCore/v4/startPlayLive"
+    .end annotation
+.end method
+
+--- METHOD line 576 ---
+.method public abstract H(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;
+    .param p1    # Ljava/lang/String;
+        .annotation runtime Lmf/s;
+            value = "agreement"
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation runtime Lmf/s;
+            value = "ip"
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation runtime Lmf/a;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Lretrofit2/Call<",
+            "Lcom/request/result/StartPlayVODResult;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Lmf/k;
+        value = {
+            "Cache-Control:no-store;Content-type:application/json;charset=utf-8"
+        }
+    .end annotation
+
+    .annotation runtime Lmf/o;
+        value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+    .end annotation
+.end method
+
+--- METHOD line 1260 ---
+.method public abstract S(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+    .param p1    # Ljava/lang/String;
+        .annotation runtime Lmf/s;
+            value = "agreement"
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation runtime Lmf/s;
+            value = "ip"
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation runtime Lmf/a;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/request/result/StartPlayVODResult;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Lmf/k;
+        value = {
+            "Cache-Control:no-store;Content-type:application/json;charset=utf-8"
+        }
+    .end annotation
+
+    .annotation runtime Lmf/o;
+        value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+    .end annotation
+.end method
+
+===== NEARBY STARTPLAY STRINGS =====
+
+FILE=smali/ud/n1.smali line=19532
+19512:     .line 46
+19513:     const-string v0, "null cannot be cast to non-null type com.module.basemvp.BaseMVPActivity<*>"
+19514: 
+19515:     .line 47
+19516:     .line 48
+19517:     invoke-static {p2, v0}, Lne/k;->d(Ljava/lang/Object;Ljava/lang/String;)V
+19518: 
+19519:     .line 49
+19520:     .line 50
+19521:     .line 51
+19522:     move-object v1, p2
+19523: 
+19524:     .line 52
+19525:     check-cast v1, Lcom/module/basemvp/a;
+19526: 
+19527:     .line 53
+19528:     .line 54
+19529:     const/4 v3, 0x0
+19530: 
+19531:     .line 55
+19532:     const-string v4, "/startPlayVOD"
+19533: 
+19534:     .line 56
+19535:     .line 57
+19536:     const-string v5, "vod"
+19537: 
+19538:     .line 58
+19539:     .line 59
+19540:     iget-object v6, p0, Lud/n1;->D0:Ljava/lang/String;
+19541: 
+19542:     .line 60
+19543:     .line 61
+19544:     iget-object p2, p0, Lud/n1;->A0:Lcom/request/result/AssetData;
+19545: 
+19546:     .line 62
+19547:     .line 63
+19548:     if-eqz p2, :cond_1
+19549: 
+19550:     .line 64
+19551:     .line 65
+19552:     invoke-virtual {p2}, Lcom/request/result/AssetData;->getName()Ljava/lang/String;
+
+FILE=smali_classes2/sb/b.smali line=337
+00317:     .annotation system Ldalvik/annotation/Signature;
+00318:         value = {
+00319:             "(",
+00320:             "Ljava/lang/String;",
+00321:             "Ljava/lang/String;",
+00322:             "Ljava/lang/String;",
+00323:             ")",
+00324:             "Lio/reactivex/Observable<",
+00325:             "Lcom/request/result/StartPlayLiveResult;",
+00326:             ">;"
+00327:         }
+00328:     .end annotation
+00329: 
+00330:     .annotation runtime Lmf/k;
+00331:         value = {
+00332:             "Content-Type:application/json;charset=utf-8"
+00333:         }
+00334:     .end annotation
+00335: 
+00336:     .annotation runtime Lmf/o;
+00337:         value = "{agreement}://{ip}/api/portalCore/v4/startPlayLive"
+00338:     .end annotation
+00339: .end method
+00340: 
+00341: .method public abstract E(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+00342:     .param p1    # Ljava/lang/String;
+00343:         .annotation runtime Lmf/s;
+00344:             value = "agreement"
+00345:         .end annotation
+00346:     .end param
+00347:     .param p2    # Ljava/lang/String;
+00348:         .annotation runtime Lmf/s;
+00349:             value = "ip"
+00350:         .end annotation
+00351:     .end param
+00352:     .param p3    # Ljava/lang/String;
+00353:         .annotation runtime Lmf/a;
+00354:         .end annotation
+00355:     .end param
+00356:     .annotation system Ldalvik/annotation/Signature;
+00357:         value = {
+
+FILE=smali_classes2/sb/b.smali line=611
+00591:     .annotation system Ldalvik/annotation/Signature;
+00592:         value = {
+00593:             "(",
+00594:             "Ljava/lang/String;",
+00595:             "Ljava/lang/String;",
+00596:             "Ljava/lang/String;",
+00597:             ")",
+00598:             "Lretrofit2/Call<",
+00599:             "Lcom/request/result/StartPlayVODResult;",
+00600:             ">;"
+00601:         }
+00602:     .end annotation
+00603: 
+00604:     .annotation runtime Lmf/k;
+00605:         value = {
+00606:             "Cache-Control:no-store;Content-type:application/json;charset=utf-8"
+00607:         }
+00608:     .end annotation
+00609: 
+00610:     .annotation runtime Lmf/o;
+00611:         value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+00612:     .end annotation
+00613: .end method
+00614: 
+00615: .method public abstract H0(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+00616:     .param p1    # Ljava/lang/String;
+00617:         .annotation runtime Lmf/s;
+00618:             value = "agreement"
+00619:         .end annotation
+00620:     .end param
+00621:     .param p2    # Ljava/lang/String;
+00622:         .annotation runtime Lmf/s;
+00623:             value = "ip"
+00624:         .end annotation
+00625:     .end param
+00626:     .param p3    # Ljava/lang/String;
+00627:         .annotation runtime Lmf/a;
+00628:         .end annotation
+00629:     .end param
+00630:     .annotation system Ldalvik/annotation/Signature;
+00631:         value = {
+
+FILE=smali_classes2/sb/b.smali line=1295
+01275:     .annotation system Ldalvik/annotation/Signature;
+01276:         value = {
+01277:             "(",
+01278:             "Ljava/lang/String;",
+01279:             "Ljava/lang/String;",
+01280:             "Ljava/lang/String;",
+01281:             ")",
+01282:             "Lio/reactivex/Observable<",
+01283:             "Lcom/request/result/StartPlayVODResult;",
+01284:             ">;"
+01285:         }
+01286:     .end annotation
+01287: 
+01288:     .annotation runtime Lmf/k;
+01289:         value = {
+01290:             "Cache-Control:no-store;Content-type:application/json;charset=utf-8"
+01291:         }
+01292:     .end annotation
+01293: 
+01294:     .annotation runtime Lmf/o;
+01295:         value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+01296:     .end annotation
+01297: .end method
+01298: 
+01299: .method public abstract T(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+01300:     .param p1    # Ljava/lang/String;
+01301:         .annotation runtime Lmf/s;
+01302:             value = "agreement"
+01303:         .end annotation
+01304:     .end param
+01305:     .param p2    # Ljava/lang/String;
+01306:         .annotation runtime Lmf/s;
+01307:             value = "ip"
+01308:         .end annotation
+01309:     .end param
+01310:     .param p3    # Ljava/lang/String;
+01311:         .annotation runtime Lmf/a;
+01312:         .end annotation
+01313:     .end param
+01314:     .annotation system Ldalvik/annotation/Signature;
+01315:         value = {
+
+NOTE=focused static extraction around startPlayVOD/startPlayLive only
