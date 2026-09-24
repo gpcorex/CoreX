@@ -1,0 +1,704 @@
+XUPER_NETWORK_WIRING_V1
+generated_at=2026-09-24T13:32:25+00:00
+
+[RETROFIT_HTTP_ANNOTATIONS]
+
+[REQUEST_API_CLASSES]
+smali/com/dcs/bean/DomainInfo.smali
+smali/com/dcs/bean/URLInfo.smali
+smali/com/request/result/ActiveData.smali
+smali/com/request/result/ActiveResult.smali
+smali/com/request/result/AddFavoriteResult.smali
+smali/com/request/result/AddHistoryResult.smali
+smali/com/request/result/AddSubscribeData.smali
+smali/com/request/result/AddSubscribeResult.smali
+smali/com/request/result/ApkPushHoleResult.smali
+smali/com/request/result/ApkQueryCouponResult.smali
+smali/com/request/result/ApkReceiveCouponResult.smali
+smali/com/request/result/AreaCodeData.smali
+smali/com/request/result/AssetData.smali
+smali/com/request/result/AssetList.smali
+smali/com/request/result/AuthInfoList.smali
+smali/com/request/result/AvailableCouponCodeList.smali
+smali/com/request/result/BaseResult.smali
+smali/com/request/result/BaseTimeData.smali
+smali/com/request/result/BaseTimeResult.smali
+smali/com/request/result/BindEmailGiftDaysResult.smali
+smali/com/request/result/BindPhoneResult.smali
+smali/com/request/result/CdnListBeanResult.smali
+smali/com/request/result/Channel$getMosaicChannes$type$1.smali
+smali/com/request/result/Channel.smali
+smali/com/request/result/CheckForceBindResult.smali
+smali/com/request/result/CheckVerifiCodeResult.smali
+smali/com/request/result/ChildColumn.smali
+smali/com/request/result/CombineData.smali
+smali/com/request/result/ConfigBean.smali
+smali/com/request/result/ConfigCenterData.smali
+smali/com/request/result/ConfigCenterResponse.smali
+smali/com/request/result/ConfigData.smali
+smali/com/request/result/ConfigInfoBean.smali
+smali/com/request/result/ConfigResult.smali
+smali/com/request/result/ContentList.smali
+smali/com/request/result/CouponCodeList.smali
+smali/com/request/result/DataCollectResult.smali
+smali/com/request/result/DcsAuthResultData.smali
+smali/com/request/result/DcsBaseResult.smali
+smali/com/request/result/DelFavoriteResult.smali
+smali/com/request/result/DeviceData.smali
+smali/com/request/result/DevicesListData.smali
+smali/com/request/result/EmailSuffixData.smali
+smali/com/request/result/EpgData.smali
+smali/com/request/result/EpgResult.smali
+smali/com/request/result/ExchangeOrderInfo.smali
+smali/com/request/result/ExchangeResult.smali
+smali/com/request/result/ExchangeResultData.smali
+smali/com/request/result/ExtranetIpResult.smali
+smali/com/request/result/FavIdData.smali
+smali/com/request/result/FavIdDataItem.smali
+smali/com/request/result/FavoriteList.smali
+smali/com/request/result/FeedBackContactData.smali
+smali/com/request/result/FeedBackContactResult.smali
+smali/com/request/result/FilterByContentResult.smali
+smali/com/request/result/FilterByContentResultData.smali
+smali/com/request/result/FilterGenreResult.smali
+smali/com/request/result/FilterGenreResultData.smali
+smali/com/request/result/FilterInfo.smali
+smali/com/request/result/FootballMatchData.smali
+smali/com/request/result/FootballMatchResult.smali
+smali/com/request/result/ForceBindData.smali
+smali/com/request/result/FreeDataBean.smali
+smali/com/request/result/FreeProduct.smali
+smali/com/request/result/FreeResult.smali
+smali/com/request/result/GetAddrData.smali
+smali/com/request/result/GetAllbackProgramResult.smali
+smali/com/request/result/GetAllbackProgramResultData.smali
+smali/com/request/result/GetAreaCodeResult.smali
+smali/com/request/result/GetAuthInfoResult.smali
+smali/com/request/result/GetAuthInfoResultData.smali
+smali/com/request/result/GetColumnContentsResult.smali
+smali/com/request/result/GetColumnContentsResultData.smali
+smali/com/request/result/GetColumnRecommendsData.smali
+smali/com/request/result/GetColumnRecommendsResult.smali
+smali/com/request/result/GetDeviceResult.smali
+smali/com/request/result/GetEmailSuffixResult.smali
+smali/com/request/result/GetExchangeOrderInfoResult.smali
+smali/com/request/result/GetFavoritesResult.smali
+smali/com/request/result/GetFavoritesResultData.smali
+smali/com/request/result/GetHomeData.smali
+smali/com/request/result/GetHomeResult.smali
+smali/com/request/result/GetInviteCodeData.smali
+smali/com/request/result/GetInviteCodeResult.smali
+smali/com/request/result/GetItemDataResult.smali
+smali/com/request/result/GetItemDataResultData.smali
+smali/com/request/result/GetLiveDataResult.smali
+smali/com/request/result/GetLiveDataResultData.smali
+smali/com/request/result/GetNextColumnData.smali
+smali/com/request/result/GetNextColumnResult.smali
+smali/com/request/result/GetOrderInfoResult.smali
+smali/com/request/result/GetPackageResult.smali
+smali/com/request/result/GetPlayUrlResult.smali
+smali/com/request/result/GetQrResult.smali
+smali/com/request/result/GetQrTokenResult.smali
+smali/com/request/result/GetRecommendsResult.smali
+smali/com/request/result/GetRecommendsResultData.smali
+smali/com/request/result/GetShelveData.smali
+smali/com/request/result/GetShelveResult.smali
+smali/com/request/result/GetSlbInfoBeanResult.smali
+smali/com/request/result/GetSlbInfoBeanResultData.smali
+smali/com/request/result/GetSubscribeResult.smali
+smali/com/request/result/GetVerifiCodeResult.smali
+smali/com/request/result/GiftDaysData.smali
+smali/com/request/result/HearBeatResultData.smali
+smali/com/request/result/HeartBeatResult.smali
+smali/com/request/result/HistoryStat.smali
+smali/com/request/result/HomeData$Companion.smali
+smali/com/request/result/HomeData.smali
+smali/com/request/result/HomeRecommend.smali
+smali/com/request/result/Item.smali
+smali/com/request/result/LicenseBTVData.smali
+smali/com/request/result/LicenseData.smali
+smali/com/request/result/LineupData.smali
+smali/com/request/result/LineupPlayer.smali
+smali/com/request/result/LineupResult.smali
+smali/com/request/result/LineupTeam.smali
+smali/com/request/result/LiveAddress.smali
+smali/com/request/result/LoginResult.smali
+smali/com/request/result/LoginResultData.smali
+smali/com/request/result/Match.smali
+smali/com/request/result/MatchChannel.smali
+smali/com/request/result/MatchEventData.smali
+smali/com/request/result/MatchEventResult.smali
+smali/com/request/result/MatchEventTeam.smali
+smali/com/request/result/MatchPromotion.smali
+smali/com/request/result/MatchScoreBoardData.smali
+smali/com/request/result/MatchScoreBoardResult.smali
+smali/com/request/result/MatchScoreGroup.smali
+smali/com/request/result/MatchScoreTeam.smali
+smali/com/request/result/MatchStat.smali
+smali/com/request/result/MatchStatData.smali
+smali/com/request/result/MatchStatResult.smali
+smali/com/request/result/MosaicChannelBean.smali
+smali/com/request/result/MovieList.smali
+smali/com/request/result/OrderInfo.smali
+smali/com/request/result/P2pDaemonResult.smali
+smali/com/request/result/PackageInfo.smali
+smali/com/request/result/PackagePriceList.smali
+smali/com/request/result/PcdnBaseResult.smali
+smali/com/request/result/PcdnDebugInfoResult.smali
+smali/com/request/result/PcdnMediaInfoResult.smali
+smali/com/request/result/PcdnPeerInfoResult.smali
+smali/com/request/result/PcdnStationInfoResult.smali
+smali/com/request/result/PersonData.smali
+smali/com/request/result/PersonDetailInfo.smali
+smali/com/request/result/PersonResult.smali
+smali/com/request/result/PersonSearchResult.smali
+smali/com/request/result/PersonWorksData.smali
+smali/com/request/result/PersonWorksInfo.smali
+smali/com/request/result/PersonWorksResult.smali
+smali/com/request/result/PortalCode.smali
+smali/com/request/result/PortalCodeList.smali
+smali/com/request/result/PosterList.smali
+smali/com/request/result/ProductPriceList.smali
+smali/com/request/result/ProgramSearchResult.smali
+smali/com/request/result/PropertiesInfoBean.smali
+smali/com/request/result/PropertiesInfoResult.smali
+smali/com/request/result/QrResultData.smali
+smali/com/request/result/QrResultUserInfo.smali
+smali/com/request/result/QrTokenData.smali
+smali/com/request/result/QueryCouponData.smali
+smali/com/request/result/RecommendColumnContentDataBean.smali
+smali/com/request/result/RecommendColumnContentResult.smali
+smali/com/request/result/RecommendList.smali
+smali/com/request/result/RegisterResult.smali
+smali/com/request/result/ResourceSearchResult.smali
+smali/com/request/result/SameSeasonSeriesBean.smali
+smali/com/request/result/SearchByContentResult.smali
+smali/com/request/result/SearchByContentResultData.smali
+smali/com/request/result/SearchByNameResult.smali
+smali/com/request/result/SearchByNameResultData.smali
+smali/com/request/result/SearchItem.smali
+smali/com/request/result/SearchROrPData.smali
+smali/com/request/result/SearchROrPResult.smali
+smali/com/request/result/SendEmailResult.smali
+smali/com/request/result/SeriesSearchResult.smali
+smali/com/request/result/ShelveMatch.smali
+smali/com/request/result/ShelveMatchList.smali
+smali/com/request/result/ShelveMatchResult.smali
+smali/com/request/result/SimpleProgramList.smali
+smali/com/request/result/SlbBaseResult.smali
+smali/com/request/result/SlbDesResult.smali
+smali/com/request/result/SlbInfo.smali
+smali/com/request/result/SnTokenData.smali
+smali/com/request/result/SnTokenResult.smali
+smali/com/request/result/Snapshot.smali
+smali/com/request/result/StartPlayBTVResult.smali
+smali/com/request/result/StartPlayBTVResultData.smali
+smali/com/request/result/StartPlayBTVResultLicenseList.smali
+smali/com/request/result/StartPlayLiveResult.smali
+smali/com/request/result/StartPlayLiveResultData.smali
+smali/com/request/result/StartPlayVODResult.smali
+smali/com/request/result/StartPlayVODResultData.smali
+smali/com/request/result/StartPlayVODResultDataItem.smali
+smali/com/request/result/SubscribeData.smali
+smali/com/request/result/SubscribeListData.smali
+smali/com/request/result/Team.smali
+smali/com/request/result/TeamEvent.smali
+smali/com/request/result/TeamStat.smali
+smali/com/request/result/TerminalAuthResult.smali
+smali/com/request/result/ThumbnailResult.smali
+smali/com/request/result/TotalMovieListItem.smali
+smali/com/request/result/UnBindEmailData.smali
+smali/com/request/result/UnBindEmailResult.smali
+smali/com/request/result/UrlListBeanResult.smali
+smali/com/request/result/UserFeedBackResult.smali
+smali/com/request/result/UserInfo.smali
+smali/com/request/result/VerifyEmailCodeData.smali
+smali/com/request/result/VerifyEmailCodeResult.smali
+smali/com/request/result/WorkInfoBean.smali
+smali_classes2/com/request/R$anim.smali
+smali_classes2/com/request/R$animator.smali
+smali_classes2/com/request/R$attr.smali
+smali_classes2/com/request/R$bool.smali
+smali_classes2/com/request/R$color.smali
+smali_classes2/com/request/R$dimen.smali
+smali_classes2/com/request/R$drawable.smali
+smali_classes2/com/request/R$id.smali
+smali_classes2/com/request/R$integer.smali
+smali_classes2/com/request/R$interpolator.smali
+smali_classes2/com/request/R$layout.smali
+smali_classes2/com/request/R$plurals.smali
+smali_classes2/com/request/R$string.smali
+smali_classes2/com/request/R$style.smali
+smali_classes2/com/request/R$styleable.smali
+smali_classes2/com/request/R$xml.smali
+smali_classes2/com/request/bean/ActiveBean.smali
+smali_classes2/com/request/bean/AddFavoriteBean.smali
+smali_classes2/com/request/bean/AddHistoryBean.smali
+smali_classes2/com/request/bean/AddSubscribeBean.smali
+smali_classes2/com/request/bean/AllMatchBean.smali
+smali_classes2/com/request/bean/AllowQRLoginBean.smali
+smali_classes2/com/request/bean/ApkQueryCouponBean.smali
+smali_classes2/com/request/bean/ApkReceiveCouponBean.smali
+smali_classes2/com/request/bean/ApkReportBean.smali
+smali_classes2/com/request/bean/AuthReportBean.smali
+smali_classes2/com/request/bean/AutoLoginBean.smali
+smali_classes2/com/request/bean/BackProgram.smali
+smali_classes2/com/request/bean/BaseRequestBean.smali
+smali_classes2/com/request/bean/BindEmailBean.smali
+smali_classes2/com/request/bean/BindEmailGiftDaysBean.smali
+smali_classes2/com/request/bean/BindPhoneBean.smali
+smali_classes2/com/request/bean/BlSearchByContentBean.smali
+smali_classes2/com/request/bean/ChangeBindEmailBean.smali
+smali_classes2/com/request/bean/ChangeBindPhoneBean.smali
+smali_classes2/com/request/bean/ChannelEpg.smali
+smali_classes2/com/request/bean/ChannelJsonInfo.smali
+smali_classes2/com/request/bean/CheckVerifiCodeBean.smali
+smali_classes2/com/request/bean/CloseForceChangePwdPageEvent.smali
+smali_classes2/com/request/bean/ConfigBean.smali
+smali_classes2/com/request/bean/ConfigCenterRequestBean.smali
+smali_classes2/com/request/bean/CouponQualificationEvent.smali
+smali_classes2/com/request/bean/CustomerServiceBean.smali
+smali_classes2/com/request/bean/DcsAuthBean.smali
+smali_classes2/com/request/bean/DcsBaseRequestBean.smali
+smali_classes2/com/request/bean/DcsGetAddrBean.smali
+smali_classes2/com/request/bean/DelFavoriteBean.smali
+smali_classes2/com/request/bean/DelSubscribeBean.smali
+smali_classes2/com/request/bean/DeleteDevicesBean.smali
+smali_classes2/com/request/bean/EmailResetPassNoticeBean.smali
+smali_classes2/com/request/bean/EmailResetPwdBean.smali
+smali_classes2/com/request/bean/Epg4bRequestBean.smali
+smali_classes2/com/request/bean/EpgBean.smali
+smali_classes2/com/request/bean/EpgProgram.smali
+smali_classes2/com/request/bean/ExchangeBean.smali
+smali_classes2/com/request/bean/FilterByContentBean.smali
+smali_classes2/com/request/bean/FilterGenreBean.smali
+smali_classes2/com/request/bean/FootballMatchBean.smali
+smali_classes2/com/request/bean/ForceBindBean.smali
+smali_classes2/com/request/bean/FreeTimeBean.smali
+smali_classes2/com/request/bean/GetAllbackProgramBean.smali
+smali_classes2/com/request/bean/GetAreaCodeBean.smali
+smali_classes2/com/request/bean/GetAuthInfoBean.smali
+smali_classes2/com/request/bean/GetColumnContentsBean.smali
+smali_classes2/com/request/bean/GetColumnRecommendBean.smali
+smali_classes2/com/request/bean/GetDevicesBean.smali
+smali_classes2/com/request/bean/GetExchangeOrderInfoBean.smali
+smali_classes2/com/request/bean/GetFavoritesBean.smali
+smali_classes2/com/request/bean/GetHomeBean.smali
+smali_classes2/com/request/bean/GetInviteCodeBean.smali
+smali_classes2/com/request/bean/GetItemDataBean.smali
+smali_classes2/com/request/bean/GetLiveDataBean.smali
+smali_classes2/com/request/bean/GetNextColumnBean.smali
+smali_classes2/com/request/bean/GetOrderInfoBean.smali
+smali_classes2/com/request/bean/GetPackageBean.smali
+smali_classes2/com/request/bean/GetPersonBean.smali
+smali_classes2/com/request/bean/GetQRTokenBean.smali
+smali_classes2/com/request/bean/GetQrResultBean.smali
+smali_classes2/com/request/bean/GetRecommendsBean.smali
+smali_classes2/com/request/bean/GetShelveBean.smali
+smali_classes2/com/request/bean/GetSlbInfoBean.smali
+smali_classes2/com/request/bean/GetSubscribeBean.smali
+smali_classes2/com/request/bean/GetVerifiCodeBean.smali
+smali_classes2/com/request/bean/HeartBeatBean.smali
+smali_classes2/com/request/bean/ItemByPersonBean.smali
+smali_classes2/com/request/bean/LineupBean.smali
+smali_classes2/com/request/bean/LiveSearchBean.smali
+smali_classes2/com/request/bean/LoginBean.smali
+smali_classes2/com/request/bean/LogoutBean.smali
+smali_classes2/com/request/bean/MatchEventBean.smali
+smali_classes2/com/request/bean/MatchScoreBoardBean.smali
+smali_classes2/com/request/bean/MatchStatBean.smali
+smali_classes2/com/request/bean/ModifyOttAccountBean.smali
+smali_classes2/com/request/bean/NearestMatchBean.smali
+smali_classes2/com/request/bean/PasswordCheckBean.smali
+smali_classes2/com/request/bean/PasswordSetBean.smali
+smali_classes2/com/request/bean/PcdnPullMediaBean$Companion.smali
+smali_classes2/com/request/bean/PcdnPullMediaBean.smali
+smali_classes2/com/request/bean/PlayErrorCollectBean.smali
+smali_classes2/com/request/bean/PlayMessageCollectBean.smali
+smali_classes2/com/request/bean/PreInstallAuthBean.smali
+smali_classes2/com/request/bean/RefreshUerInfoPlayEvent.smali
+smali_classes2/com/request/bean/RestrictedStatusBean.smali
+smali_classes2/com/request/bean/SearchByContentBean.smali
+smali_classes2/com/request/bean/SearchByNameBean.smali
+smali_classes2/com/request/bean/SearchROrPBean.smali
+smali_classes2/com/request/bean/SendEmailBean.smali
+smali_classes2/com/request/bean/SendEmailVerifyCodeBean.smali
+smali_classes2/com/request/bean/SendPackageEmailBean.smali
+smali_classes2/com/request/bean/ShelveMatchBean.smali
+smali_classes2/com/request/bean/SnTokenBean.smali
+smali_classes2/com/request/bean/StartPlayBTVBean.smali
+smali_classes2/com/request/bean/StartPlayLiveBean.smali
+smali_classes2/com/request/bean/StartPlayVODBean.smali
+smali_classes2/com/request/bean/SubTitleFileList.smali
+smali_classes2/com/request/bean/SubTitleItemData.smali
+smali_classes2/com/request/bean/SubTitleResult.smali
+smali_classes2/com/request/bean/SubtitleDownloadErrorEvent.smali
+smali_classes2/com/request/bean/SubtitleDownloadFinishEvent.smali
+smali_classes2/com/request/bean/TerminalAuthBean.smali
+smali_classes2/com/request/bean/UnBindEmailV3Bean.smali
+smali_classes2/com/request/bean/UnbindBean.smali
+smali_classes2/com/request/bean/UpdateDeviceTokenBean.smali
+smali_classes2/com/request/bean/UpdatePwdBean.smali
+smali_classes2/com/request/bean/UserFeedBackBean.smali
+smali_classes2/com/request/bean/UserTokenInvalidEvent.smali
+smali_classes2/com/request/bean/VerifyEmailCodeBean.smali
+smali_classes2/com/request/bean/VodCartonCollectBean.smali
+smali_classes2/com/request/bean/VodDetailAuthChangeEvent.smali
+smali_classes2/com/request/bean/VodPlayEndCollectBean.smali
+smali_classes2/com/request/bean/VodPlayStartCollectBean.smali
+smali_classes2/com/request/bean/WaitConfirmBean.smali
+smali_classes2/com/request/converterFactory/bean/EncryptJsonBean.smali
+smali_classes2/com/request/converterFactory/bean/ResultException.smali
+
+[DOMAIN_AND_URLINFO_CLASSES]
+--- smali/com/dcs/bean/DomainInfo.smali
+.field private final domainType:I
+.field private final first:Ljava/lang/String;
+.field private final second:Ljava/lang/String;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
+    const-string v0, "first"
+    const-string v0, "second"
+.method public static synthetic copy$default(Lcom/dcs/bean/DomainInfo;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Object;)Lcom/dcs/bean/DomainInfo;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()I
+.method public final copy(Ljava/lang/String;Ljava/lang/String;I)Lcom/dcs/bean/DomainInfo;
+    const-string v0, "first"
+    const-string v0, "second"
+.method public equals(Ljava/lang/Object;)Z
+.method public final getDomainType()I
+.method public final getFirst()Ljava/lang/String;
+.method public final getSecond()Ljava/lang/String;
+.method public hashCode()I
+.method public toString()Ljava/lang/String;
+    const-string v1, "DomainInfo(first="
+    const-string v1, ", second="
+    const-string v1, ", domainType="
+--- smali/com/dcs/bean/URLInfo.smali
+.field private host_alias:Ljava/lang/String;
+.field private url:Ljava/lang/String;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v0, "host_alias"
+    const-string v0, "url"
+.method public static synthetic copy$default(Lcom/dcs/bean/URLInfo;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/dcs/bean/URLInfo;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;)Lcom/dcs/bean/URLInfo;
+    const-string v0, "host_alias"
+    const-string v0, "url"
+.method public equals(Ljava/lang/Object;)Z
+.method public final getHost_alias()Ljava/lang/String;
+.method public final getUrl()Ljava/lang/String;
+.method public hashCode()I
+.method public final setHost_alias(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setUrl(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public toString()Ljava/lang/String;
+    const-string v1, "URLInfo(host_alias="
+    const-string v1, ", url="
+--- smali/com/dcs/bean/N1Data.smali
+.field private apk:Ljava/lang/String;
+.field private apk_ver:Ljava/lang/String;
+.field private auth_version:Ljava/lang/String;
+.field private gateway_mac:Ljava/lang/String;
+.field private pre_code:Ljava/lang/String;
+.field private reserve1:Ljava/lang/String;
+.field private sn:Ljava/lang/String;
+.field private spkg_ver:Ljava/lang/String;
+.field private user_id:Ljava/lang/String;
+.field private user_identity:Ljava/lang/String;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    const-string v0, "sn"
+    const-string v0, "auth_version"
+    const-string v0, "apk"
+    const-string v0, "apk_ver"
+    const-string v0, "gateway_mac"
+    const-string v0, "reserve1"
+.method public static synthetic copy$default(Lcom/dcs/bean/N1Data;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/dcs/bean/N1Data;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/dcs/bean/N1Data;
+    const-string v0, "sn"
+    const-string v0, "auth_version"
+    const-string v0, "apk"
+    const-string v0, "apk_ver"
+    const-string v0, "gateway_mac"
+    const-string v0, "reserve1"
+.method public equals(Ljava/lang/Object;)Z
+.method public final getApk()Ljava/lang/String;
+.method public final getApk_ver()Ljava/lang/String;
+.method public final getAuth_version()Ljava/lang/String;
+.method public final getGateway_mac()Ljava/lang/String;
+.method public final getPre_code()Ljava/lang/String;
+.method public final getReserve1()Ljava/lang/String;
+.method public final getSn()Ljava/lang/String;
+.method public final getSpkg_ver()Ljava/lang/String;
+.method public final getUser_id()Ljava/lang/String;
+.method public final getUser_identity()Ljava/lang/String;
+.method public hashCode()I
+.method public final setApk(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setApk_ver(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setAuth_version(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setGateway_mac(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setPre_code(Ljava/lang/String;)V
+.method public final setReserve1(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setSn(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setSpkg_ver(Ljava/lang/String;)V
+.method public final setUser_id(Ljava/lang/String;)V
+.method public final setUser_identity(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+    const-string v1, "N1Data(sn="
+    const-string v1, ", pre_code="
+    const-string v1, ", auth_version="
+    const-string v1, ", apk="
+    const-string v1, ", apk_ver="
+    const-string v1, ", spkg_ver="
+    const-string v1, ", gateway_mac="
+    const-string v1, ", reserve1="
+    const-string v1, ", user_id="
+    const-string v1, ", user_identity="
+--- smali/com/dcs/bean/V1Data.smali
+.field private apk:Ljava/lang/String;
+.field private apk_ver:Ljava/lang/String;
+.field private approve_code:Ljava/lang/String;
+.field private auth_version:Ljava/lang/String;
+.field private code:Ljava/lang/String;
+.field private entry_type:Ljava/lang/String;
+.field private open_num:Ljava/lang/String;
+.field private reserve1:Ljava/lang/String;
+.field private sn:Ljava/lang/String;
+.field private spkg_ver:Ljava/lang/String;
+.field private type:I
+.field private user_id:Ljava/lang/String;
+.field private user_identity:Ljava/lang/String;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    const-string v0, "entry_type"
+    const-string v0, "sn"
+    const-string v0, "code"
+    const-string v0, "auth_version"
+    const-string v0, "apk"
+    const-string v0, "apk_ver"
+    const-string v0, "spkg_ver"
+    const-string v0, "reserve1"
+.method public static synthetic copy$default(Lcom/dcs/bean/V1Data;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/dcs/bean/V1Data;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
+.method public final component11()I
+.method public final component12()Ljava/lang/String;
+.method public final component13()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)Lcom/dcs/bean/V1Data;
+    const-string v0, "entry_type"
+    const-string v0, "sn"
+    const-string v0, "code"
+    const-string v0, "auth_version"
+    const-string v0, "apk"
+    const-string v0, "apk_ver"
+    const-string v0, "spkg_ver"
+    const-string v0, "reserve1"
+.method public equals(Ljava/lang/Object;)Z
+.method public final getApk()Ljava/lang/String;
+.method public final getApk_ver()Ljava/lang/String;
+.method public final getApprove_code()Ljava/lang/String;
+.method public final getAuth_version()Ljava/lang/String;
+.method public final getCode()Ljava/lang/String;
+.method public final getEntry_type()Ljava/lang/String;
+.method public final getOpen_num()Ljava/lang/String;
+.method public final getReserve1()Ljava/lang/String;
+.method public final getSn()Ljava/lang/String;
+.method public final getSpkg_ver()Ljava/lang/String;
+.method public final getType()I
+.method public final getUser_id()Ljava/lang/String;
+.method public final getUser_identity()Ljava/lang/String;
+.method public hashCode()I
+.method public final setApk(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setApk_ver(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setApprove_code(Ljava/lang/String;)V
+.method public final setAuth_version(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setCode(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setEntry_type(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setOpen_num(Ljava/lang/String;)V
+.method public final setReserve1(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setSn(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setSpkg_ver(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setType(I)V
+.method public final setUser_id(Ljava/lang/String;)V
+.method public final setUser_identity(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+    const-string v1, "V1Data(entry_type="
+    const-string v1, ", sn="
+    const-string v1, ", code="
+    const-string v1, ", auth_version="
+    const-string v1, ", approve_code="
+    const-string v1, ", open_num="
+    const-string v1, ", apk="
+    const-string v1, ", apk_ver="
+    const-string v1, ", spkg_ver="
+    const-string v1, ", reserve1="
+    const-string v1, ", type="
+    const-string v1, ", user_id="
+    const-string v1, ", user_identity="
+--- smali/com/dcs/bean/V1Bean.smali
+.field private s:Ljava/lang/String;
+.field private status:I
+.method public constructor <init>(Ljava/lang/String;I)V
+    const-string v0, "s"
+.method public static synthetic copy$default(Lcom/dcs/bean/V1Bean;Ljava/lang/String;IILjava/lang/Object;)Lcom/dcs/bean/V1Bean;
+.method public final component1()Ljava/lang/String;
+.method public final component2()I
+.method public final copy(Ljava/lang/String;I)Lcom/dcs/bean/V1Bean;
+    const-string v0, "s"
+.method public equals(Ljava/lang/Object;)Z
+.method public final getS()Ljava/lang/String;
+.method public final getStatus()I
+.method public hashCode()I
+.method public final setS(Ljava/lang/String;)V
+    const-string v0, "<set-?>"
+.method public final setStatus(I)V
+.method public toString()Ljava/lang/String;
+    const-string v1, "V1Bean(s="
+    const-string v1, ", status="
+
+[BASEURL_BUILDERS_AND_HOST_ASSIGNMENTS]
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes3/com/vod/R$id.smali:393:.field public static final ghost_view:I = 0x7f0a0100
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes3/com/vod/R$id.smali:395:.field public static final ghost_view_holder:I = 0x7f0a0101
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes3/com/vod/R$string.smali:981:.field public static final domain_is_security:I = 0x7f1201f8
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/core/R$id.smali:221:.field public static final ghost_view:I = 0x7f0a0100
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/core/R$id.smali:223:.field public static final ghost_view_holder:I = 0x7f0a0101
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:1:.class public final Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:7:.field private final domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:42:    iput-object p1, p0, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:46:    iput-object p2, p0, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:50:    iput p3, p0, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:57:.method public static synthetic copy$default(Lcom/dcs/bean/DomainInfo;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Object;)Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:64:    iget-object p1, p0, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:71:    iget-object p2, p0, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:78:    iget p3, p0, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:81:    invoke-virtual {p0, p1, p2, p3}, Lcom/dcs/bean/DomainInfo;->copy(Ljava/lang/String;Ljava/lang/String;I)Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:93:    iget-object v0, p0, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:101:    iget-object v0, p0, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:109:    iget v0, p0, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:114:.method public final copy(Ljava/lang/String;Ljava/lang/String;I)Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:125:    new-instance v0, Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:127:    invoke-direct {v0, p1, p2, p3}, Lcom/dcs/bean/DomainInfo;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:142:    instance-of v1, p1, Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:151:    check-cast p1, Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:153:    iget-object v1, p0, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:155:    iget-object v3, p1, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:166:    iget-object v1, p0, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:168:    iget-object v3, p1, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:179:    iget v1, p0, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:181:    iget p1, p1, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:195:    iget v0, p0, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:206:    iget-object v0, p0, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:217:    iget-object v0, p0, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:227:    iget-object v0, p0, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:235:    iget-object v1, p0, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:245:    iget v1, p0, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:259:    const-string v1, "DomainInfo(first="
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:263:    iget-object v1, p0, Lcom/dcs/bean/DomainInfo;->first:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:271:    iget-object v1, p0, Lcom/dcs/bean/DomainInfo;->second:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:275:    const-string v1, ", domainType="
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/DomainInfo.smali:279:    iget v1, p0, Lcom/dcs/bean/DomainInfo;->domainType:I
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:1:.class public final Lcom/dcs/bean/URLInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:7:.field private host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:17:    const-string v0, "host_alias"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:40:    iput-object p1, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:44:    iput-object p2, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:51:.method public static synthetic copy$default(Lcom/dcs/bean/URLInfo;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/dcs/bean/URLInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:58:    iget-object p1, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:65:    iget-object p2, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:68:    invoke-virtual {p0, p1, p2}, Lcom/dcs/bean/URLInfo;->copy(Ljava/lang/String;Ljava/lang/String;)Lcom/dcs/bean/URLInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:80:    iget-object v0, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:88:    iget-object v0, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:93:.method public final copy(Ljava/lang/String;Ljava/lang/String;)Lcom/dcs/bean/URLInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:96:    const-string v0, "host_alias"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:104:    new-instance v0, Lcom/dcs/bean/URLInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:106:    invoke-direct {v0, p1, p2}, Lcom/dcs/bean/URLInfo;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:121:    instance-of v1, p1, Lcom/dcs/bean/URLInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:130:    check-cast p1, Lcom/dcs/bean/URLInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:132:    iget-object v1, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:134:    iget-object v3, p1, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:145:    iget-object v1, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:147:    iget-object p1, p1, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:165:    iget-object v0, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:176:    iget-object v0, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:186:    iget-object v0, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:194:    iget-object v1, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:218:    iput-object p1, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:238:    iput-object p1, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:252:    const-string v1, "URLInfo(host_alias="
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:256:    iget-object v1, p0, Lcom/dcs/bean/URLInfo;->host_alias:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/URLInfo.smali:264:    iget-object v1, p0, Lcom/dcs/bean/URLInfo;->url:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/Business.smali:13:            "Lcom/dcs/bean/URLInfo;",
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/Business.smali:28:            "Lcom/dcs/bean/URLInfo;",
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/Business.smali:108:            "Lcom/dcs/bean/URLInfo;",
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/Business.smali:125:            "Lcom/dcs/bean/URLInfo;",
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/Business.smali:213:            "Lcom/dcs/bean/URLInfo;",
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/dcs/bean/Business.smali:274:            "Lcom/dcs/bean/URLInfo;",
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/interactive/brasiliptv/ui/activity/WelcomeActivity.smali:1472:    invoke-virtual {v2, v1, v0, v3}, Lv2/a;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/dcs/bean/DomainInfo;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/interactive/brasiliptv/ui/activity/WelcomeActivity.smali:1737:    invoke-static/range {v4 .. v17}, Lz0/h;->A(Lz0/h;ZLcom/dcs/bean/DomainInfo;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)V
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali/com/interactive/brasiliptv/ui/activity/WelcomeActivity.smali:2197:    const-string v2, "Init domain"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:31:.field private host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:152:    const-string v0, "host"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:237:    iput-object v1, v0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:731:    iget-object v15, v0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:891:    iget-object v0, p0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:1123:    const-string v0, "host"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:1387:    iget-object v1, p0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:1389:    iget-object v3, p1, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:1578:    iget-object v0, p0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:1823:    iget-object v1, p0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:2117:    iput-object p1, p0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:2399:    const-string v1, ", host="
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/SnTokenBean.smali:2403:    iget-object v1, p0, Lcom/request/bean/SnTokenBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:27:.field private host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:166:    const-string v0, "host"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:255:    iput-object v1, v0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:762:    iget-object v15, v0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:922:    iget-object v0, p0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:1160:    const-string v0, "host"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:1444:    iget-object v1, p0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:1446:    iget-object v3, p1, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:1600:    iget-object v0, p0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:1898:    iget-object v1, p0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:2142:    iput-object p1, p0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:2500:    const-string v1, ", host="
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/bean/PreInstallAuthBean.smali:2504:    iget-object v1, p0, Lcom/request/bean/PreInstallAuthBean;->host:Ljava/lang/String;
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/R$id.smali:221:.field public static final ghost_view:I = 0x7f0a0100
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/R$id.smali:223:.field public static final ghost_view_holder:I = 0x7f0a0101
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/request/R$string.smali:101:.field public static final domain_is_security:I = 0x7f1201f8
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/interactive/brasiliptv/R$id.smali:519:.field public static final ghost_view:I = 0x7f0a0100
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/interactive/brasiliptv/R$id.smali:521:.field public static final ghost_view_holder:I = 0x7f0a0101
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/interactive/brasiliptv/ui/activity/WelcomeActivity$b.smali:48:    const-string v0, "domain"
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/smali_classes2/com/interactive/brasiliptv/R$string.smali:1015:.field public static final domain_is_security:I = 0x7f1201f8
