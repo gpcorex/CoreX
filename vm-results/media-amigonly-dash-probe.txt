@@ -23,3 +23,24 @@ mpd=no
 sample=
 
 NOTE=read-only reachability/manifest inspection; no credentials, tokens, or license requests
+http=000
+content_type=
+bytes=0
+mpd=no
+sample=
+
+URL=https://cdn-py.cvattv.com.ar/live/c4eds/UNICANAL_C4/SA_Live_dash_enc/UNICANAL_C4.mpd
+http=000
+content_type=
+bytes=0
+mpd=no
+sample=
+
+URL=https://cdn-py.cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc/TELEFUTURO_C4.mpd
+http=000
+content_type=
+bytes=0
+mpd=no
+sample=
+
+NOTE=read-only reachability/manifest inspection; no credentials, tokens, or license requests
