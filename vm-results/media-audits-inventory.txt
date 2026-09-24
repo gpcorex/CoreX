@@ -1,0 +1,32 @@
+MEDIA_AUDITS_INVENTORY
+timestamp=2026-09-24T17:50:06+00:00
+
+PROJECT=/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef
+--- top-level files ---
+canon/analysis.json|569044 bytes
+project.json|580 bytes
+--- audit/result dirs ---
+work/android-audit
+
+PROJECT=/home/ubuntu/Central/projects/20260923-131847-xuper-20tv-204-99-2-20-para-20tv-20gratis-20clon-8adb13
+--- top-level files ---
+canon/analysis.json|497186 bytes
+project.json|708 bytes
+--- audit/result dirs ---
+work/android-audit
+
+PROJECT=/home/ubuntu/Central/projects/20260923-140402-xuper-amigonly-2-0-apk-acc315
+--- top-level files ---
+canon/analysis.json|482030 bytes
+project.json|560 bytes
+--- audit/result dirs ---
+work/android-audit
+
+PROJECT=/home/ubuntu/Central/projects/20260923-092511-crunchyroll-20v3-112-2-20-premium-apk-ecb4b7
+--- top-level files ---
+canon/analysis.json|90887 bytes
+project.json|637 bytes
+--- audit/result dirs ---
+work/android-audit
+
+NOTE=inventory only; no files modified
