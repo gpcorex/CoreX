@@ -1,0 +1,6 @@
+MEDIA_API_PUBLIC_V1_READY
+local_health={"ok": true, "video_items": 0, "live_channels": 0}
+public_health={"ok": true, "video_items": 0, "live_channels": 0}
+public_base=https://cen-tral.duckdns.org/media-api
+caddyfile=/etc/caddy/Caddyfile
+backup=/etc/caddy/Caddyfile.media-api-backup
