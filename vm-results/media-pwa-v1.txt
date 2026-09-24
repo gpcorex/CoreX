@@ -1,0 +1,7 @@
+MEDIA_PWA_V1_READY
+service=active
+local_marker=Centro Multimedia
+public_http=200
+public_marker=Centro Multimedia
+url=https://cen-tral.duckdns.org/multimedia/
+path=/home/ubuntu/Central/media_center/pwa
