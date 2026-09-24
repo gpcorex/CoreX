@@ -1,0 +1,8 @@
+MEDIA_CATALOG_SERVICE_V1_READY
+service_status=active
+listen=127.0.0.1:8092
+health={"ok": true, "video_items": 0, "live_channels": 0}
+sample_items={"items": [], "count": 0}
+sample_live={"channels": [], "count": 0}
+service=/home/ubuntu/Central/media_center/video/catalog_service.py
+unit=/etc/systemd/system/media-catalog.service
