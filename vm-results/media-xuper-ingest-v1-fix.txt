@@ -1,0 +1,11 @@
+MEDIA_XUPER_INGEST_V1_FIX_READY
+vod_test={"ok": true, "source": "/home/ubuntu/Central/media_center/inbox/xuper/vod-fixture.json", "classified_as": ["vod"], "results": [{"kind": "vod", "result": {"provider": "xuper", "found": 2, "inserted": 2, "updated": 0, "images": 3, "tags": 4, "episodes": 2, "db": "/tmp/xuper-ingest-v1-fix-test.db"}}], "archived": null}
+live_test={"ok": true, "source": "/home/ubuntu/Central/media_center/inbox/xuper/live-fixture.json", "classified_as": ["live"], "results": [{"kind": "live", "result": {"provider": "xuper", "channels": 2, "live_sources": 3, "epg_programs": 3, "db": "/tmp/xuper-ingest-v1-fix-test.db"}}], "archived": null}
+video_item_count=2
+episode_count=2
+live_channel_count=2
+epg_program_count=3
+foreign_key_check=OK
+inbox=/home/ubuntu/Central/media_center/inbox/xuper
+archive=/home/ubuntu/Central/media_center/archive/xuper
+ingest=/home/ubuntu/Central/media_center/video/adapters/xuper/ingest_xuper.py
