@@ -1,0 +1,209 @@
+MEDIA_PWA_PLAYBACK_SOURCE_SNAPSHOT
+timestamp=2026-09-24T17:16:13+00:00
+
+=== catalog_service.py ===
+#!/usr/bin/env python3
+import json
+import sqlite3
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import urlparse, parse_qs
+
+DB = "/home/ubuntu/Central/media_center/video/catalog.db"
+HOST = "127.0.0.1"
+PORT = 8092
+
+def db():
+    conn = sqlite3.connect(DB)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys=ON")
+    return conn
+
+def rows(sql, params=()):
+    conn = db()
+    try:
+        return [dict(r) for r in conn.execute(sql, params).fetchall()]
+    finally:
+        conn.close()
+
+class Handler(BaseHTTPRequestHandler):
+    server_version = "MediaCatalog/1.0"
+
+    def send_json(self, status, payload):
+        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def log_message(self, fmt, *args):
+        return
+
+    def do_GET(self):
+        u = urlparse(self.path)
+        q = parse_qs(u.query)
+
+        if u.path == "/health":
+            try:
+                conn = db()
+                count = conn.execute("SELECT count(*) FROM video_item").fetchone()[0]
+                live = conn.execute("SELECT count(*) FROM live_channel").fetchone()[0]
+                conn.close()
+                self.send_json(200, {"ok": True, "video_items": count, "live_channels": live})
+            except Exception as e:
+                self.send_json(500, {"ok": False, "error": str(e)})
+            return
+
+        if u.path == "/video/items":
+            limit = min(max(int(q.get("limit", ["50"])[0]), 1), 200)
+            kind = q.get("kind", [None])[0]
+            if kind:
+                data = rows(
+                    """SELECT v.*, 
+                              (SELECT url FROM image i WHERE i.video_item_id=v.id ORDER BY priority DESC,id LIMIT 1) AS poster_url
+                       FROM video_item v
+                       WHERE v.kind=?
+                       ORDER BY v.updated_at DESC
+                       LIMIT ?""",
+                    (kind, limit)
+                )
+            else:
+                data = rows(
+                    """SELECT v.*, 
+                              (SELECT url FROM image i WHERE i.video_item_id=v.id ORDER BY priority DESC,id LIMIT 1) AS poster_url
+                       FROM video_item v
+                       ORDER BY v.updated_at DESC
+                       LIMIT ?""",
+                    (limit,)
+                )
+            self.send_json(200, {"items": data, "count": len(data)})
+            return
+
+        if u.path == "/video/search":
+            term = q.get("q", [""])[0].strip()
+            limit = min(max(int(q.get("limit", ["50"])[0]), 1), 200)
+            if not term:
+                self.send_json(200, {"items": [], "count": 0})
+                return
+            like = "%" + term + "%"
+            data = rows(
+                """SELECT v.*,
+                          (SELECT url FROM image i WHERE i.video_item_id=v.id ORDER BY priority DESC,id LIMIT 1) AS poster_url
+                   FROM video_item v
+                   WHERE v.title LIKE ? COLLATE NOCASE
+                      OR COALESCE(v.original_title,'') LIKE ? COLLATE NOCASE
+                      OR COALESCE(v.description,'') LIKE ? COLLATE NOCASE
+                   ORDER BY v.title
+                   LIMIT ?""",
+                (like, like, like, limit)
+            )
+            self.send_json(200, {"items": data, "count": len(data), "query": term})
+            return
+
+        if u.path.startswith("/video/item/"):
+            item_id = u.path.split("/video/item/", 1)[1]
+            base = rows("SELECT * FROM video_item WHERE id=?", (item_id,))
+            if not base:
+                self.send_json(404, {"error": "not_found"})
+                return
+            payload = base[0]
+            payload["images"] = rows("SELECT image_type,url,language,provider,priority FROM image WHERE video_item_id=? ORDER BY priority DESC,id", (item_id,))
+            payload["tags"] = rows("""SELECT t.name FROM tag t JOIN video_item_tag vit ON vit.tag_id=t.id WHERE vit.video_item_id=? ORDER BY t.name""", (item_id,))
+            payload["seasons"] = rows("SELECT id,season_number,title,description FROM season WHERE video_item_id=? ORDER BY season_number", (item_id,))
+            for s in payload["seasons"]:
+                s["episodes"] = rows("SELECT id,external_program_id,episode_number,title,description,duration_seconds,quality_hint,viewpoint FROM episode WHERE season_id=? ORDER BY episode_number", (s["id"],))
+            self.send_json(200, payload)
+            return
+
+        if u.path == "/live/channels":
+            data = rows("SELECT * FROM live_channel ORDER BY COALESCE(channel_number,999999), name")
+            self.send_json(200, {"channels": data, "count": len(data)})
+            return
+
+        if u.path.startswith("/live/channel/") and u.path.endswith("/epg"):
+            channel_id = u.path[len("/live/channel/"):-len("/epg")].rstrip("/")
+            data = rows("SELECT * FROM epg_program WHERE channel_id=? ORDER BY starts_at", (channel_id,))
+            self.send_json(200, {"channel_id": channel_id, "programs": data, "count": len(data)})
+            return
+
+        self.send_json(404, {"error": "not_found"})
+
+def main():
+    ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
+
+if __name__ == "__main__":
+    main()
+
+=== pwa index relevant ===
+}
+function fill(id,arr,label){document.getElementById(id).innerHTML=arr.map(x=>card(x,label)).join("")}
+
+function render(){
+ const movies=allVideos.filter(x=>x.kind==="movie");
+ const series=allVideos.filter(x=>x.kind==="series");
+ const anime=allVideos.filter(x=>x.kind==="anime");
+
+ const dm=movies.length?movies:demoMovies;
+ const ds=(series.length||anime.length)?series:demoSeries.filter(x=>x.kind==="series");
+ const da=anime.length?anime:demoSeries.filter(x=>x.kind==="anime");
+ const dl=allLive.length?allLive:demoLive;
+
+ fill("homeMovies",dm.slice(0,12),movies.length?"":"demo");
+ fill("homeSeries",ds.slice(0,12),(series.length||anime.length)?"":"demo");
+ fill("homeAnime",da.slice(0,12),anime.length?"":"demo");
+ fill("homeLive",dl.slice(0,12),allLive.length?"en vivo":"demo");
+
+ fill("moviesGrid",dm,movies.length?"":"demo");
+ fill("seriesGrid",[...ds,...da],(series.length||anime.length)?"":"demo");
+ fill("liveGrid",dl,allLive.length?"en vivo":"demo");
+
+ document.getElementById("movieCount").textContent=movies.length+" títulos";
+ document.getElementById("seriesCount").textContent=series.length+" títulos";
+ document.getElementById("animeCount").textContent=anime.length+" títulos";
+ document.getElementById("liveCount").textContent=allLive.length+" canales";
+}
+
+function setView(id){
+ document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));
+ document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===id));
+ const names={home:"Inicio",movies:"Películas",series:"Series",searchView:"Buscar",liveView:"TV en vivo"};
+ document.getElementById("tvTitle").textContent=names[id]||"Centro Multimedia";
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
+
+function doSearch(q){
+ q=q.trim().toLowerCase();
+ setView("searchView");
+ if(!q){
+   document.getElementById("searchGrid").innerHTML='<div class="empty">Escribí algo para buscar.</div>';
+   return;
+ }
+ const pool=allVideos.length?allVideos:[...demoMovies,...demoSeries];
+ const found=pool.filter(x=>(x.title||x.name||"").toLowerCase().includes(q));
+ document.getElementById("searchGrid").innerHTML=found.length?found.map(x=>card(x,allVideos.length?"":"demo")).join(""):'<div class="empty">No encontramos resultados.</div>';
+}
+["searchTop","searchTv"].forEach(id=>{
+ document.getElementById(id).addEventListener("keydown",e=>{if(e.key==="Enter") doSearch(e.target.value)});
+});
+
+async function load(){
+ try{
+   const [h,v,l]=await Promise.all([
+     fetch(API+"/health").then(r=>r.json()),
+     fetch(API+"/video/items?limit=100").then(r=>r.json()),
+     fetch(API+"/live/channels").then(r=>r.json())
+   ]);
+   allVideos=v.items||[]; allLive=l.channels||[];
+   document.getElementById("dot").classList.add("ok");
+   document.getElementById("statusText").textContent="Conectado · "+h.video_items+" videos · "+h.live_channels+" canales";
+ }catch(e){
+   document.getElementById("statusText").textContent="Modo diseño · API no disponible";
+ }
+ render();
+}
+load();
+if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body>
+</html>
