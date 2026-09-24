@@ -1,0 +1,13 @@
+MEDIA_XUPER_CACHE_SCAN
+timestamp=2026-09-24T17:03:40+00:00
+
+PROJECT=/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef
+
+PROJECT=/home/ubuntu/Central/projects/20260923-131847-xuper-20tv-204-99-2-20-para-20tv-20gratis-20clon-8adb13
+
+PROJECT=/home/ubuntu/Central/projects/20260923-140402-xuper-amigonly-2-0-apk-acc315
+
+candidate_files=0
+sqlite_files=0
+likely_media_databases=0
+NOTE=read-only scan; nothing imported
