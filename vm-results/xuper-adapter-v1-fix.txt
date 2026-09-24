@@ -1,0 +1,9 @@
+XUPER_ADAPTER_V1_FIX_READY
+first_import={"provider": "xuper", "found": 2, "inserted": 2, "updated": 0, "db": "/tmp/xuper-adapter-test.db"}
+second_import={"provider": "xuper", "found": 2, "inserted": 0, "updated": 2, "db": "/tmp/xuper-adapter-test.db"}
+video_item_count=2
+xuper_ref_count=2
+foreign_key_check=OK
+ids:
+xuper:fixture-movie-001|Película de prueba
+xuper:fixture-series-001|Serie de prueba
