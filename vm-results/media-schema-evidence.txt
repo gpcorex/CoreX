@@ -1,0 +1,155 @@
+MEDIA_SCHEMA_EVIDENCE_V1
+generated_at=2026-09-24T13:03:16+00:00
+
+=== smali/com/request/result/AssetList.smali ===
+.field private actorDisplay:Ljava/lang/String;
+.field private alias:Ljava/lang/String;
+.field private contentId:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
+.field private description:Ljava/lang/String;
+.field private director:Ljava/lang/String;
+.field private duration:Ljava/lang/String;
+.field private transient mIconPosterUrl:Ljava/lang/String;
+.field private transient mScoreStr:Landroid/text/Spanned;
+.field private transient mShowName:Ljava/lang/String;
+.field private transient mUpdateCountStr:Landroid/text/Spanned;
+.field private moreAudio:I
+.field private moreSubtitle:I
+.field private name:Ljava/lang/String;
+.field private posterList:Ljava/util/List;
+.field private programType:Ljava/lang/String;
+.field private score:F
+.field private shelveTime:Ljava/lang/String;
+.field private tags:Ljava/lang/String;
+.field private type:Ljava/lang/String;
+.field private updateCount:I
+.field private updateTime:Ljava/lang/String;
+.field private viewpoint:Ljava/lang/String;
+.field private volumnCount:I
+
+=== smali/com/request/result/AssetData.smali ===
+.field private actorDisplay:Ljava/lang/String;
+.field private alias:Ljava/lang/String;
+.field private awardsUrl:Ljava/lang/String;
+.field private contentId:Ljava/lang/String;
+.field private contentTag:Ljava/lang/String;
+.field private contentTagUrl:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
+.field private description:Ljava/lang/String;
+.field private descriptionCompt:Ljava/lang/String;
+.field private director:Ljava/lang/String;
+.field private duration:Ljava/lang/String;
+.field private favoriteId:I
+.field private hasFavorite:Ljava/lang/String;
+.field private hasPositive:Ljava/lang/String;
+.field private hasSubscribe:Ljava/lang/String;
+.field private hasTidbits:Ljava/lang/String;
+.field private hasTrailer:Ljava/lang/String;
+.field private keyWords:Ljava/lang/String;
+.field private language:Ljava/lang/String;
+.field private loveCount:Ljava/lang/String;
+.field private moreAudio:I
+.field private moreSubtitle:I
+.field private name:Ljava/lang/String;
+.field private originalCountry:Ljava/lang/String;
+.field private playBlues:I
+.field private posterList:Ljava/util/List;
+.field private programType:Ljava/lang/String;
+.field private releaseTime:Ljava/lang/String;
+.field private restricted:Ljava/lang/String;
+.field private sameSeasonSeriesList:Ljava/util/List;
+.field private score:F
+.field private simpleProgramList:Ljava/util/List;
+.field private subscribeId:I
+.field private subscribeNum:Ljava/lang/Integer;
+.field private tags:Ljava/lang/String;
+.field private updateCount:I
+.field private viewPoint:Ljava/lang/String;
+.field private volumnCount:I
+
+=== smali/com/request/result/TotalMovieListItem.smali ===
+.field private movieList:Ljava/util/List;
+.field private quality:Ljava/lang/String;
+
+=== smali/com/request/result/SameSeasonSeriesBean.smali ===
+.field private final contentId:Ljava/lang/String;
+.field private final seasonNumber:I
+
+=== smali/com/request/result/SeriesSearchResult.smali ===
+.field private seriesList:Ljava/util/List;
+.field private totalSize:I
+
+=== smali/com/request/result/ProgramSearchResult.smali ===
+.field private programList:Ljava/util/List;
+.field private totalSize:I
+
+=== smali/com/request/result/ResourceSearchResult.smali ===
+.field private resourceList:Ljava/util/List;
+.field private totalSize:I
+
+=== smali/com/request/result/StartPlayVODResult.smali ===
+.field private data:Lcom/request/result/StartPlayVODResultData;
+.field private errorMessage:Ljava/lang/String;
+.field private returnCode:Ljava/lang/String;
+
+=== smali/com/request/result/StartPlayVODResultData.smali ===
+.field private episodeList:Ljava/util/List;
+.field private name:Ljava/lang/String;
+.field private seriesFlag:Ljava/lang/String;
+.field private vodFreeCount:I
+.field private vodFreeFlag:Ljava/lang/String;
+
+=== smali/com/request/result/StartPlayVODResultDataItem.smali ===
+.field private episodeNumber:I
+.field private programContentId:Ljava/lang/String;
+.field private subtitleList:Ljava/util/List;
+.field private totalMovieList:Ljava/util/List;
+
+=== smali/com/request/result/GetPlayUrlResult.smali ===
+.field private cdn_type:Ljava/lang/String;
+.field private code_desc:Ljava/lang/String;
+.field private mark:Ljava/lang/String;
+.field private redirect_url:Ljava/lang/String;
+.field private redirect_url_ipv6:Ljava/lang/String;
+.field private result_code:I
+.field private rst_flag:I
+.field private rst_port:I
+
+=== smali/com/request/result/Channel.smali ===
+.field private alias:Ljava/lang/String;
+.field private channelCode:Ljava/lang/String;
+.field private channelNumber:I
+.field private fixedChannelNumber:Ljava/lang/String;
+.field private isFav:Z
+.field private isLock:Z
+.field private keyWords:Ljava/lang/String;
+.field private liveAddressList:Ljava/util/List;
+.field private mosaicChanneArray:Ljava/util/List;
+.field private mosaicChannelList:Ljava/lang/String;
+.field private name:Ljava/lang/String;
+.field private posterList:Ljava/util/List;
+.field private posterUrl:Ljava/lang/String;
+.field private quality:Ljava/lang/String;
+.field private restricted:Ljava/lang/String;
+.field private showChannelName:Ljava/lang/String;
+.field private showIconUrl:Ljava/lang/String;
+.field private showPosterUrl:Ljava/lang/String;
+.field private supportBusiness:Ljava/lang/String;
+.field private supportVideoType:Ljava/lang/String;
+.field private tags:Ljava/lang/String;
+
+=== smali/com/request/result/EpgData.smali ===
+.field private alias:Ljava/lang/String;
+.field private channelCode:Ljava/lang/String;
+.field private channelNumber:Ljava/lang/String;
+.field private keyWords:Ljava/lang/String;
+.field private name:Ljava/lang/String;
+.field private programList:Ljava/util/List;
+.field private restricted:Ljava/lang/String;
+.field private supportBusiness:Ljava/lang/String;
+.field private tags:Ljava/lang/String;
+
+=== smali/com/request/result/StartPlayLiveResultData.smali ===
+.field private liveAddressList:Ljava/util/List;
+.field private name:Ljava/lang/String;
+
