@@ -1,0 +1,5 @@
+MEDIA_PWA_CLICK_FIX_READY
+timestamp=2026-09-24T17:36:28+00:00
+marker=219: return '<article class="card" data-title="'+esc(title.toLowerCase())+'" data-item-id="'+esc(x.id||"")+'"><div class="poster">'+img+'<span class="badge">'+esc(label||x.kind||x.quality||"")+'</span></div><div class="meta"><strong>'+esc(title)+'</strong><span>'+esc(x.kind||x.quality||"")+'</span></div></article>';
+public_http=200
+url=https://cen-tral.duckdns.org/multimedia/
