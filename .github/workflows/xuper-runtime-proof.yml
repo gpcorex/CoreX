@@ -2,6 +2,11 @@ name: Xuper Runtime Proof
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/xuper-runtime-trigger.txt"
+      - ".github/workflows/xuper-runtime-proof.yml"
 
 jobs:
   run-xuper:
