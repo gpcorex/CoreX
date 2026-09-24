@@ -1,0 +1,17 @@
+XUPER_ACTIONS_STAGE2
+timestamp=2026-09-24T19:43:02+00:00
+apk=/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/source/AU-20260923-104449-e62e2c-XuperTv-N0F4C3-v6.73.0.apk
+-rw-rw-r--+ 1 ubuntu ubuntu 34M Sep 23 10:45 /home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/source/AU-20260923-104449-e62e2c-XuperTv-N0F4C3-v6.73.0.apk
+d676e290d4af876aaa10ba93684ea2d4421a3d28756679c22820335ae9267685  /home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/source/AU-20260923-104449-e62e2c-XuperTv-N0F4C3-v6.73.0.apk
+
+=== ABI ===
+abis=arm64-v8a,armeabi-v7a
+
+=== REMOTE ===
+origin	https://github.com/gpcorex/CoreX.git (fetch)
+origin	https://github.com/gpcorex/CoreX.git (push)
+
+=== PUSHED ===
+f1484e95f0e917ee0e06c4921866a0a7c70ed44f
+branch=xuper-runtime-input
+note=workflow must be dispatched from GitHub after branch push
