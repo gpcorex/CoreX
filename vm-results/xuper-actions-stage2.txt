@@ -15,3 +15,8 @@ origin	https://github.com/gpcorex/CoreX.git (push)
 f1484e95f0e917ee0e06c4921866a0a7c70ed44f
 branch=xuper-runtime-input
 note=workflow must be dispatched from GitHub after branch push
+
+=== PUSHED ===
+1cefd0011be97d4f7c944a0e80809385160d0602
+branch=xuper-runtime-input
+note=workflow must be dispatched from GitHub after branch push
