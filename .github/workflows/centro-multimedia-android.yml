@@ -26,10 +26,25 @@ jobs:
       - name: Android SDK packages
         shell: bash
         run: |
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          sdkmanager --list_installed | grep -E 'platforms;android-35|build-tools;35.0.0'
+          set -euo pipefail
+          SDKROOT="${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}"
+          SDKMANAGER=""
+          for candidate in             "$SDKROOT/cmdline-tools/latest/bin/sdkmanager"             "$SDKROOT/cmdline-tools/16.0/bin/sdkmanager"             "$SDKROOT/cmdline-tools/12.0/bin/sdkmanager"
+          do
+            if [ -x "$candidate" ]; then
+              SDKMANAGER="$candidate"
+              break
+            fi
+          done
+          if [ -z "$SDKMANAGER" ]; then
+            echo "sdkmanager not found under $SDKROOT"
+            find "$SDKROOT" -maxdepth 5 -type f -name sdkmanager -print || true
+            exit 1
+          fi
+          echo "Using $SDKMANAGER"
+          yes | "$SDKMANAGER" --licenses >/dev/null || true
+          "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+          "$SDKMANAGER" --list_installed | grep -E 'platforms;android-35|build-tools;35.0.0'
 
       - name: Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
