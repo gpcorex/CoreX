@@ -1,0 +1,6 @@
+sqlite3=missing
+schema_written=/home/ubuntu/Central/media_center/video/schema.sql
+schema=/home/ubuntu/Central/media_center/video/schema.sql
+mapping=/home/ubuntu/Central/media_center/video/xuper_mapping_v1.md
+architecture=/home/ubuntu/Central/media_center/ARCHITECTURE.md
+db=/home/ubuntu/Central/media_center/video/catalog.db
