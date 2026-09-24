@@ -1,0 +1,2690 @@
+XUPER_PLAYBACK_CHAIN_FINAL
+timestamp=2026-09-24T18:58:10+00:00
+root=/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded
+
+FILE=smali_classes2/com/live/db/LiveAddressList.smali
+00280: 
+00281: .method public final setPlayUrl(Ljava/lang/String;)V
+00282:     .locals 0
+00283: 
+00284:     .line 1
+00285:     iput-object p1, p0, Lcom/live/db/LiveAddressList;->playUrl:Ljava/lang/String;
+00286: 
+00287:     .line 2
+00288:     .line 3
+00289:     return-void
+00290: .end method
+00291: 
+00292: .method public final setPlayUrlList(Ljava/util/List;)V
+00293:     .locals 0
+00294:     .annotation system Ldalvik/annotation/Signature;
+00295:         value = {
+00296:             "(",
+00297:             "Ljava/util/List<",
+00298:             "Ljava/lang/String;",
+00299:             ">;)V"
+00300:         }
+00301:     .end annotation
+00302: 
+00303:     .line 1
+00304:     iput-object p1, p0, Lcom/live/db/LiveAddressList;->playUrlList:Ljava/util/List;
+HITS_SHOWN=4
+
+===== getPlayUrl =====
+
+FILE=smali/com/request/result/PcdnMediaInfoResult.smali
+00761: 
+00762: .method public final getName()Ljava/lang/String;
+00763:     .locals 1
+00764: 
+00765:     .line 1
+00766:     iget-object v0, p0, Lcom/request/result/PcdnMediaInfoResult;->name:Ljava/lang/String;
+00767: 
+00768:     .line 2
+00769:     .line 3
+00770:     return-object v0
+00771: .end method
+00772: 
+00773: .method public final getPlayUrl()Ljava/lang/String;
+00774:     .locals 1
+00775: 
+00776:     .line 1
+00777:     iget-object v0, p0, Lcom/request/result/PcdnMediaInfoResult;->playUrl:Ljava/lang/String;
+00778: 
+00779:     .line 2
+00780:     .line 3
+00781:     return-object v0
+00782: .end method
+00783: 
+00784: .method public final getProtocol()Ljava/lang/String;
+00785:     .locals 1
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00173: 
+00174: .method public getPlayType()Lcc/h0$a;
+00175:     .locals 1
+00176: 
+00177:     .line 1
+00178:     iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00179: 
+00180:     .line 2
+00181:     .line 3
+00182:     return-object v0
+00183: .end method
+00184: 
+00185: .method public getPlayUrl()Ljava/lang/String;
+00186:     .locals 1
+00187: 
+00188:     .line 1
+00189:     iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->playUrl:Ljava/lang/String;
+00190: 
+00191:     .line 2
+00192:     .line 3
+00193:     return-object v0
+00194: .end method
+00195: 
+00196: .method public getProgramIndex()I
+00197:     .locals 1
+
+FILE=smali_classes2/com/live/db/LiveAddressList.smali
+00151: 
+00152: .method public final getPlayCode()Ljava/lang/String;
+00153:     .locals 1
+00154: 
+00155:     .line 1
+00156:     iget-object v0, p0, Lcom/live/db/LiveAddressList;->playCode:Ljava/lang/String;
+00157: 
+00158:     .line 2
+00159:     .line 3
+00160:     return-object v0
+00161: .end method
+00162: 
+00163: .method public final getPlayUrl()Ljava/lang/String;
+00164:     .locals 1
+00165: 
+00166:     .line 1
+00167:     iget-object v0, p0, Lcom/live/db/LiveAddressList;->playUrl:Ljava/lang/String;
+00168: 
+00169:     .line 2
+00170:     .line 3
+00171:     return-object v0
+00172: .end method
+00173: 
+00174: .method public final getPlayUrlList()Ljava/util/List;
+00175:     .locals 1
+
+FILE=smali_classes2/com/live/db/LiveAddressList.smali
+00162: 
+00163: .method public final getPlayUrl()Ljava/lang/String;
+00164:     .locals 1
+00165: 
+00166:     .line 1
+00167:     iget-object v0, p0, Lcom/live/db/LiveAddressList;->playUrl:Ljava/lang/String;
+00168: 
+00169:     .line 2
+00170:     .line 3
+00171:     return-object v0
+00172: .end method
+00173: 
+00174: .method public final getPlayUrlList()Ljava/util/List;
+00175:     .locals 1
+00176:     .annotation system Ldalvik/annotation/Signature;
+00177:         value = {
+00178:             "()",
+00179:             "Ljava/util/List<",
+00180:             "Ljava/lang/String;",
+00181:             ">;"
+00182:         }
+00183:     .end annotation
+00184: 
+00185:     .line 1
+00186:     iget-object v0, p0, Lcom/live/db/LiveAddressList;->playUrlList:Ljava/util/List;
+HITS_SHOWN=4
+
+===== setAddressLicense =====
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00261: 
+00262: .method public isUrlExpired()Z
+00263:     .locals 1
+00264: 
+00265:     .line 1
+00266:     iget-boolean v0, p0, Lcom/module/bean/PipVideoInfo;->isUrlExpired:Z
+00267: 
+00268:     .line 2
+00269:     .line 3
+00270:     return v0
+00271: .end method
+00272: 
+00273: .method public setAddressLicense(Ljava/lang/String;)V
+00274:     .locals 0
+00275: 
+00276:     .line 1
+00277:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00278: 
+00279:     .line 2
+00280:     .line 3
+00281:     return-void
+00282: .end method
+00283: 
+00284: .method public setChannelCode(Ljava/lang/String;)V
+00285:     .locals 0
+HITS_SHOWN=1
+
+===== getAddressLicense =====
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00096:     move-result p1
+00097: 
+00098:     iput-boolean p1, p0, Lcom/module/bean/PipVideoInfo;->isUrlExpired:Z
+00099: 
+00100:     .line 15
+00101:     iput p14, p0, Lcom/module/bean/PipVideoInfo;->programIndex:I
+00102: 
+00103:     return-void
+00104: .end method
+00105: 
+00106: 
+00107: # virtual methods
+00108: .method public getAddressLicense()Ljava/lang/String;
+00109:     .locals 1
+00110: 
+00111:     .line 1
+00112:     iget-object v0, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00113: 
+00114:     .line 2
+00115:     .line 3
+00116:     return-object v0
+00117: .end method
+00118: 
+00119: .method public getChannelCode()Ljava/lang/String;
+00120:     .locals 1
+HITS_SHOWN=1
+
+===== DefinitionBean =====
+
+FILE=smali_classes3/rd/a$d.smali
+00072:     const-string v3, "onClickSwitch"
+00073: 
+00074:     move-object/from16 v9, p9
+00075: 
+00076:     invoke-static {v9, v3}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00077: 
+00078:     .line 1
+00079:     new-instance v3, Ltd/h;
+00080: 
+00081:     invoke-direct {v3}, Ltd/h;-><init>()V
+00082: 
+00083:     .line 2
+00084:     instance-of v4, v2, Lcom/module/bean/DefinitionBean;
+00085: 
+00086:     const/4 v10, 0x0
+00087: 
+00088:     if-eqz v4, :cond_0
+00089: 
+00090:     check-cast v2, Lcom/module/bean/DefinitionBean;
+00091: 
+00092:     goto :goto_0
+00093: 
+00094:     :cond_0
+00095:     move-object v2, v10
+00096: 
+
+FILE=smali_classes3/rd/a$d.smali
+00078:     .line 1
+00079:     new-instance v3, Ltd/h;
+00080: 
+00081:     invoke-direct {v3}, Ltd/h;-><init>()V
+00082: 
+00083:     .line 2
+00084:     instance-of v4, v2, Lcom/module/bean/DefinitionBean;
+00085: 
+00086:     const/4 v10, 0x0
+00087: 
+00088:     if-eqz v4, :cond_0
+00089: 
+00090:     check-cast v2, Lcom/module/bean/DefinitionBean;
+00091: 
+00092:     goto :goto_0
+00093: 
+00094:     :cond_0
+00095:     move-object v2, v10
+00096: 
+00097:     :goto_0
+00098:     invoke-virtual {v3, v2}, Ltd/h;->Z9(Lcom/module/bean/DefinitionBean;)V
+00099: 
+00100:     if-nez p4, :cond_1
+00101: 
+00102:     goto :goto_1
+
+FILE=smali_classes3/rd/a$d.smali
+00086:     const/4 v10, 0x0
+00087: 
+00088:     if-eqz v4, :cond_0
+00089: 
+00090:     check-cast v2, Lcom/module/bean/DefinitionBean;
+00091: 
+00092:     goto :goto_0
+00093: 
+00094:     :cond_0
+00095:     move-object v2, v10
+00096: 
+00097:     :goto_0
+00098:     invoke-virtual {v3, v2}, Ltd/h;->Z9(Lcom/module/bean/DefinitionBean;)V
+00099: 
+00100:     if-nez p4, :cond_1
+00101: 
+00102:     goto :goto_1
+00103: 
+00104:     :cond_1
+00105:     move-object v10, p4
+00106: 
+00107:     .line 3
+00108:     :goto_1
+00109:     invoke-virtual {v3, v10}, Ltd/h;->ca(Ljava/util/List;)V
+00110: 
+
+FILE=smali_classes3/ud/n1$y.smali
+00286:     .line 28
+00287:     return-void
+00288: .end method
+00289: 
+00290: .method public c(ILcom/module/bean/AudioInfoBean;)V
+00291:     .locals 6
+00292: 
+00293:     .line 1
+00294:     iget-object p2, p0, Lud/n1$y;->a:Lud/n1;
+00295: 
+00296:     .line 2
+00297:     .line 3
+00298:     invoke-virtual {p2}, Lud/n1;->Wb()Lcom/module/bean/DefinitionBean;
+00299: 
+00300:     .line 4
+00301:     .line 5
+00302:     .line 6
+00303:     move-result-object p2
+00304: 
+00305:     .line 7
+00306:     if-eqz p2, :cond_8
+00307: 
+00308:     .line 8
+00309:     .line 9
+00310:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSourceIndex()I
+
+FILE=smali_classes3/ud/n1$y.smali
+00298:     invoke-virtual {p2}, Lud/n1;->Wb()Lcom/module/bean/DefinitionBean;
+00299: 
+00300:     .line 4
+00301:     .line 5
+00302:     .line 6
+00303:     move-result-object p2
+00304: 
+00305:     .line 7
+00306:     if-eqz p2, :cond_8
+00307: 
+00308:     .line 8
+00309:     .line 9
+00310:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSourceIndex()I
+00311: 
+00312:     .line 10
+00313:     .line 11
+00314:     .line 12
+00315:     move-result v0
+00316: 
+00317:     .line 13
+00318:     const-string v1, "mVideoView"
+00319: 
+00320:     .line 14
+00321:     .line 15
+00322:     const/4 v2, 0x0
+
+FILE=smali_classes3/ud/n1$y.smali
+00320:     .line 14
+00321:     .line 15
+00322:     const/4 v2, 0x0
+00323: 
+00324:     .line 16
+00325:     const/4 v3, 0x0
+00326: 
+00327:     .line 17
+00328:     if-eq v0, p1, :cond_4
+00329: 
+00330:     .line 18
+00331:     .line 19
+00332:     invoke-virtual {p2, p1}, Lcom/module/bean/DefinitionBean;->setSelectSourceIndex(I)V
+00333: 
+00334:     .line 20
+00335:     .line 21
+00336:     .line 22
+00337:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+00338: 
+00339:     .line 23
+00340:     .line 24
+00341:     .line 25
+00342:     move-result-object p1
+00343: 
+00344:     .line 26
+
+FILE=smali_classes3/ud/n1$y.smali
+00325:     const/4 v3, 0x0
+00326: 
+00327:     .line 17
+00328:     if-eq v0, p1, :cond_4
+00329: 
+00330:     .line 18
+00331:     .line 19
+00332:     invoke-virtual {p2, p1}, Lcom/module/bean/DefinitionBean;->setSelectSourceIndex(I)V
+00333: 
+00334:     .line 20
+00335:     .line 21
+00336:     .line 22
+00337:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+00338: 
+00339:     .line 23
+00340:     .line 24
+00341:     .line 25
+00342:     move-result-object p1
+00343: 
+00344:     .line 26
+00345:     iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+00346: 
+00347:     .line 27
+00348:     .line 28
+00349:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+
+FILE=smali_classes3/ud/n1$y.smali
+00337:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+00338: 
+00339:     .line 23
+00340:     .line 24
+00341:     .line 25
+00342:     move-result-object p1
+00343: 
+00344:     .line 26
+00345:     iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+00346: 
+00347:     .line 27
+00348:     .line 28
+00349:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+00350: 
+00351:     .line 29
+00352:     .line 30
+00353:     .line 31
+00354:     move-result-object v4
+00355: 
+00356:     .line 32
+00357:     invoke-virtual {v4}, Lcom/module/bean/SourceBean;->getSelectAduio()Lcom/module/bean/AudioInfoBean;
+00358: 
+00359:     .line 33
+00360:     .line 34
+00361:     .line 35
+
+FILE=smali_classes3/ud/n1$y.smali
+00477:     move-result-object p1
+00478: 
+00479:     .line 92
+00480:     invoke-virtual {v3, p1}, Led/e;->setMedia(Ljava/lang/String;)V
+00481: 
+00482:     .line 93
+00483:     .line 94
+00484:     .line 95
+00485:     goto :goto_3
+00486: 
+00487:     .line 96
+00488:     :cond_4
+00489:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+00490: 
+00491:     .line 97
+00492:     .line 98
+00493:     .line 99
+00494:     move-result-object p1
+00495: 
+00496:     .line 100
+00497:     invoke-virtual {p1}, Lcom/module/bean/SourceBean;->getSelectAduio()Lcom/module/bean/AudioInfoBean;
+00498: 
+00499:     .line 101
+00500:     .line 102
+00501:     .line 103
+
+FILE=smali_classes3/ud/n1$y.smali
+00513:     .line 109
+00514:     move-result-object p1
+00515: 
+00516:     .line 110
+00517:     goto :goto_1
+00518: 
+00519:     .line 111
+00520:     :cond_5
+00521:     move-object p1, v3
+00522: 
+00523:     .line 112
+00524:     :goto_1
+00525:     invoke-virtual {p2}, Lcom/module/bean/DefinitionBean;->getSelectSource()Lcom/module/bean/SourceBean;
+00526: 
+00527:     .line 113
+00528:     .line 114
+00529:     .line 115
+00530:     move-result-object v0
+00531: 
+00532:     .line 116
+00533:     invoke-virtual {v0}, Lcom/module/bean/SourceBean;->getSelectAudio()I
+00534: 
+00535:     .line 117
+00536:     .line 118
+00537:     .line 119
+
+FILE=smali_classes3/ud/n1$y.smali
+00644:     iget-object v0, p0, Lud/n1$y;->a:Lud/n1;
+00645: 
+00646:     .line 172
+00647:     .line 173
+00648:     invoke-static {v0}, Lud/n1;->Ga(Lud/n1;)Ljava/lang/String;
+00649: 
+00650:     .line 174
+00651:     .line 175
+00652:     .line 176
+00653:     move-result-object v0
+00654: 
+00655:     .line 177
+00656:     invoke-virtual {p1, v0, p2}, Lcom/module/bean/AudioInfoUtil;->putAduioRecord(Ljava/lang/String;Lcom/module/bean/DefinitionBean;)V
+00657: 
+00658:     .line 178
+00659:     .line 179
+00660:     .line 180
+00661:     iget-object p1, p0, Lud/n1$y;->a:Lud/n1;
+00662: 
+00663:     .line 181
+00664:     .line 182
+00665:     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->J6()Landroid/content/Context;
+00666: 
+00667:     .line 183
+00668:     .line 184
+
+FILE=smali_classes3/ud/n1$d.smali
+00001: .class final Lud/n1$d;
+00002: .super Lne/l;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Lme/l;
+00007: 
+00008: 
+00009: # annotations
+00010: .annotation system Ldalvik/annotation/EnclosingMethod;
+00011:     value = Lud/n1;->fc(Lcom/module/bean/DefinitionBean;)V
+00012: .end annotation
+00013: 
+00014: .annotation system Ldalvik/annotation/InnerClass;
+00015:     accessFlags = 0x18
+00016:     name = null
+00017: .end annotation
+00018: 
+00019: 
+00020: # static fields
+00021: .field public static final a:Lud/n1$d;
+00022: 
+00023: 
+HITS_SHOWN=12
+
+===== SourceBean =====
+
+FILE=smali_classes3/ld/a.smali
+00001: .class public final Lld/a;
+00002: .super Ljava/lang/Object;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Lpa/b;
+00007: 
+00008: 
+00009: # instance fields
+00010: .field private a:Lcom/module/bean/SourceBean;
+00011: 
+00012: .field private b:I
+00013: 
+00014: .field private c:Z
+00015: 
+00016: 
+00017: # direct methods
+00018: .method public constructor <init>(Lcom/module/bean/SourceBean;IZ)V
+00019:     .locals 1
+00020: 
+00021:     .line 1
+00022:     const-string v0, "sourceBean"
+
+FILE=smali_classes3/ld/a.smali
+00006: .implements Lpa/b;
+00007: 
+00008: 
+00009: # instance fields
+00010: .field private a:Lcom/module/bean/SourceBean;
+00011: 
+00012: .field private b:I
+00013: 
+00014: .field private c:Z
+00015: 
+00016: 
+00017: # direct methods
+00018: .method public constructor <init>(Lcom/module/bean/SourceBean;IZ)V
+00019:     .locals 1
+00020: 
+00021:     .line 1
+00022:     const-string v0, "sourceBean"
+00023: 
+00024:     .line 2
+00025:     .line 3
+00026:     invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00027: 
+00028:     .line 4
+00029:     .line 5
+00030:     .line 6
+
+FILE=smali_classes3/ld/a.smali
+00024:     .line 2
+00025:     .line 3
+00026:     invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00027: 
+00028:     .line 4
+00029:     .line 5
+00030:     .line 6
+00031:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00032: 
+00033:     .line 7
+00034:     .line 8
+00035:     .line 9
+00036:     iput-object p1, p0, Lld/a;->a:Lcom/module/bean/SourceBean;
+00037: 
+00038:     .line 10
+00039:     .line 11
+00040:     iput p2, p0, Lld/a;->b:I
+00041: 
+00042:     .line 12
+00043:     .line 13
+00044:     iput-boolean p3, p0, Lld/a;->c:Z
+00045: 
+00046:     .line 14
+00047:     .line 15
+00048:     return-void
+
+FILE=smali_classes3/ld/a.smali
+00052: # virtual methods
+00053: .method public final a()I
+00054:     .locals 1
+00055: 
+00056:     .line 1
+00057:     iget v0, p0, Lld/a;->b:I
+00058: 
+00059:     .line 2
+00060:     .line 3
+00061:     return v0
+00062: .end method
+00063: 
+00064: .method public final b()Lcom/module/bean/SourceBean;
+00065:     .locals 1
+00066: 
+00067:     .line 1
+00068:     iget-object v0, p0, Lld/a;->a:Lcom/module/bean/SourceBean;
+00069: 
+00070:     .line 2
+00071:     .line 3
+00072:     return-object v0
+00073: .end method
+00074: 
+00075: .method public final c()Z
+00076:     .locals 1
+
+FILE=smali_classes3/ld/a.smali
+00056:     .line 1
+00057:     iget v0, p0, Lld/a;->b:I
+00058: 
+00059:     .line 2
+00060:     .line 3
+00061:     return v0
+00062: .end method
+00063: 
+00064: .method public final b()Lcom/module/bean/SourceBean;
+00065:     .locals 1
+00066: 
+00067:     .line 1
+00068:     iget-object v0, p0, Lld/a;->a:Lcom/module/bean/SourceBean;
+00069: 
+00070:     .line 2
+00071:     .line 3
+00072:     return-object v0
+00073: .end method
+00074: 
+00075: .method public final c()Z
+00076:     .locals 1
+00077: 
+00078:     .line 1
+00079:     iget-boolean v0, p0, Lld/a;->c:Z
+00080: 
+
+FILE=smali_classes3/kd/f1$a.smali
+00040: .end method
+00041: 
+00042: 
+00043: # virtual methods
+00044: .method public final a(I)V
+00045:     .locals 2
+00046: 
+00047:     .line 1
+00048:     iget-object v0, p0, Lkd/f1$a;->a:Lld/a;
+00049: 
+00050:     .line 2
+00051:     .line 3
+00052:     invoke-virtual {v0}, Lld/a;->b()Lcom/module/bean/SourceBean;
+00053: 
+00054:     .line 4
+00055:     .line 5
+00056:     .line 6
+00057:     move-result-object v0
+00058: 
+00059:     .line 7
+00060:     invoke-virtual {v0, p1}, Lcom/module/bean/SourceBean;->setSelectAudio(I)V
+00061: 
+00062:     .line 8
+00063:     .line 9
+00064:     .line 10
+
+FILE=smali_classes3/kd/f1$a.smali
+00048:     iget-object v0, p0, Lkd/f1$a;->a:Lld/a;
+00049: 
+00050:     .line 2
+00051:     .line 3
+00052:     invoke-virtual {v0}, Lld/a;->b()Lcom/module/bean/SourceBean;
+00053: 
+00054:     .line 4
+00055:     .line 5
+00056:     .line 6
+00057:     move-result-object v0
+00058: 
+00059:     .line 7
+00060:     invoke-virtual {v0, p1}, Lcom/module/bean/SourceBean;->setSelectAudio(I)V
+00061: 
+00062:     .line 8
+00063:     .line 9
+00064:     .line 10
+00065:     iget-object p1, p0, Lkd/f1$a;->b:Lkd/f1;
+00066: 
+00067:     .line 11
+00068:     .line 12
+00069:     invoke-virtual {p1}, Lkd/f1;->q()Lme/p;
+00070: 
+00071:     .line 13
+00072:     .line 14
+
+FILE=smali_classes3/kd/f1$a.smali
+00093:     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+00094: 
+00095:     .line 25
+00096:     .line 26
+00097:     .line 27
+00098:     move-result-object v0
+00099: 
+00100:     .line 28
+00101:     iget-object v1, p0, Lkd/f1$a;->a:Lld/a;
+00102: 
+00103:     .line 29
+00104:     .line 30
+00105:     invoke-virtual {v1}, Lld/a;->b()Lcom/module/bean/SourceBean;
+00106: 
+00107:     .line 31
+00108:     .line 32
+00109:     .line 33
+00110:     move-result-object v1
+00111: 
+00112:     .line 34
+00113:     invoke-virtual {v1}, Lcom/module/bean/SourceBean;->getSelectAduio()Lcom/module/bean/AudioInfoBean;
+00114: 
+00115:     .line 35
+00116:     .line 36
+00117:     .line 37
+
+FILE=smali_classes3/kd/f1$a.smali
+00101:     iget-object v1, p0, Lkd/f1$a;->a:Lld/a;
+00102: 
+00103:     .line 29
+00104:     .line 30
+00105:     invoke-virtual {v1}, Lld/a;->b()Lcom/module/bean/SourceBean;
+00106: 
+00107:     .line 31
+00108:     .line 32
+00109:     .line 33
+00110:     move-result-object v1
+00111: 
+00112:     .line 34
+00113:     invoke-virtual {v1}, Lcom/module/bean/SourceBean;->getSelectAduio()Lcom/module/bean/AudioInfoBean;
+00114: 
+00115:     .line 35
+00116:     .line 36
+00117:     .line 37
+00118:     move-result-object v1
+00119: 
+00120:     .line 38
+00121:     invoke-interface {p1, v0, v1}, Lme/p;->h(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+00122: 
+00123:     .line 39
+00124:     .line 40
+00125:     .line 41
+
+FILE=smali_classes3/kd/f1.smali
+00333:     .line 132
+00334:     .line 133
+00335:     invoke-direct {p1}, Lkd/e1;-><init>()V
+00336: 
+00337:     .line 134
+00338:     .line 135
+00339:     .line 136
+00340:     :cond_4
+00341:     move-object v0, p1
+00342: 
+00343:     .line 137
+00344:     :goto_3
+00345:     invoke-virtual {p2}, Lld/a;->b()Lcom/module/bean/SourceBean;
+00346: 
+00347:     .line 138
+00348:     .line 139
+00349:     .line 140
+00350:     move-result-object p1
+00351: 
+00352:     .line 141
+00353:     invoke-virtual {p1}, Lcom/module/bean/SourceBean;->getSelectAudio()I
+00354: 
+00355:     .line 142
+00356:     .line 143
+00357:     .line 144
+
+FILE=smali_classes3/kd/f1.smali
+00341:     move-object v0, p1
+00342: 
+00343:     .line 137
+00344:     :goto_3
+00345:     invoke-virtual {p2}, Lld/a;->b()Lcom/module/bean/SourceBean;
+00346: 
+00347:     .line 138
+00348:     .line 139
+00349:     .line 140
+00350:     move-result-object p1
+00351: 
+00352:     .line 141
+00353:     invoke-virtual {p1}, Lcom/module/bean/SourceBean;->getSelectAudio()I
+00354: 
+00355:     .line 142
+00356:     .line 143
+00357:     .line 144
+00358:     move-result p1
+00359: 
+00360:     .line 145
+00361:     invoke-virtual {v0, p1}, Lkd/e1;->t(I)V
+00362: 
+00363:     .line 146
+00364:     .line 147
+00365:     .line 148
+
+FILE=smali_classes3/kd/f1.smali
+00397:     .line 162
+00398:     .line 163
+00399:     invoke-direct {p1, p2, p0}, Lkd/f1$a;-><init>(Lld/a;Lkd/f1;)V
+00400: 
+00401:     .line 164
+00402:     .line 165
+00403:     .line 166
+00404:     invoke-virtual {v0, p1}, Lkd/e1;->s(Lme/l;)V
+00405: 
+00406:     .line 167
+00407:     .line 168
+00408:     .line 169
+00409:     invoke-virtual {p2}, Lld/a;->b()Lcom/module/bean/SourceBean;
+00410: 
+00411:     .line 170
+00412:     .line 171
+00413:     .line 172
+00414:     move-result-object p1
+00415: 
+00416:     .line 173
+00417:     invoke-virtual {p1}, Lcom/module/bean/SourceBean;->getAudioInfoList()Ljava/util/List;
+00418: 
+00419:     .line 174
+00420:     .line 175
+00421:     .line 176
+HITS_SHOWN=12
+
+===== LiveAddress =====
+
+FILE=smali/com/request/result/Channel.smali
+00016: .field private fixedChannelNumber:Ljava/lang/String;
+00017: 
+00018: .field private isFav:Z
+00019: 
+00020: .field private isLock:Z
+00021: 
+00022: .field private keyWords:Ljava/lang/String;
+00023: 
+00024: .field private liveAddressList:Ljava/util/List;
+00025:     .annotation system Ldalvik/annotation/Signature;
+00026:         value = {
+00027:             "Ljava/util/List<",
+00028:             "Lcom/request/result/LiveAddress;",
+00029:             ">;"
+00030:         }
+00031:     .end annotation
+00032: .end field
+00033: 
+00034: .field private mosaicChanneArray:Ljava/util/List;
+00035:     .annotation system Ldalvik/annotation/Signature;
+00036:         value = {
+00037:             "Ljava/util/List<",
+00038:             "Lcom/request/result/MosaicChannelBean;",
+00039:             ">;"
+00040:         }
+
+FILE=smali/com/request/result/Channel.smali
+00083:             "Ljava/lang/String;",
+00084:             "Ljava/lang/String;",
+00085:             "Ljava/lang/String;",
+00086:             "I",
+00087:             "Ljava/lang/String;",
+00088:             "Ljava/lang/String;",
+00089:             "Ljava/lang/String;",
+00090:             "Ljava/lang/String;",
+00091:             "Ljava/lang/String;",
+00092:             "Ljava/lang/String;",
+00093:             "Ljava/lang/String;",
+00094:             "Ljava/util/List<",
+00095:             "Lcom/request/result/LiveAddress;",
+00096:             ">;ZZ",
+00097:             "Ljava/lang/String;",
+00098:             "Ljava/util/List<",
+00099:             "Lcom/request/result/PosterList;",
+00100:             ">;",
+00101:             "Ljava/lang/String;",
+00102:             ")V"
+00103:         }
+00104:     .end annotation
+00105: 
+00106:     move-object v0, p0
+00107: 
+
+FILE=smali/com/request/result/Channel.smali
+00497: 
+00498:     iget-object v0, p0, Lcom/request/result/Channel;->quality:Ljava/lang/String;
+00499: 
+00500:     return-object v0
+00501: .end method
+00502: 
+00503: .method public final component12()Ljava/util/List;
+00504:     .locals 1
+00505:     .annotation system Ldalvik/annotation/Signature;
+00506:         value = {
+00507:             "()",
+00508:             "Ljava/util/List<",
+00509:             "Lcom/request/result/LiveAddress;",
+00510:             ">;"
+00511:         }
+00512:     .end annotation
+00513: 
+00514:     iget-object v0, p0, Lcom/request/result/Channel;->liveAddressList:Ljava/util/List;
+00515: 
+00516:     return-object v0
+00517: .end method
+00518: 
+00519: .method public final component13()Z
+00520:     .locals 1
+00521: 
+
+FILE=smali/com/request/result/Channel.smali
+00636:             "Ljava/lang/String;",
+00637:             "Ljava/lang/String;",
+00638:             "Ljava/lang/String;",
+00639:             "I",
+00640:             "Ljava/lang/String;",
+00641:             "Ljava/lang/String;",
+00642:             "Ljava/lang/String;",
+00643:             "Ljava/lang/String;",
+00644:             "Ljava/lang/String;",
+00645:             "Ljava/lang/String;",
+00646:             "Ljava/lang/String;",
+00647:             "Ljava/util/List<",
+00648:             "Lcom/request/result/LiveAddress;",
+00649:             ">;ZZ",
+00650:             "Ljava/lang/String;",
+00651:             "Ljava/util/List<",
+00652:             "Lcom/request/result/PosterList;",
+00653:             ">;",
+00654:             "Ljava/lang/String;",
+00655:             ")",
+00656:             "Lcom/request/result/Channel;"
+00657:         }
+00658:     .end annotation
+00659: 
+00660:     move-object/from16 v1, p1
+
+FILE=smali/com/request/result/Channel.smali
+00999: 
+01000: .method public final getKeyWords()Ljava/lang/String;
+01001:     .locals 1
+01002: 
+01003:     .line 1
+01004:     iget-object v0, p0, Lcom/request/result/Channel;->keyWords:Ljava/lang/String;
+01005: 
+01006:     .line 2
+01007:     .line 3
+01008:     return-object v0
+01009: .end method
+01010: 
+01011: .method public final getLiveAddressList()Ljava/util/List;
+01012:     .locals 1
+01013:     .annotation system Ldalvik/annotation/Signature;
+01014:         value = {
+01015:             "()",
+01016:             "Ljava/util/List<",
+01017:             "Lcom/request/result/LiveAddress;",
+01018:             ">;"
+01019:         }
+01020:     .end annotation
+01021: 
+01022:     .line 1
+01023:     iget-object v0, p0, Lcom/request/result/Channel;->liveAddressList:Ljava/util/List;
+
+===== startPlayVOD =====
+
+FILE=smali/ud/n1.smali
+19520:     .line 50
+19521:     .line 51
+19522:     move-object v1, p2
+19523: 
+19524:     .line 52
+19525:     check-cast v1, Lcom/module/basemvp/a;
+19526: 
+19527:     .line 53
+19528:     .line 54
+19529:     const/4 v3, 0x0
+19530: 
+19531:     .line 55
+19532:     const-string v4, "/startPlayVOD"
+19533: 
+19534:     .line 56
+19535:     .line 57
+19536:     const-string v5, "vod"
+19537: 
+19538:     .line 58
+19539:     .line 59
+19540:     iget-object v6, p0, Lud/n1;->D0:Ljava/lang/String;
+19541: 
+19542:     .line 60
+19543:     .line 61
+19544:     iget-object p2, p0, Lud/n1;->A0:Lcom/request/result/AssetData;
+
+FILE=smali_classes2/sb/b.smali
+00599:             "Lcom/request/result/StartPlayVODResult;",
+00600:             ">;"
+00601:         }
+00602:     .end annotation
+00603: 
+00604:     .annotation runtime Lmf/k;
+00605:         value = {
+00606:             "Cache-Control:no-store;Content-type:application/json;charset=utf-8"
+00607:         }
+00608:     .end annotation
+00609: 
+00610:     .annotation runtime Lmf/o;
+00611:         value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+00612:     .end annotation
+00613: .end method
+00614: 
+00615: .method public abstract H0(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+00616:     .param p1    # Ljava/lang/String;
+00617:         .annotation runtime Lmf/s;
+00618:             value = "agreement"
+00619:         .end annotation
+00620:     .end param
+00621:     .param p2    # Ljava/lang/String;
+00622:         .annotation runtime Lmf/s;
+00623:             value = "ip"
+
+FILE=smali_classes2/sb/b.smali
+01283:             "Lcom/request/result/StartPlayVODResult;",
+01284:             ">;"
+01285:         }
+01286:     .end annotation
+01287: 
+01288:     .annotation runtime Lmf/k;
+01289:         value = {
+01290:             "Cache-Control:no-store;Content-type:application/json;charset=utf-8"
+01291:         }
+01292:     .end annotation
+01293: 
+01294:     .annotation runtime Lmf/o;
+01295:         value = "{agreement}://{ip}/api/portalCore/v10/startPlayVOD"
+01296:     .end annotation
+01297: .end method
+01298: 
+01299: .method public abstract T(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+01300:     .param p1    # Ljava/lang/String;
+01301:         .annotation runtime Lmf/s;
+01302:             value = "agreement"
+01303:         .end annotation
+01304:     .end param
+01305:     .param p2    # Ljava/lang/String;
+01306:         .annotation runtime Lmf/s;
+01307:             value = "ip"
+HITS_SHOWN=3
+
+===== startPlayLive =====
+
+FILE=smali_classes2/sb/b.smali
+00325:             "Lcom/request/result/StartPlayLiveResult;",
+00326:             ">;"
+00327:         }
+00328:     .end annotation
+00329: 
+00330:     .annotation runtime Lmf/k;
+00331:         value = {
+00332:             "Content-Type:application/json;charset=utf-8"
+00333:         }
+00334:     .end annotation
+00335: 
+00336:     .annotation runtime Lmf/o;
+00337:         value = "{agreement}://{ip}/api/portalCore/v4/startPlayLive"
+00338:     .end annotation
+00339: .end method
+00340: 
+00341: .method public abstract E(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+00342:     .param p1    # Ljava/lang/String;
+00343:         .annotation runtime Lmf/s;
+00344:             value = "agreement"
+00345:         .end annotation
+00346:     .end param
+00347:     .param p2    # Ljava/lang/String;
+00348:         .annotation runtime Lmf/s;
+00349:             value = "ip"
+HITS_SHOWN=1
+
+===== StartPlayVOD =====
+
+FILE=smali_classes3/qd/e0.smali
+00231:     .line 37
+00232:     .line 38
+00233:     return-void
+00234: .end method
+00235: 
+00236: .method public n2()V
+00237:     .locals 0
+00238: 
+00239:     .line 1
+00240:     return-void
+00241: .end method
+00242: 
+00243: .method public z4(Lcom/request/result/StartPlayVODResult;I)V
+00244:     .locals 1
+00245: 
+00246:     .line 1
+00247:     const-string v0, "result"
+00248: 
+00249:     .line 2
+00250:     .line 3
+00251:     invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00252: 
+00253:     .line 4
+00254:     .line 5
+00255:     .line 6
+
+FILE=smali_classes3/qd/e0.smali
+00244:     .locals 1
+00245: 
+00246:     .line 1
+00247:     const-string v0, "result"
+00248: 
+00249:     .line 2
+00250:     .line 3
+00251:     invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00252: 
+00253:     .line 4
+00254:     .line 5
+00255:     .line 6
+00256:     invoke-virtual {p1}, Lcom/request/result/StartPlayVODResult;->getData()Lcom/request/result/StartPlayVODResultData;
+00257: 
+00258:     .line 7
+00259:     .line 8
+00260:     .line 9
+00261:     move-result-object p1
+00262: 
+00263:     .line 10
+00264:     if-eqz p1, :cond_0
+00265: 
+00266:     .line 11
+00267:     .line 12
+00268:     iget-object v0, p0, Lqd/e0;->b:Lod/g;
+
+FILE=smali_classes3/qd/e0.smali
+00260:     .line 9
+00261:     move-result-object p1
+00262: 
+00263:     .line 10
+00264:     if-eqz p1, :cond_0
+00265: 
+00266:     .line 11
+00267:     .line 12
+00268:     iget-object v0, p0, Lqd/e0;->b:Lod/g;
+00269: 
+00270:     .line 13
+00271:     .line 14
+00272:     invoke-interface {v0, p1, p2}, Lod/g;->Y1(Lcom/request/result/StartPlayVODResultData;I)V
+00273: 
+00274:     .line 15
+00275:     .line 16
+00276:     .line 17
+00277:     :cond_0
+00278:     return-void
+00279: .end method
+
+FILE=smali_classes3/od/g.smali
+00001: .class public interface abstract Lod/g;
+00002: .super Ljava/lang/Object;
+00003: .source "SourceFile"
+00004: 
+00005: 
+00006: # virtual methods
+00007: .method public abstract V(Ljava/lang/String;I)V
+00008: .end method
+00009: 
+00010: .method public abstract W3()V
+00011: .end method
+00012: 
+00013: .method public abstract Y1(Lcom/request/result/StartPlayVODResultData;I)V
+00014: .end method
+
+FILE=smali_classes3/ud/n1$p.smali
+00001: .class final Lud/n1$p;
+00002: .super Lne/l;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Lme/l;
+00007: 
+00008: 
+00009: # annotations
+00010: .annotation system Ldalvik/annotation/EnclosingMethod;
+00011:     value = Lud/n1;->Y1(Lcom/request/result/StartPlayVODResultData;I)V
+00012: .end annotation
+00013: 
+00014: .annotation system Ldalvik/annotation/InnerClass;
+00015:     accessFlags = 0x18
+00016:     name = null
+00017: .end annotation
+00018: 
+00019: 
+00020: # static fields
+00021: .field public static final a:Lud/n1$p;
+00022: 
+00023: 
+
+FILE=smali_classes3/ud/n1$b0.smali
+00001: .class final Lud/n1$b0;
+00002: .super Lne/l;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Lme/l;
+00007: 
+00008: 
+00009: # annotations
+00010: .annotation system Ldalvik/annotation/EnclosingMethod;
+00011:     value = Lud/n1;->Cd(Lcom/request/result/StartPlayVODResultData;I)V
+00012: .end annotation
+00013: 
+00014: .annotation system Ldalvik/annotation/InnerClass;
+00015:     accessFlags = 0x18
+00016:     name = null
+00017: .end annotation
+00018: 
+00019: 
+00020: # static fields
+00021: .field public static final a:Lud/n1$b0;
+00022: 
+00023: 
+
+FILE=smali_classes3/ud/n1$c0.smali
+00001: .class public final Lud/n1$c0;
+00002: .super Ljava/lang/Object;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Lio/reactivex/Observer;
+00007: 
+00008: 
+00009: # annotations
+00010: .annotation system Ldalvik/annotation/EnclosingMethod;
+00011:     value = Lud/n1;->Cd(Lcom/request/result/StartPlayVODResultData;I)V
+00012: .end annotation
+00013: 
+00014: .annotation system Ldalvik/annotation/InnerClass;
+00015:     accessFlags = 0x19
+00016:     name = null
+00017: .end annotation
+00018: 
+00019: 
+00020: # instance fields
+00021: .field final synthetic a:Lud/n1;
+00022: 
+00023: .field final synthetic b:Lcom/request/result/StartPlayVODResultData;
+
+FILE=smali_classes3/ud/n1$c0.smali
+00011:     value = Lud/n1;->Cd(Lcom/request/result/StartPlayVODResultData;I)V
+00012: .end annotation
+00013: 
+00014: .annotation system Ldalvik/annotation/InnerClass;
+00015:     accessFlags = 0x19
+00016:     name = null
+00017: .end annotation
+00018: 
+00019: 
+00020: # instance fields
+00021: .field final synthetic a:Lud/n1;
+00022: 
+00023: .field final synthetic b:Lcom/request/result/StartPlayVODResultData;
+00024: 
+00025: .field final synthetic c:I
+00026: 
+00027: 
+00028: # direct methods
+00029: .method constructor <init>(Lud/n1;Lcom/request/result/StartPlayVODResultData;I)V
+00030:     .locals 0
+00031: 
+00032:     .line 1
+00033:     iput-object p1, p0, Lud/n1$c0;->a:Lud/n1;
+00034: 
+00035:     .line 2
+
+FILE=smali_classes3/ud/n1$c0.smali
+00017: .end annotation
+00018: 
+00019: 
+00020: # instance fields
+00021: .field final synthetic a:Lud/n1;
+00022: 
+00023: .field final synthetic b:Lcom/request/result/StartPlayVODResultData;
+00024: 
+00025: .field final synthetic c:I
+00026: 
+00027: 
+00028: # direct methods
+00029: .method constructor <init>(Lud/n1;Lcom/request/result/StartPlayVODResultData;I)V
+00030:     .locals 0
+00031: 
+00032:     .line 1
+00033:     iput-object p1, p0, Lud/n1$c0;->a:Lud/n1;
+00034: 
+00035:     .line 2
+00036:     .line 3
+00037:     iput-object p2, p0, Lud/n1$c0;->b:Lcom/request/result/StartPlayVODResultData;
+00038: 
+00039:     .line 4
+00040:     .line 5
+00041:     iput p3, p0, Lud/n1$c0;->c:I
+
+FILE=smali_classes3/ud/n1$c0.smali
+00025: .field final synthetic c:I
+00026: 
+00027: 
+00028: # direct methods
+00029: .method constructor <init>(Lud/n1;Lcom/request/result/StartPlayVODResultData;I)V
+00030:     .locals 0
+00031: 
+00032:     .line 1
+00033:     iput-object p1, p0, Lud/n1$c0;->a:Lud/n1;
+00034: 
+00035:     .line 2
+00036:     .line 3
+00037:     iput-object p2, p0, Lud/n1$c0;->b:Lcom/request/result/StartPlayVODResultData;
+00038: 
+00039:     .line 4
+00040:     .line 5
+00041:     iput p3, p0, Lud/n1$c0;->c:I
+00042: 
+00043:     .line 6
+00044:     .line 7
+00045:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00046: 
+00047:     .line 8
+00048:     .line 9
+00049:     .line 10
+
+FILE=smali_classes3/ud/n1$c0.smali
+00073:     .line 8
+00074:     .line 9
+00075:     invoke-interface {p1}, Lio/reactivex/disposables/Disposable;->dispose()V
+00076: 
+00077:     .line 10
+00078:     .line 11
+00079:     .line 12
+00080:     :cond_0
+00081:     iget-object p1, p0, Lud/n1$c0;->a:Lud/n1;
+00082: 
+00083:     .line 13
+00084:     .line 14
+00085:     iget-object p2, p0, Lud/n1$c0;->b:Lcom/request/result/StartPlayVODResultData;
+00086: 
+00087:     .line 15
+00088:     .line 16
+00089:     iget v0, p0, Lud/n1$c0;->c:I
+00090: 
+00091:     .line 17
+00092:     .line 18
+00093:     invoke-virtual {p1, p2, v0}, Lud/n1;->Y1(Lcom/request/result/StartPlayVODResultData;I)V
+00094: 
+00095:     .line 19
+00096:     .line 20
+00097:     .line 21
+
+FILE=smali_classes3/ud/n1$c0.smali
+00081:     iget-object p1, p0, Lud/n1$c0;->a:Lud/n1;
+00082: 
+00083:     .line 13
+00084:     .line 14
+00085:     iget-object p2, p0, Lud/n1$c0;->b:Lcom/request/result/StartPlayVODResultData;
+00086: 
+00087:     .line 15
+00088:     .line 16
+00089:     iget v0, p0, Lud/n1$c0;->c:I
+00090: 
+00091:     .line 17
+00092:     .line 18
+00093:     invoke-virtual {p1, p2, v0}, Lud/n1;->Y1(Lcom/request/result/StartPlayVODResultData;I)V
+00094: 
+00095:     .line 19
+00096:     .line 20
+00097:     .line 21
+00098:     return-void
+00099: .end method
+00100: 
+00101: .method public onComplete()V
+00102:     .locals 3
+00103: 
+00104:     .line 1
+00105:     sget-object v0, Lcc/s;->a:Lcc/s;
+HITS_SHOWN=12
+
+===== StartPlayLive =====
+
+FILE=smali/bc/l0.smali
+00021: 
+00022:     return-void
+00023: .end method
+00024: 
+00025: 
+00026: # virtual methods
+00027: .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+00028:     .locals 1
+00029: 
+00030:     .line 1
+00031:     iget-object v0, p0, Lbc/l0;->a:Lbc/z1;
+00032: 
+00033:     check-cast p1, Lcom/request/bean/StartPlayLiveBean;
+00034: 
+00035:     invoke-static {v0, p1}, Lbc/z1;->k(Lbc/z1;Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+00036: 
+00037:     move-result-object p1
+00038: 
+00039:     return-object p1
+00040: .end method
+
+FILE=smali/bc/l0.smali
+00023: .end method
+00024: 
+00025: 
+00026: # virtual methods
+00027: .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+00028:     .locals 1
+00029: 
+00030:     .line 1
+00031:     iget-object v0, p0, Lbc/l0;->a:Lbc/z1;
+00032: 
+00033:     check-cast p1, Lcom/request/bean/StartPlayLiveBean;
+00034: 
+00035:     invoke-static {v0, p1}, Lbc/z1;->k(Lbc/z1;Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+00036: 
+00037:     move-result-object p1
+00038: 
+00039:     return-object p1
+00040: .end method
+
+FILE=smali/bc/f.smali
+05691:     .line 4
+05692:     .line 5
+05693:     .line 6
+05694:     const-string v0, "channelCode"
+05695: 
+05696:     .line 7
+05697:     .line 8
+05698:     invoke-static {p3, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+05699: 
+05700:     .line 9
+05701:     .line 10
+05702:     .line 11
+05703:     new-instance v0, Lcom/request/bean/StartPlayLiveBean;
+05704: 
+05705:     .line 12
+05706:     .line 13
+05707:     invoke-virtual {p0}, Lbc/f;->P()Ljava/lang/String;
+05708: 
+05709:     .line 14
+05710:     .line 15
+05711:     .line 16
+05712:     move-result-object v2
+05713: 
+05714:     .line 17
+05715:     invoke-virtual {p0}, Lbc/f;->O()Ljava/lang/String;
+
+FILE=smali/bc/f.smali
+05731:     move-object v1, v0
+05732: 
+05733:     .line 26
+05734:     move-object v5, p1
+05735: 
+05736:     .line 27
+05737:     move-object v6, p2
+05738: 
+05739:     .line 28
+05740:     move-object v7, p3
+05741: 
+05742:     .line 29
+05743:     invoke-direct/range {v1 .. v7}, Lcom/request/bean/StartPlayLiveBean;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)V
+05744: 
+05745:     .line 30
+05746:     .line 31
+05747:     .line 32
+05748:     iget-object p1, p0, Lbc/f;->d:Lbc/z1;
+05749: 
+05750:     .line 33
+05751:     .line 34
+05752:     invoke-virtual {p1, v0}, Lbc/z1;->a3(Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+05753: 
+05754:     .line 35
+05755:     .line 36
+
+FILE=smali/bc/f.smali
+05740:     move-object v7, p3
+05741: 
+05742:     .line 29
+05743:     invoke-direct/range {v1 .. v7}, Lcom/request/bean/StartPlayLiveBean;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)V
+05744: 
+05745:     .line 30
+05746:     .line 31
+05747:     .line 32
+05748:     iget-object p1, p0, Lbc/f;->d:Lbc/z1;
+05749: 
+05750:     .line 33
+05751:     .line 34
+05752:     invoke-virtual {p1, v0}, Lbc/z1;->a3(Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+05753: 
+05754:     .line 35
+05755:     .line 36
+05756:     .line 37
+05757:     move-result-object p1
+05758: 
+05759:     .line 38
+05760:     return-object p1
+05761: .end method
+05762: 
+05763: .method public final w()Lio/reactivex/Observable;
+05764:     .locals 6
+
+FILE=smali/bc/z1.smali
+04275:     .line 43
+04276:     invoke-virtual {v0, p0}, Lio/reactivex/Observable;->onErrorResumeNext(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+04277: 
+04278:     .line 44
+04279:     .line 45
+04280:     .line 46
+04281:     move-result-object p0
+04282: 
+04283:     .line 47
+04284:     return-object p0
+04285: .end method
+04286: 
+04287: .method private static final b3(Lbc/z1;Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+04288:     .locals 4
+04289: 
+04290:     .line 1
+04291:     const-string v0, "this$0"
+04292: 
+04293:     .line 2
+04294:     .line 3
+04295:     invoke-static {p0, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+04296: 
+04297:     .line 4
+04298:     .line 5
+04299:     .line 6
+
+FILE=smali/bc/z1.smali
+05655:     .line 43
+05656:     invoke-virtual {v0, p0}, Lio/reactivex/Observable;->onErrorResumeNext(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+05657: 
+05658:     .line 44
+05659:     .line 45
+05660:     .line 46
+05661:     move-result-object p0
+05662: 
+05663:     .line 47
+05664:     return-object p0
+05665: .end method
+05666: 
+05667: .method public static synthetic k(Lbc/z1;Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+05668:     .locals 0
+05669: 
+05670:     .line 1
+05671:     invoke-static {p0, p1}, Lbc/z1;->b3(Lbc/z1;Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+05672: 
+05673:     move-result-object p0
+05674: 
+05675:     return-object p0
+05676: .end method
+05677: 
+05678: .method public static synthetic k0(Lbc/z1;Lcom/request/bean/UpdateDeviceTokenBean;)Lio/reactivex/Observable;
+05679:     .locals 0
+
+FILE=smali/bc/z1.smali
+05659:     .line 45
+05660:     .line 46
+05661:     move-result-object p0
+05662: 
+05663:     .line 47
+05664:     return-object p0
+05665: .end method
+05666: 
+05667: .method public static synthetic k(Lbc/z1;Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+05668:     .locals 0
+05669: 
+05670:     .line 1
+05671:     invoke-static {p0, p1}, Lbc/z1;->b3(Lbc/z1;Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+05672: 
+05673:     move-result-object p0
+05674: 
+05675:     return-object p0
+05676: .end method
+05677: 
+05678: .method public static synthetic k0(Lbc/z1;Lcom/request/bean/UpdateDeviceTokenBean;)Lio/reactivex/Observable;
+05679:     .locals 0
+05680: 
+05681:     .line 1
+05682:     invoke-static {p0, p1}, Lbc/z1;->j3(Lbc/z1;Lcom/request/bean/UpdateDeviceTokenBean;)Lio/reactivex/Observable;
+05683: 
+
+FILE=smali/com/request/result/Channel.smali
+01005: 
+01006:     .line 2
+01007:     .line 3
+01008:     return-object v0
+01009: .end method
+01010: 
+01011: .method public final getLiveAddressList()Ljava/util/List;
+01012:     .locals 1
+01013:     .annotation system Ldalvik/annotation/Signature;
+01014:         value = {
+01015:             "()",
+01016:             "Ljava/util/List<",
+01017:             "Lcom/request/result/LiveAddress;",
+01018:             ">;"
+01019:         }
+01020:     .end annotation
+01021: 
+01022:     .line 1
+01023:     iget-object v0, p0, Lcom/request/result/Channel;->liveAddressList:Ljava/util/List;
+01024: 
+01025:     .line 2
+01026:     .line 3
+01027:     return-object v0
+01028: .end method
+01029: 
+
+FILE=smali/com/request/result/Channel.smali
+01623: 
+01624: .method public final setKeyWords(Ljava/lang/String;)V
+01625:     .locals 0
+01626: 
+01627:     .line 1
+01628:     iput-object p1, p0, Lcom/request/result/Channel;->keyWords:Ljava/lang/String;
+01629: 
+01630:     .line 2
+01631:     .line 3
+01632:     return-void
+01633: .end method
+01634: 
+01635: .method public final setLiveAddressList(Ljava/util/List;)V
+01636:     .locals 0
+01637:     .annotation system Ldalvik/annotation/Signature;
+01638:         value = {
+01639:             "(",
+01640:             "Ljava/util/List<",
+01641:             "Lcom/request/result/LiveAddress;",
+01642:             ">;)V"
+01643:         }
+01644:     .end annotation
+01645: 
+01646:     .line 1
+01647:     iput-object p1, p0, Lcom/request/result/Channel;->liveAddressList:Ljava/util/List;
+
+FILE=smali/com/request/result/Channel.smali
+01629: 
+01630:     .line 2
+01631:     .line 3
+01632:     return-void
+01633: .end method
+01634: 
+01635: .method public final setLiveAddressList(Ljava/util/List;)V
+01636:     .locals 0
+01637:     .annotation system Ldalvik/annotation/Signature;
+01638:         value = {
+01639:             "(",
+01640:             "Ljava/util/List<",
+01641:             "Lcom/request/result/LiveAddress;",
+01642:             ">;)V"
+01643:         }
+01644:     .end annotation
+01645: 
+01646:     .line 1
+01647:     iput-object p1, p0, Lcom/request/result/Channel;->liveAddressList:Ljava/util/List;
+01648: 
+01649:     .line 2
+01650:     .line 3
+01651:     return-void
+01652: .end method
+01653: 
+
+FILE=smali/com/request/result/LiveAddress.smali
+00001: .class public final Lcom/request/result/LiveAddress;
+00002: .super Ljava/lang/Object;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Ljava/io/Serializable;
+00007: 
+00008: 
+00009: # instance fields
+00010: .field private AVFormat:Ljava/lang/String;
+00011: 
+00012: .field private cdnType:Ljava/lang/String;
+00013: 
+
+FILE=smali/com/request/result/LiveAddress.smali
+00039:     .line 7
+00040:     .line 8
+00041:     invoke-static {p6, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00042: 
+00043:     .line 9
+00044:     .line 10
+00045:     .line 11
+00046:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00047: 
+00048:     .line 12
+00049:     .line 13
+00050:     .line 14
+00051:     iput-object p1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+00052: 
+00053:     .line 15
+00054:     .line 16
+00055:     iput-object p2, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+00056: 
+00057:     .line 17
+00058:     .line 18
+00059:     iput-object p3, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+00060: 
+00061:     .line 19
+00062:     .line 20
+00063:     iput-object p4, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+
+FILE=smali/com/request/result/LiveAddress.smali
+00043:     .line 9
+00044:     .line 10
+00045:     .line 11
+00046:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00047: 
+00048:     .line 12
+00049:     .line 13
+00050:     .line 14
+00051:     iput-object p1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+00052: 
+00053:     .line 15
+00054:     .line 16
+00055:     iput-object p2, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+00056: 
+00057:     .line 17
+00058:     .line 18
+00059:     iput-object p3, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+00060: 
+00061:     .line 19
+00062:     .line 20
+00063:     iput-object p4, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+00064: 
+00065:     .line 21
+00066:     .line 22
+00067:     iput-object p5, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+
+FILE=smali/com/request/result/LiveAddress.smali
+00047: 
+00048:     .line 12
+00049:     .line 13
+00050:     .line 14
+00051:     iput-object p1, p0, Lcom/request/result/LiveAddress;->playCode:Ljava/lang/String;
+00052: 
+00053:     .line 15
+00054:     .line 16
+00055:     iput-object p2, p0, Lcom/request/result/LiveAddress;->cdnType:Ljava/lang/String;
+00056: 
+00057:     .line 17
+00058:     .line 18
+00059:     iput-object p3, p0, Lcom/request/result/LiveAddress;->quality:Ljava/lang/String;
+00060: 
+00061:     .line 19
+00062:     .line 20
+00063:     iput-object p4, p0, Lcom/request/result/LiveAddress;->license:Ljava/lang/String;
+00064: 
+00065:     .line 21
+00066:     .line 22
+00067:     iput-object p5, p0, Lcom/request/result/LiveAddress;->AVFormat:Ljava/lang/String;
+00068: 
+00069:     .line 23
+00070:     .line 24
+00071:     iput-object p6, p0, Lcom/request/result/LiveAddress;->tag:Ljava/lang/String;
+HITS_SHOWN=12
+
+===== setVideoPath =====
+
+FILE=smali_classes3/tv/danmaku/ijk/media/player/widget/IjkVideoView.smali
+03310:     iget v0, p0, Ltv/danmaku/ijk/media/player/widget/IjkVideoView;->mVideoRotationDegree:I
+03311: 
+03312:     .line 93
+03313:     .line 94
+03314:     invoke-interface {p1, v0}, Ltv/danmaku/ijk/media/player/widget/media/IRenderView;->setVideoRotation(I)V
+03315: 
+03316:     .line 95
+03317:     .line 96
+03318:     .line 97
+03319:     return-void
+03320: .end method
+03321: 
+03322: .method public setVideoPath(Ljava/lang/String;)V
+03323:     .locals 0
+03324: 
+03325:     .line 1
+03326:     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+03327: 
+03328:     .line 2
+03329:     .line 3
+03330:     .line 4
+03331:     move-result-object p1
+03332: 
+03333:     .line 5
+03334:     invoke-virtual {p0, p1}, Ltv/danmaku/ijk/media/player/widget/IjkVideoView;->setVideoURI(Landroid/net/Uri;)V
+
+FILE=smali/com/download/activity/LocalPlayActivity.smali
+01295: 
+01296:     .line 48
+01297:     .line 49
+01298:     .line 50
+01299:     invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+01300: 
+01301:     .line 51
+01302:     .line 52
+01303:     .line 53
+01304:     move-result-object v3
+01305: 
+01306:     .line 54
+01307:     invoke-virtual {v2, v3}, Ltv/danmaku/ijk/media/player/widget/IjkVideoView;->setVideoPath(Ljava/lang/String;)V
+01308: 
+01309:     .line 55
+01310:     .line 56
+01311:     .line 57
+01312:     invoke-virtual {p0, v0}, Lcom/download/activity/LocalPlayActivity;->s6(I)Landroid/view/View;
+01313: 
+01314:     .line 58
+01315:     .line 59
+01316:     .line 60
+01317:     move-result-object v0
+01318: 
+01319:     .line 61
+
+FILE=smali_classes2/eb/g.smali
+01176:     iget-object v1, p0, Leb/g;->a:Lcom/advertlib/bean/AdInfoWrapper;
+01177: 
+01178:     .line 89
+01179:     .line 90
+01180:     invoke-virtual {v1}, Lcom/advertlib/bean/AdInfoWrapper;->getCachePath()Ljava/lang/String;
+01181: 
+01182:     .line 91
+01183:     .line 92
+01184:     .line 93
+01185:     move-result-object v1
+01186: 
+01187:     .line 94
+01188:     invoke-virtual {v0, v1}, Ltv/danmaku/ijk/media/player/widget/IjkVideoView;->setVideoPath(Ljava/lang/String;)V
+01189: 
+01190:     .line 95
+01191:     .line 96
+01192:     .line 97
+01193:     :cond_4
+01194:     return-void
+01195: .end method
+01196: 
+01197: .method private static final v(Leb/g;Ltv/danmaku/ijk/media/player/IMediaPlayer;)V
+01198:     .locals 0
+01199: 
+01200:     .line 1
+HITS_SHOWN=3
+
+===== VodPlayerWindow =====
+
+FILE=smali_classes3/rd/a$a.smali
+00213:     .line 4
+00214:     .line 5
+00215:     .line 6
+00216:     const-string v0, "attrs"
+00217: 
+00218:     .line 7
+00219:     .line 8
+00220:     invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00221: 
+00222:     .line 9
+00223:     .line 10
+00224:     .line 11
+00225:     new-instance v0, Lcom/vod/view/VodPlayerWindow;
+00226: 
+00227:     .line 12
+00228:     .line 13
+00229:     invoke-direct {v0, p1, p2}, Lcom/vod/view/VodPlayerWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+00230: 
+00231:     .line 14
+00232:     .line 15
+00233:     .line 16
+00234:     return-object v0
+00235: .end method
+00236: 
+00237: .method public f(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+
+FILE=smali/bc/z1.smali
+11235:     .line 13
+11236:     invoke-virtual {v0, p1, v1}, Lbc/a2;->c(Ljava/lang/Object;Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+11237: 
+11238:     .line 14
+11239:     .line 15
+11240:     .line 16
+11241:     move-result-object p1
+11242: 
+11243:     .line 17
+11244:     return-object p1
+11245: .end method
+11246: 
+11247: .method public final a3(Lcom/request/bean/StartPlayLiveBean;)Lio/reactivex/Observable;
+11248:     .locals 2
+11249: 
+11250:     .line 1
+11251:     const-string v0, "bean"
+11252: 
+11253:     .line 2
+11254:     .line 3
+11255:     invoke-static {p1, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+11256: 
+11257:     .line 4
+11258:     .line 5
+11259:     .line 6
+
+FILE=smali/com/request/result/StartPlayLiveResult.smali
+00001: .class public final Lcom/request/result/StartPlayLiveResult;
+00002: .super Ljava/lang/Object;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Ljava/io/Serializable;
+00007: 
+00008: 
+00009: # instance fields
+00010: .field private data:Lcom/request/result/StartPlayLiveResultData;
+00011: 
+00012: .field private errorMessage:Ljava/lang/String;
+00013: 
+
+FILE=smali/com/request/result/StartPlayLiveResult.smali
+00001: .class public final Lcom/request/result/StartPlayLiveResult;
+00002: .super Ljava/lang/Object;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Ljava/io/Serializable;
+00007: 
+00008: 
+00009: # instance fields
+00010: .field private data:Lcom/request/result/StartPlayLiveResultData;
+00011: 
+00012: .field private errorMessage:Ljava/lang/String;
+00013: 
+00014: .field private returnCode:Ljava/lang/String;
+00015: 
+00016: 
+00017: # direct methods
+00018: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)V
+00019:     .locals 0
+00020: 
+00021:     .line 1
+00022:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+FILE=smali/com/request/result/StartPlayLiveResult.smali
+00006: .implements Ljava/io/Serializable;
+00007: 
+00008: 
+00009: # instance fields
+00010: .field private data:Lcom/request/result/StartPlayLiveResultData;
+00011: 
+00012: .field private errorMessage:Ljava/lang/String;
+00013: 
+00014: .field private returnCode:Ljava/lang/String;
+00015: 
+00016: 
+00017: # direct methods
+00018: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)V
+00019:     .locals 0
+00020: 
+00021:     .line 1
+00022:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00023: 
+00024:     .line 2
+00025:     .line 3
+00026:     .line 4
+00027:     iput-object p1, p0, Lcom/request/result/StartPlayLiveResult;->returnCode:Ljava/lang/String;
+00028: 
+00029:     .line 5
+00030:     .line 6
+HITS_SHOWN=12
+
+===== PipVideoInfo =====
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00001: .class public Lcom/module/bean/PipVideoInfo;
+00002: .super Ljava/lang/Object;
+00003: .source "SourceFile"
+00004: 
+00005: # interfaces
+00006: .implements Ljava/io/Serializable;
+00007: 
+00008: 
+00009: # instance fields
+00010: .field addressLicense:Ljava/lang/String;
+00011: 
+00012: .field channelCode:Ljava/lang/String;
+00013: 
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00046:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00047: 
+00048:     return-void
+00049: .end method
+00050: 
+00051: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcc/h0$a;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/Channel;Ljava/lang/Boolean;I)V
+00052:     .locals 0
+00053: 
+00054:     .line 1
+00055:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00056: 
+00057:     .line 2
+00058:     iput-object p2, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+00059: 
+00060:     .line 3
+00061:     iput-object p3, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00062: 
+00063:     .line 4
+00064:     iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+00065: 
+00066:     .line 5
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00049: .end method
+00050: 
+00051: .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcc/h0$a;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/Channel;Ljava/lang/Boolean;I)V
+00052:     .locals 0
+00053: 
+00054:     .line 1
+00055:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00056: 
+00057:     .line 2
+00058:     iput-object p2, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+00059: 
+00060:     .line 3
+00061:     iput-object p3, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00062: 
+00063:     .line 4
+00064:     iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+00065: 
+00066:     .line 5
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00052:     .locals 0
+00053: 
+00054:     .line 1
+00055:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00056: 
+00057:     .line 2
+00058:     iput-object p2, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+00059: 
+00060:     .line 3
+00061:     iput-object p3, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00062: 
+00063:     .line 4
+00064:     iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+00065: 
+00066:     .line 5
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00055:     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+00056: 
+00057:     .line 2
+00058:     iput-object p2, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+00059: 
+00060:     .line 3
+00061:     iput-object p3, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00062: 
+00063:     .line 4
+00064:     iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+00065: 
+00066:     .line 5
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00058:     iput-object p2, p0, Lcom/module/bean/PipVideoInfo;->channelCode:Ljava/lang/String;
+00059: 
+00060:     .line 3
+00061:     iput-object p3, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00062: 
+00063:     .line 4
+00064:     iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+00065: 
+00066:     .line 5
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+00080: 
+00081:     .line 10
+00082:     iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+
+FILE=smali_classes3/rd/a$a.smali
+00217: 
+00218:     .line 7
+00219:     .line 8
+00220:     invoke-static {p2, v0}, Lne/k;->f(Ljava/lang/Object;Ljava/lang/String;)V
+00221: 
+00222:     .line 9
+00223:     .line 10
+00224:     .line 11
+00225:     new-instance v0, Lcom/vod/view/VodPlayerWindow;
+00226: 
+00227:     .line 12
+00228:     .line 13
+00229:     invoke-direct {v0, p1, p2}, Lcom/vod/view/VodPlayerWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+00230: 
+00231:     .line 14
+00232:     .line 15
+00233:     .line 16
+00234:     return-object v0
+00235: .end method
+00236: 
+00237: .method public f(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+00238:     .locals 7
+00239: 
+00240:     .line 1
+00241:     const-string v0, "context"
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00001: .class public final Lcom/vod/view/VodPlayerWindow;
+00002: .super Lcom/zhy/autolayout/AutoFrameLayout;
+00003: .source "SourceFile"
+00004: 
+00005: 
+00006: # instance fields
+00007: .field private final a:Ljava/lang/String;
+00008: 
+00009: .field private b:Z
+00010: 
+00011: .field private c:Lud/n1;
+00012: 
+00013: .field private d:Lme/l;
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00020:     .locals 1
+00021: 
+00022:     .line 1
+00023:     new-instance v0, Ljava/util/LinkedHashMap;
+00024: 
+00025:     .line 2
+00026:     .line 3
+00027:     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+00028: 
+00029:     .line 4
+00030:     .line 5
+00031:     .line 6
+00032:     iput-object v0, p0, Lcom/vod/view/VodPlayerWindow;->e:Ljava/util/Map;
+00033: 
+00034:     .line 7
+00035:     .line 8
+00036:     invoke-direct {p0, p1, p2}, Lcom/zhy/autolayout/AutoFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+00037: 
+00038:     .line 9
+00039:     .line 10
+00040:     .line 11
+00041:     const-class p1, Lcom/vod/view/VodPlayerWindow;
+00042: 
+00043:     .line 12
+00044:     .line 13
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00029:     .line 4
+00030:     .line 5
+00031:     .line 6
+00032:     iput-object v0, p0, Lcom/vod/view/VodPlayerWindow;->e:Ljava/util/Map;
+00033: 
+00034:     .line 7
+00035:     .line 8
+00036:     invoke-direct {p0, p1, p2}, Lcom/zhy/autolayout/AutoFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+00037: 
+00038:     .line 9
+00039:     .line 10
+00040:     .line 11
+00041:     const-class p1, Lcom/vod/view/VodPlayerWindow;
+00042: 
+00043:     .line 12
+00044:     .line 13
+00045:     invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+00046: 
+00047:     .line 14
+00048:     .line 15
+00049:     .line 16
+00050:     move-result-object p1
+00051: 
+00052:     .line 17
+00053:     iput-object p1, p0, Lcom/vod/view/VodPlayerWindow;->a:Ljava/lang/String;
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00041:     const-class p1, Lcom/vod/view/VodPlayerWindow;
+00042: 
+00043:     .line 12
+00044:     .line 13
+00045:     invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+00046: 
+00047:     .line 14
+00048:     .line 15
+00049:     .line 16
+00050:     move-result-object p1
+00051: 
+00052:     .line 17
+00053:     iput-object p1, p0, Lcom/vod/view/VodPlayerWindow;->a:Ljava/lang/String;
+00054: 
+00055:     .line 18
+00056:     .line 19
+00057:     sget p1, Lcom/vod/R$drawable;->sel_player_window:I
+00058: 
+00059:     .line 20
+00060:     .line 21
+00061:     invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+00062: 
+00063:     .line 22
+00064:     .line 23
+00065:     .line 24
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00054: 
+00055:     .line 18
+00056:     .line 19
+00057:     sget p1, Lcom/vod/R$drawable;->sel_player_window:I
+00058: 
+00059:     .line 20
+00060:     .line 21
+00061:     invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+00062: 
+00063:     .line 22
+00064:     .line 23
+00065:     .line 24
+00066:     invoke-direct {p0}, Lcom/vod/view/VodPlayerWindow;->i()V
+00067: 
+00068:     .line 25
+00069:     .line 26
+00070:     .line 27
+00071:     new-instance p1, Lud/n1;
+00072: 
+00073:     .line 28
+00074:     .line 29
+00075:     invoke-direct {p1}, Lud/n1;-><init>()V
+00076: 
+00077:     .line 30
+00078:     .line 31
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00068:     .line 25
+00069:     .line 26
+00070:     .line 27
+00071:     new-instance p1, Lud/n1;
+00072: 
+00073:     .line 28
+00074:     .line 29
+00075:     invoke-direct {p1}, Lud/n1;-><init>()V
+00076: 
+00077:     .line 30
+00078:     .line 31
+00079:     .line 32
+00080:     iput-object p1, p0, Lcom/vod/view/VodPlayerWindow;->c:Lud/n1;
+00081: 
+00082:     .line 33
+00083:     .line 34
+00084:     return-void
+00085: .end method
+00086: 
+00087: .method public static synthetic h(Lcom/vod/view/VodPlayerWindow;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZZLjava/lang/String;Ljava/lang/String;ZIIILjava/lang/Object;)V
+00088:     .locals 15
+00089: 
+00090:     move/from16 v0, p13
+00091: 
+00092:     and-int/lit16 v1, v0, 0x400
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00075:     invoke-direct {p1}, Lud/n1;-><init>()V
+00076: 
+00077:     .line 30
+00078:     .line 31
+00079:     .line 32
+00080:     iput-object p1, p0, Lcom/vod/view/VodPlayerWindow;->c:Lud/n1;
+00081: 
+00082:     .line 33
+00083:     .line 34
+00084:     return-void
+00085: .end method
+00086: 
+00087: .method public static synthetic h(Lcom/vod/view/VodPlayerWindow;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZZLjava/lang/String;Ljava/lang/String;ZIIILjava/lang/Object;)V
+00088:     .locals 15
+00089: 
+00090:     move/from16 v0, p13
+00091: 
+00092:     and-int/lit16 v1, v0, 0x400
+00093: 
+00094:     if-eqz v1, :cond_0
+00095: 
+00096:     const/4 v1, 0x0
+00097: 
+00098:     const/4 v13, 0x0
+00099: 
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00131: 
+00132:     move/from16 v8, p6
+00133: 
+00134:     move/from16 v9, p7
+00135: 
+00136:     move-object/from16 v10, p8
+00137: 
+00138:     move-object/from16 v11, p9
+00139: 
+00140:     move/from16 v12, p10
+00141: 
+00142:     .line 1
+00143:     invoke-virtual/range {v2 .. v14}, Lcom/vod/view/VodPlayerWindow;->g(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZZLjava/lang/String;Ljava/lang/String;ZII)V
+00144: 
+00145:     return-void
+00146: .end method
+00147: 
+00148: .method private final i()V
+00149:     .locals 0
+00150: 
+00151:     .line 1
+00152:     return-void
+00153: .end method
+00154: 
+00155: 
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00148: .method private final i()V
+00149:     .locals 0
+00150: 
+00151:     .line 1
+00152:     return-void
+00153: .end method
+00154: 
+00155: 
+00156: # virtual methods
+00157: .method public final a()V
+00158:     .locals 4
+00159: 
+00160:     iget-object v0, p0, Lcom/vod/view/VodPlayerWindow;->a:Ljava/lang/String;
+00161: 
+00162:     const/4 v1, 0x0
+00163: 
+00164:     new-array v2, v1, [Ljava/lang/Object;
+00165: 
+00166:     const-string v3, "exitFullScreen"
+00167: 
+00168:     invoke-static {v0, v3, v2}, Lh2/b;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+00169: 
+00170:     iget-boolean v0, p0, Lcom/vod/view/VodPlayerWindow;->b:Z
+00171: 
+00172:     if-eqz v0, :cond_1
+
+FILE=smali_classes3/com/vod/view/VodPlayerWindow.smali
+00158:     .locals 4
+00159: 
+00160:     iget-object v0, p0, Lcom/vod/view/VodPlayerWindow;->a:Ljava/lang/String;
+00161: 
+00162:     const/4 v1, 0x0
+00163: 
+00164:     new-array v2, v1, [Ljava/lang/Object;
+00165: 
+00166:     const-string v3, "exitFullScreen"
+00167: 
+00168:     invoke-static {v0, v3, v2}, Lh2/b;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+00169: 
+00170:     iget-boolean v0, p0, Lcom/vod/view/VodPlayerWindow;->b:Z
+00171: 
+00172:     if-eqz v0, :cond_1
+00173: 
+00174:     iget-object v0, p0, Lcom/vod/view/VodPlayerWindow;->c:Lud/n1;
+00175: 
+00176:     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->s7()Z
+00177: 
+00178:     move-result v0
+00179: 
+00180:     if-eqz v0, :cond_1
+00181: 
+00182:     iput-boolean v1, p0, Lcom/vod/view/VodPlayerWindow;->b:Z
+HITS_SHOWN=12
+
+===== CROSS_LINK_CANDIDATES =====
+2|smali/com/request/result/PcdnMediaInfoResult.smali
+4|smali_classes2/com/module/bean/PipVideoInfo.smali
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00061:     iput-object p3, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00062: 
+00063:     .line 4
+00064:     iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+00065: 
+00066:     .line 5
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+00080: 
+00081:     .line 10
+00082:     iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+00083: 
+00084:     .line 11
+00085:     iput-object p9, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00064:     iput-object p4, p0, Lcom/module/bean/PipVideoInfo;->programInfoJson:Ljava/lang/String;
+00065: 
+00066:     .line 5
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+00080: 
+00081:     .line 10
+00082:     iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+00083: 
+00084:     .line 11
+00085:     iput-object p9, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+00086: 
+00087:     .line 12
+00088:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00067:     iput-object p10, p0, Lcom/module/bean/PipVideoInfo;->pipProgramInfoJson:Ljava/lang/String;
+00068: 
+00069:     .line 6
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+00080: 
+00081:     .line 10
+00082:     iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+00083: 
+00084:     .line 11
+00085:     iput-object p9, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+00086: 
+00087:     .line 12
+00088:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+00089: 
+00090:     .line 13
+00091:     iput-object p12, p0, Lcom/module/bean/PipVideoInfo;->mPipChannel:Lcom/request/result/Channel;
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00070:     iput-object p5, p0, Lcom/module/bean/PipVideoInfo;->addressLicense:Ljava/lang/String;
+00071: 
+00072:     .line 7
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+00080: 
+00081:     .line 10
+00082:     iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+00083: 
+00084:     .line 11
+00085:     iput-object p9, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+00086: 
+00087:     .line 12
+00088:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+00089: 
+00090:     .line 13
+00091:     iput-object p12, p0, Lcom/module/bean/PipVideoInfo;->mPipChannel:Lcom/request/result/Channel;
+00092: 
+00093:     .line 14
+00094:     invoke-virtual {p13}, Ljava/lang/Boolean;->booleanValue()Z
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00073:     iput-object p6, p0, Lcom/module/bean/PipVideoInfo;->from:Ljava/lang/String;
+00074: 
+00075:     .line 8
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+00080: 
+00081:     .line 10
+00082:     iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+00083: 
+00084:     .line 11
+00085:     iput-object p9, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+00086: 
+00087:     .line 12
+00088:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+00089: 
+00090:     .line 13
+00091:     iput-object p12, p0, Lcom/module/bean/PipVideoInfo;->mPipChannel:Lcom/request/result/Channel;
+00092: 
+00093:     .line 14
+00094:     invoke-virtual {p13}, Ljava/lang/Boolean;->booleanValue()Z
+00095: 
+00096:     move-result p1
+00097: 
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00076:     iput-object p7, p0, Lcom/module/bean/PipVideoInfo;->quality:Ljava/lang/String;
+00077: 
+00078:     .line 9
+00079:     iput-object p11, p0, Lcom/module/bean/PipVideoInfo;->pipQuality:Ljava/lang/String;
+00080: 
+00081:     .line 10
+00082:     iput-object p8, p0, Lcom/module/bean/PipVideoInfo;->programName:Ljava/lang/String;
+00083: 
+00084:     .line 11
+00085:     iput-object p9, p0, Lcom/module/bean/PipVideoInfo;->isMultiQuality:Ljava/lang/Boolean;
+00086: 
+00087:     .line 12
+00088:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->programNo:Ljava/lang/String;
+00089: 
+00090:     .line 13
+00091:     iput-object p12, p0, Lcom/module/bean/PipVideoInfo;->mPipChannel:Lcom/request/result/Channel;
+00092: 
+00093:     .line 14
+00094:     invoke-virtual {p13}, Ljava/lang/Boolean;->booleanValue()Z
+00095: 
+00096:     move-result p1
+00097: 
+00098:     iput-boolean p1, p0, Lcom/module/bean/PipVideoInfo;->isUrlExpired:Z
+00099: 
+00100:     .line 15
+HITS_SHOWN=12
+
+===== setPlayUrl =====
+
+FILE=smali/com/request/result/PcdnMediaInfoResult.smali
+01198: 
+01199: .method public final setName(Ljava/lang/String;)V
+01200:     .locals 0
+01201: 
+01202:     .line 1
+01203:     iput-object p1, p0, Lcom/request/result/PcdnMediaInfoResult;->name:Ljava/lang/String;
+01204: 
+01205:     .line 2
+01206:     .line 3
+01207:     return-void
+01208: .end method
+01209: 
+01210: .method public final setPlayUrl(Ljava/lang/String;)V
+01211:     .locals 0
+01212: 
+01213:     .line 1
+01214:     iput-object p1, p0, Lcom/request/result/PcdnMediaInfoResult;->playUrl:Ljava/lang/String;
+01215: 
+01216:     .line 2
+01217:     .line 3
+01218:     return-void
+01219: .end method
+01220: 
+01221: .method public final setProtocol(Ljava/lang/String;)V
+01222:     .locals 0
+
+FILE=smali_classes2/com/module/bean/PipVideoInfo.smali
+00338: 
+00339: .method public setPlayType(Lcc/h0$a;)V
+00340:     .locals 0
+00341: 
+00342:     .line 1
+00343:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->playType:Lcc/h0$a;
+00344: 
+00345:     .line 2
+00346:     .line 3
+00347:     return-void
+00348: .end method
+00349: 
+00350: .method public setPlayUrl(Ljava/lang/String;)V
+00351:     .locals 0
+00352: 
+00353:     .line 1
+00354:     iput-object p1, p0, Lcom/module/bean/PipVideoInfo;->playUrl:Ljava/lang/String;
+00355: 
+00356:     .line 2
+00357:     .line 3
+00358:     return-void
+00359: .end method
+00360: 
+00361: .method public setProgramIndex(I)V
+00362:     .locals 0
+
+FILE=smali_classes2/com/live/db/LiveAddressList.smali
+00269: 
+00270: .method public final setPlayCode(Ljava/lang/String;)V
+00271:     .locals 0
+00272: 
+00273:     .line 1
+00274:     iput-object p1, p0, Lcom/live/db/LiveAddressList;->playCode:Ljava/lang/String;
+00275: 
+00276:     .line 2
+00277:     .line 3
+00278:     return-void
+00279: .end method
+00280: 
+00281: .method public final setPlayUrl(Ljava/lang/String;)V
+00282:     .locals 0
+00283: 
+00284:     .line 1
+00285:     iput-object p1, p0, Lcom/live/db/LiveAddressList;->playUrl:Ljava/lang/String;
+00286: 
+00287:     .line 2
+00288:     .line 3
+00289:     return-void
+00290: .end method
+00291: 
+00292: .method public final setPlayUrlList(Ljava/util/List;)V
+00293:     .locals 0
+2|smali_classes2/com/live/db/LiveAddressList.smali
+CANDIDATE_FILES=3
+
+NOTE=static call-chain extraction only; no credentials, tokens, cookies, or live requests collected
