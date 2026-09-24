@@ -1,0 +1,1891 @@
+MEDIA_CORE_FIELDS_V1
+generated_at=2026-09-24T13:01:12+00:00
+
+=== smali/com/request/result/MovieList.smali ===
+[FIELDS]
+.field private audioInfo:Ljava/lang/String;
+.field private audioType:Ljava/lang/String;
+.field private bitRateType:Ljava/lang/String;
+.field private contentId:Ljava/lang/String;
+.field private encodeFormat:Ljava/lang/String;
+.field private licenseList:Ljava/util/List;
+.field private quality:Ljava/lang/String;
+.field private screenFormat:Ljava/lang/String;
+.field private terminalType:Ljava/lang/String;
+.field private type:Ljava/lang/String;
+.field private videoFormat:Ljava/lang/String;
+.field private videoType:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "MovieList(contentId="
+    const-string v1, ", terminalType="
+    const-string v1, ", type="
+    const-string v1, ", audioType="
+    const-string v1, ", videoType="
+    const-string v1, ", screenFormat="
+    const-string v1, ", encodeFormat="
+    const-string v1, ", videoFormat="
+    const-string v1, ", bitRateType="
+    const-string v1, ", quality="
+    const-string v1, ", audioInfo="
+    const-string v1, ", licenseList="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+.method public static synthetic copy$default(Lcom/request/result/MovieList;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/request/result/MovieList;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
+.method public final component11()Ljava/lang/String;
+.method public final component12()Ljava/util/List;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lcom/request/result/MovieList;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getAudioInfo()Ljava/lang/String;
+.method public final getAudioType()Ljava/lang/String;
+.method public final getBitRateType()Ljava/lang/String;
+.method public final getContentId()Ljava/lang/String;
+.method public final getEncodeFormat()Ljava/lang/String;
+.method public final getLicenseList()Ljava/util/List;
+.method public final getQuality()Ljava/lang/String;
+.method public final getScreenFormat()Ljava/lang/String;
+.method public final getTerminalType()Ljava/lang/String;
+.method public final getType()Ljava/lang/String;
+.method public final getVideoFormat()Ljava/lang/String;
+.method public final getVideoType()Ljava/lang/String;
+.method public hashCode()I
+.method public final setAudioInfo(Ljava/lang/String;)V
+.method public final setAudioType(Ljava/lang/String;)V
+.method public final setBitRateType(Ljava/lang/String;)V
+.method public final setContentId(Ljava/lang/String;)V
+.method public final setEncodeFormat(Ljava/lang/String;)V
+.method public final setLicenseList(Ljava/util/List;)V
+.method public final setQuality(Ljava/lang/String;)V
+.method public final setScreenFormat(Ljava/lang/String;)V
+.method public final setTerminalType(Ljava/lang/String;)V
+.method public final setType(Ljava/lang/String;)V
+.method public final setVideoFormat(Ljava/lang/String;)V
+.method public final setVideoType(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/ContentList.smali ===
+[FIELDS]
+.field private columnAlias:Ljava/lang/String;
+.field private columnPosterList:Ljava/util/List;
+.field private contentId:Ljava/lang/String;
+.field private description:Ljava/lang/String;
+.field private name:Ljava/lang/String;
+.field private posterList:Ljava/util/List;
+.field private programType:Ljava/lang/String;
+.field private remark:Ljava/lang/String;
+.field private restricted:Ljava/lang/String;
+.field private specialFlag:Ljava/lang/String;
+.field private type:Ljava/lang/String;
+.field private updateCount:Ljava/lang/String;
+.field private url:Ljava/lang/String;
+.field private viewPoint:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "contentId"
+    const-string v0, "type"
+    const-string v0, "contentId"
+    const-string v0, "type"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "ContentList(contentId="
+    const-string v1, ", name="
+    const-string v1, ", viewPoint="
+    const-string v1, ", type="
+    const-string v1, ", url="
+    const-string v1, ", description="
+    const-string v1, ", remark="
+    const-string v1, ", posterList="
+    const-string v1, ", columnPosterList="
+    const-string v1, ", programType="
+    const-string v1, ", updateCount="
+    const-string v1, ", specialFlag="
+    const-string v1, ", restricted="
+    const-string v1, ", columnAlias="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILne/g;)V
+.method public static synthetic copy$default(Lcom/request/result/ContentList;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/ContentList;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
+.method public final component11()Ljava/lang/String;
+.method public final component12()Ljava/lang/String;
+.method public final component13()Ljava/lang/String;
+.method public final component14()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/util/List;
+.method public final component9()Ljava/util/List;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/ContentList;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getColumnAlias()Ljava/lang/String;
+.method public final getColumnPosterList()Ljava/util/List;
+.method public final getContentId()Ljava/lang/String;
+.method public final getDescription()Ljava/lang/String;
+.method public final getName()Ljava/lang/String;
+.method public final getPosterList()Ljava/util/List;
+.method public final getProgramType()Ljava/lang/String;
+.method public final getRemark()Ljava/lang/String;
+.method public final getRestricted()Ljava/lang/String;
+.method public final getSpecialFlag()Ljava/lang/String;
+.method public final getType()Ljava/lang/String;
+.method public final getUpdateCount()Ljava/lang/String;
+.method public final getUrl()Ljava/lang/String;
+.method public final getViewPoint()Ljava/lang/String;
+.method public hashCode()I
+.method public final setColumnAlias(Ljava/lang/String;)V
+.method public final setColumnPosterList(Ljava/util/List;)V
+.method public final setContentId(Ljava/lang/String;)V
+.method public final setDescription(Ljava/lang/String;)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setPosterList(Ljava/util/List;)V
+.method public final setProgramType(Ljava/lang/String;)V
+.method public final setRemark(Ljava/lang/String;)V
+.method public final setRestricted(Ljava/lang/String;)V
+.method public final setSpecialFlag(Ljava/lang/String;)V
+.method public final setType(Ljava/lang/String;)V
+.method public final setUpdateCount(Ljava/lang/String;)V
+.method public final setUrl(Ljava/lang/String;)V
+.method public final setViewPoint(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/SearchItem.smali ===
+[FIELDS]
+.field private itemList:Ljava/util/List;
+.field private programType:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "SearchItem(programType="
+    const-string v1, ", itemList="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
+.method public static synthetic copy$default(Lcom/request/result/SearchItem;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/request/result/SearchItem;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/util/List;
+.method public final copy(Ljava/lang/String;Ljava/util/List;)Lcom/request/result/SearchItem;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getItemList()Ljava/util/List;
+.method public final getProgramType()Ljava/lang/String;
+.method public hashCode()I
+.method public final setItemList(Ljava/util/List;)V
+.method public final setProgramType(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/SimpleProgramList.smali ===
+[FIELDS]
+.field private contentId:Ljava/lang/String;
+.field private duration:Ljava/lang/String;
+.field private fraction:F
+.field private hasPositive:Ljava/lang/String;
+.field private hasTidbits:Ljava/lang/String;
+.field private hasTrailer:Ljava/lang/String;
+.field private isDownloaded:Z
+.field private isDownloading:Z
+.field private isSelected:Z
+.field private name:Ljava/lang/String;
+.field private posterList:Ljava/util/List;
+.field private quality:Ljava/lang/String;
+.field private seriesNumber:I
+.field private viewPoint:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "SimpleProgramList(contentId="
+    const-string v1, ", name="
+    const-string v1, ", duration="
+    const-string v1, ", hasPositive="
+    const-string v1, ", hasTidbits="
+    const-string v1, ", hasTrailer="
+    const-string v1, ", seriesNumber="
+    const-string v1, ", quality="
+    const-string v1, ", viewPoint="
+    const-string v1, ", fraction="
+    const-string v1, ", isDownloading="
+    const-string v1, ", isDownloaded="
+    const-string v1, ", isSelected="
+    const-string v1, ", posterList="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;FZZZLjava/util/List;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;FZZZLjava/util/List;ILne/g;)V
+.method public static synthetic copy$default(Lcom/request/result/SimpleProgramList;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;FZZZLjava/util/List;ILjava/lang/Object;)Lcom/request/result/SimpleProgramList;
+.method public final component1()Ljava/lang/String;
+.method public final component10()F
+.method public final component11()Z
+.method public final component12()Z
+.method public final component13()Z
+.method public final component14()Ljava/util/List;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()I
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;FZZZLjava/util/List;)Lcom/request/result/SimpleProgramList;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getContentId()Ljava/lang/String;
+.method public final getDuration()Ljava/lang/String;
+.method public final getFraction()F
+.method public final getHasPositive()Ljava/lang/String;
+.method public final getHasTidbits()Ljava/lang/String;
+.method public final getHasTrailer()Ljava/lang/String;
+.method public final getName()Ljava/lang/String;
+.method public final getPosterList()Ljava/util/List;
+.method public final getQuality()Ljava/lang/String;
+.method public final getSeriesNumber()I
+.method public final getViewPoint()Ljava/lang/String;
+.method public hashCode()I
+.method public final isDownloaded()Z
+.method public final isDownloading()Z
+.method public final isSelected()Z
+.method public final setContentId(Ljava/lang/String;)V
+.method public final setDownloaded(Z)V
+.method public final setDownloading(Z)V
+.method public final setDuration(Ljava/lang/String;)V
+.method public final setFraction(F)V
+.method public final setHasPositive(Ljava/lang/String;)V
+.method public final setHasTidbits(Ljava/lang/String;)V
+.method public final setHasTrailer(Ljava/lang/String;)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setPosterList(Ljava/util/List;)V
+.method public final setQuality(Ljava/lang/String;)V
+.method public final setSelected(Z)V
+.method public final setSeriesNumber(I)V
+.method public final setViewPoint(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/GetHomeResult.smali ===
+[FIELDS]
+.field private data:Lcom/request/result/GetHomeData;
+.field private errorMessage:Ljava/lang/String;
+.field private returnCode:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "returnCode"
+    const-string v0, "returnCode"
+    const-string v0, "<set-?>"
+    const-string v1, "GetHomeResult(returnCode="
+    const-string v1, ", errorMessage="
+    const-string v1, ", data="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetHomeData;)V
+.method public static synthetic copy$default(Lcom/request/result/GetHomeResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetHomeData;ILjava/lang/Object;)Lcom/request/result/GetHomeResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Lcom/request/result/GetHomeData;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetHomeData;)Lcom/request/result/GetHomeResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getData()Lcom/request/result/GetHomeData;
+.method public final getErrorMessage()Ljava/lang/String;
+.method public final getReturnCode()Ljava/lang/String;
+.method public hashCode()I
+.method public final setData(Lcom/request/result/GetHomeData;)V
+.method public final setErrorMessage(Ljava/lang/String;)V
+.method public final setReturnCode(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/GetColumnContentsResult.smali ===
+[FIELDS]
+.field private data:Lcom/request/result/GetColumnContentsResultData;
+.field private errorMessage:Ljava/lang/String;
+.field private returnCode:Ljava/lang/String;
+.field private totalSize:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "returnCode"
+    const-string v0, "errorMessage"
+    const-string v0, "totalSize"
+    const-string v0, "returnCode"
+    const-string v0, "errorMessage"
+    const-string v0, "totalSize"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "GetColumnContentsResult(returnCode="
+    const-string v1, ", errorMessage="
+    const-string v1, ", totalSize="
+    const-string v1, ", data="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetColumnContentsResultData;)V
+.method public static synthetic copy$default(Lcom/request/result/GetColumnContentsResult;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetColumnContentsResultData;ILjava/lang/Object;)Lcom/request/result/GetColumnContentsResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Lcom/request/result/GetColumnContentsResultData;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetColumnContentsResultData;)Lcom/request/result/GetColumnContentsResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getData()Lcom/request/result/GetColumnContentsResultData;
+.method public final getErrorMessage()Ljava/lang/String;
+.method public final getReturnCode()Ljava/lang/String;
+.method public final getTotalSize()Ljava/lang/String;
+.method public hashCode()I
+.method public final setData(Lcom/request/result/GetColumnContentsResultData;)V
+.method public final setErrorMessage(Ljava/lang/String;)V
+.method public final setReturnCode(Ljava/lang/String;)V
+.method public final setTotalSize(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/GetColumnContentsResultData.smali ===
+[FIELDS]
+.field private childColumnList:Ljava/util/List;
+[CONST_STRINGS]
+    const-string v1, "GetColumnContentsResultData(childColumnList="
+[METHODS]
+.method public constructor <init>(Ljava/util/List;)V
+.method public static synthetic copy$default(Lcom/request/result/GetColumnContentsResultData;Ljava/util/List;ILjava/lang/Object;)Lcom/request/result/GetColumnContentsResultData;
+.method public final component1()Ljava/util/List;
+.method public final copy(Ljava/util/List;)Lcom/request/result/GetColumnContentsResultData;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getChildColumnList()Ljava/util/List;
+.method public hashCode()I
+.method public final setChildColumnList(Ljava/util/List;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/GetRecommendsResultData.smali ===
+[FIELDS]
+.field private recommendList:Ljava/util/List;
+[CONST_STRINGS]
+    const-string v1, "GetRecommendsResultData(recommendList="
+[METHODS]
+.method public constructor <init>(Ljava/util/List;)V
+.method public static synthetic copy$default(Lcom/request/result/GetRecommendsResultData;Ljava/util/List;ILjava/lang/Object;)Lcom/request/result/GetRecommendsResultData;
+.method public final component1()Ljava/util/List;
+.method public final copy(Ljava/util/List;)Lcom/request/result/GetRecommendsResultData;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getRecommendList()Ljava/util/List;
+.method public hashCode()I
+.method public final setRecommendList(Ljava/util/List;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/AssetList.smali ===
+[FIELDS]
+.field private actorDisplay:Ljava/lang/String;
+.field private alias:Ljava/lang/String;
+.field private contentId:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
+.field private description:Ljava/lang/String;
+.field private director:Ljava/lang/String;
+.field private duration:Ljava/lang/String;
+.field private transient mIconPosterUrl:Ljava/lang/String;
+.field private transient mScoreStr:Landroid/text/Spanned;
+.field private transient mShowName:Ljava/lang/String;
+.field private transient mUpdateCountStr:Landroid/text/Spanned;
+.field private moreAudio:I
+.field private moreSubtitle:I
+.field private name:Ljava/lang/String;
+.field private posterList:Ljava/util/List;
+.field private programType:Ljava/lang/String;
+.field private score:F
+.field private shelveTime:Ljava/lang/String;
+.field private tags:Ljava/lang/String;
+.field private type:Ljava/lang/String;
+.field private updateCount:I
+.field private updateTime:Ljava/lang/String;
+.field private viewpoint:Ljava/lang/String;
+.field private volumnCount:I
+[CONST_STRINGS]
+    const-string v1, "name"
+    const-string v1, ""
+    const-string v3, "contentId"
+    const-string v3, "name"
+    const-string v0, "contentId"
+    const-string v0, "name"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "AssetList(contentId="
+    const-string v1, ", name="
+    const-string v1, ", moreAudio="
+    const-string v1, ", moreSubtitle="
+    const-string v1, ", score="
+    const-string v1, ", volumnCount="
+    const-string v1, ", updateCount="
+    const-string v1, ", actorDisplay="
+    const-string v1, ", type="
+    const-string v1, ", duration="
+    const-string v1, ", programType="
+    const-string v1, ", alias="
+    const-string v1, ", director="
+    const-string v1, ", viewpoint="
+    const-string v1, ", updateTime="
+    const-string v1, ", shelveTime="
+    const-string v1, ", posterList="
+    const-string v1, ", tags="
+    const-string v1, ", description="
+    const-string v1, ", contentType="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;IIFIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;IIFIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILne/g;)V
+.method public static synthetic copy$default(Lcom/request/result/AssetList;Ljava/lang/String;Ljava/lang/String;IIFIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/AssetList;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
+.method public final component11()Ljava/lang/String;
+.method public final component12()Ljava/lang/String;
+.method public final component13()Ljava/lang/String;
+.method public final component14()Ljava/lang/String;
+.method public final component15()Ljava/lang/String;
+.method public final component16()Ljava/lang/String;
+.method public final component17()Ljava/util/List;
+.method public final component18()Ljava/lang/String;
+.method public final component19()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component20()Ljava/lang/String;
+.method public final component3()I
+.method public final component4()I
+.method public final component5()F
+.method public final component6()I
+.method public final component7()I
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;IIFIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/AssetList;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getActorDisplay()Ljava/lang/String;
+.method public final getAlias()Ljava/lang/String;
+.method public final getContentId()Ljava/lang/String;
+.method public final getContentType()Ljava/lang/String;
+.method public final getDescription()Ljava/lang/String;
+.method public final getDirector()Ljava/lang/String;
+.method public final getDuration()Ljava/lang/String;
+.method public final getMIconPosterUrl()Ljava/lang/String;
+.method public final getMScoreStr()Landroid/text/Spanned;
+.method public final getMShowName()Ljava/lang/String;
+.method public final getMUpdateCountStr()Landroid/text/Spanned;
+.method public final getMoreAudio()I
+.method public final getMoreSubtitle()I
+.method public final getName()Ljava/lang/String;
+.method public final getPosterList()Ljava/util/List;
+.method public final getProgramType()Ljava/lang/String;
+.method public final getScore()F
+.method public final getShelveTime()Ljava/lang/String;
+.method public final getTags()Ljava/lang/String;
+.method public final getType()Ljava/lang/String;
+.method public final getUpdateCount()I
+.method public final getUpdateTime()Ljava/lang/String;
+.method public final getViewpoint()Ljava/lang/String;
+.method public final getVolumnCount()I
+.method public hashCode()I
+.method public final setActorDisplay(Ljava/lang/String;)V
+.method public final setAlias(Ljava/lang/String;)V
+.method public final setContentId(Ljava/lang/String;)V
+.method public final setContentType(Ljava/lang/String;)V
+.method public final setDescription(Ljava/lang/String;)V
+.method public final setDirector(Ljava/lang/String;)V
+.method public final setDuration(Ljava/lang/String;)V
+.method public final setMIconPosterUrl(Ljava/lang/String;)V
+.method public final setMScoreStr(Landroid/text/Spanned;)V
+.method public final setMShowName(Ljava/lang/String;)V
+.method public final setMUpdateCountStr(Landroid/text/Spanned;)V
+.method public final setMoreAudio(I)V
+.method public final setMoreSubtitle(I)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setPosterList(Ljava/util/List;)V
+.method public final setProgramType(Ljava/lang/String;)V
+.method public final setScore(F)V
+.method public final setShelveTime(Ljava/lang/String;)V
+.method public final setTags(Ljava/lang/String;)V
+.method public final setType(Ljava/lang/String;)V
+.method public final setUpdateCount(I)V
+.method public final setUpdateTime(Ljava/lang/String;)V
+.method public final setViewpoint(Ljava/lang/String;)V
+.method public final setVolumnCount(I)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/ThumbnailResult.smali ===
+[FIELDS]
+.field private combine_hn:I
+.field private combine_wn:I
+.field private combines:Ljava/util/List;
+.field private height:I
+.field private name:Ljava/lang/String;
+.field private nb_snapshots:I
+.field private source_url:Ljava/lang/String;
+.field private width:I
+[CONST_STRINGS]
+    const-string v0, "name"
+    const-string v0, "name"
+    const-string v0, "<set-?>"
+    const-string v1, "ThumbnailResult(name="
+    const-string v1, ", width="
+    const-string v1, ", height="
+    const-string v1, ", combine_wn="
+    const-string v1, ", combine_hn="
+    const-string v1, ", nb_snapshots="
+    const-string v1, ", source_url="
+    const-string v1, ", combines="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;IIIIILjava/lang/String;Ljava/util/List;)V
+.method public static synthetic copy$default(Lcom/request/result/ThumbnailResult;Ljava/lang/String;IIIIILjava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/request/result/ThumbnailResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()I
+.method public final component3()I
+.method public final component4()I
+.method public final component5()I
+.method public final component6()I
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/util/List;
+.method public final copy(Ljava/lang/String;IIIIILjava/lang/String;Ljava/util/List;)Lcom/request/result/ThumbnailResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getCombine_hn()I
+.method public final getCombine_wn()I
+.method public final getCombines()Ljava/util/List;
+.method public final getHeight()I
+.method public final getName()Ljava/lang/String;
+.method public final getNb_snapshots()I
+.method public final getSource_url()Ljava/lang/String;
+.method public final getWidth()I
+.method public hashCode()I
+.method public final setCombine_hn(I)V
+.method public final setCombine_wn(I)V
+.method public final setCombines(Ljava/util/List;)V
+.method public final setHeight(I)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setNb_snapshots(I)V
+.method public final setSource_url(Ljava/lang/String;)V
+.method public final setWidth(I)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/FavoriteList.smali ===
+[FIELDS]
+.field private actorDisplay:Ljava/lang/String;
+.field private alias:Ljava/lang/String;
+.field private contentId:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
+.field private description:Ljava/lang/String;
+.field private director:Ljava/lang/String;
+.field private duration:Ljava/lang/String;
+.field private id:I
+.field private moreAudio:I
+.field private moreSubtitle:I
+.field private name:Ljava/lang/String;
+.field private posterList:Ljava/util/ArrayList;
+.field private programType:Ljava/lang/String;
+.field private score:F
+.field private shelve_time:Ljava/lang/String;
+.field private supportVideoType:Ljava/lang/String;
+.field private tags:Ljava/lang/String;
+.field private type:Ljava/lang/String;
+.field private updateCount:I
+.field private updateTime:Ljava/lang/String;
+.field private viewpoint:Ljava/lang/String;
+.field private volumnCount:I
+[CONST_STRINGS]
+    const-string v1, "FavoriteList(id="
+    const-string v1, ", contentId="
+    const-string v1, ", name="
+    const-string v1, ", actorDisplay="
+    const-string v1, ", type="
+    const-string v1, ", duration="
+    const-string v1, ", programType="
+    const-string v1, ", volumnCount="
+    const-string v1, ", updateCount="
+    const-string v1, ", alias="
+    const-string v1, ", director="
+    const-string v1, ", score="
+    const-string v1, ", viewpoint="
+    const-string v1, ", updateTime="
+    const-string v1, ", shelve_time="
+    const-string v1, ", moreAudio="
+    const-string v1, ", moreSubtitle="
+    const-string v1, ", contentType="
+    const-string v1, ", tags="
+    const-string v1, ", description="
+    const-string v1, ", posterList="
+    const-string v1, ", supportVideoType="
+[METHODS]
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;FLjava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;)V
+.method public synthetic constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;FLjava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;ILne/g;)V
+.method public static synthetic copy$default(Lcom/request/result/FavoriteList;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;FLjava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/FavoriteList;
+.method public final component1()I
+.method public final component10()Ljava/lang/String;
+.method public final component11()Ljava/lang/String;
+.method public final component12()F
+.method public final component13()Ljava/lang/String;
+.method public final component14()Ljava/lang/String;
+.method public final component15()Ljava/lang/String;
+.method public final component16()I
+.method public final component17()I
+.method public final component18()Ljava/lang/String;
+.method public final component19()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component20()Ljava/lang/String;
+.method public final component21()Ljava/util/ArrayList;
+.method public final component22()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()I
+.method public final component9()I
+.method public final copy(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;FLjava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;)Lcom/request/result/FavoriteList;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getActorDisplay()Ljava/lang/String;
+.method public final getAlias()Ljava/lang/String;
+.method public final getContentId()Ljava/lang/String;
+.method public final getContentType()Ljava/lang/String;
+.method public final getDescription()Ljava/lang/String;
+.method public final getDirector()Ljava/lang/String;
+.method public final getDuration()Ljava/lang/String;
+.method public final getId()I
+.method public final getMoreAudio()I
+.method public final getMoreSubtitle()I
+.method public final getName()Ljava/lang/String;
+.method public final getPosterList()Ljava/util/ArrayList;
+.method public final getProgramType()Ljava/lang/String;
+.method public final getScore()F
+.method public final getShelve_time()Ljava/lang/String;
+.method public final getSupportVideoType()Ljava/lang/String;
+.method public final getTags()Ljava/lang/String;
+.method public final getType()Ljava/lang/String;
+.method public final getUpdateCount()I
+.method public final getUpdateTime()Ljava/lang/String;
+.method public final getViewpoint()Ljava/lang/String;
+.method public final getVolumnCount()I
+.method public hashCode()I
+.method public final setActorDisplay(Ljava/lang/String;)V
+.method public final setAlias(Ljava/lang/String;)V
+.method public final setContentId(Ljava/lang/String;)V
+.method public final setContentType(Ljava/lang/String;)V
+.method public final setDescription(Ljava/lang/String;)V
+.method public final setDirector(Ljava/lang/String;)V
+.method public final setDuration(Ljava/lang/String;)V
+.method public final setId(I)V
+.method public final setMoreAudio(I)V
+.method public final setMoreSubtitle(I)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setPosterList(Ljava/util/ArrayList;)V
+.method public final setProgramType(Ljava/lang/String;)V
+.method public final setScore(F)V
+.method public final setShelve_time(Ljava/lang/String;)V
+.method public final setSupportVideoType(Ljava/lang/String;)V
+.method public final setTags(Ljava/lang/String;)V
+.method public final setType(Ljava/lang/String;)V
+.method public final setUpdateCount(I)V
+.method public final setUpdateTime(Ljava/lang/String;)V
+.method public final setViewpoint(Ljava/lang/String;)V
+.method public final setVolumnCount(I)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/GetFavoritesResult.smali ===
+[FIELDS]
+.field private data:Lcom/request/result/GetFavoritesResultData;
+.field private errorMessage:Ljava/lang/String;
+.field private returnCode:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "GetFavoritesResult(returnCode="
+    const-string v1, ", errorMessage="
+    const-string v1, ", data="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetFavoritesResultData;)V
+.method public static synthetic copy$default(Lcom/request/result/GetFavoritesResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetFavoritesResultData;ILjava/lang/Object;)Lcom/request/result/GetFavoritesResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Lcom/request/result/GetFavoritesResultData;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/GetFavoritesResultData;)Lcom/request/result/GetFavoritesResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getData()Lcom/request/result/GetFavoritesResultData;
+.method public final getErrorMessage()Ljava/lang/String;
+.method public final getReturnCode()Ljava/lang/String;
+.method public hashCode()I
+.method public final setData(Lcom/request/result/GetFavoritesResultData;)V
+.method public final setErrorMessage(Ljava/lang/String;)V
+.method public final setReturnCode(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/FilterInfo.smali ===
+[FIELDS]
+.field private key:Ljava/lang/String;
+.field private value:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "key"
+    const-string v0, "value"
+    const-string v0, "key"
+    const-string v0, "value"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "FilterInfo(key="
+    const-string v1, ", value="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public static synthetic copy$default(Lcom/request/result/FilterInfo;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/FilterInfo;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/FilterInfo;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getKey()Ljava/lang/String;
+.method public final getValue()Ljava/lang/String;
+.method public hashCode()I
+.method public final setKey(Ljava/lang/String;)V
+.method public final setValue(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/Item.smali ===
+[FIELDS]
+.field private actorDisplay:Ljava/lang/String;
+.field private contentId:Ljava/lang/String;
+.field private director:Ljava/lang/String;
+.field private name:Ljava/lang/String;
+.field private originalCountry:Ljava/lang/String;
+.field private posterList:Ljava/util/List;
+.field private programType:Ljava/lang/String;
+.field private releaseTime:Ljava/lang/String;
+.field private tags:Ljava/lang/String;
+.field private type:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "Item(type="
+    const-string v1, ", contentId="
+    const-string v1, ", name="
+    const-string v1, ", director="
+    const-string v1, ", actorDisplay="
+    const-string v1, ", originalCountry="
+    const-string v1, ", releaseTime="
+    const-string v1, ", tags="
+    const-string v1, ", programType="
+    const-string v1, ", posterList="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+.method public static synthetic copy$default(Lcom/request/result/Item;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/request/result/Item;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/util/List;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lcom/request/result/Item;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getActorDisplay()Ljava/lang/String;
+.method public final getContentId()Ljava/lang/String;
+.method public final getDirector()Ljava/lang/String;
+.method public final getName()Ljava/lang/String;
+.method public final getOriginalCountry()Ljava/lang/String;
+.method public final getPosterList()Ljava/util/List;
+.method public final getProgramType()Ljava/lang/String;
+.method public final getReleaseTime()Ljava/lang/String;
+.method public final getTags()Ljava/lang/String;
+.method public final getType()Ljava/lang/String;
+.method public hashCode()I
+.method public final setActorDisplay(Ljava/lang/String;)V
+.method public final setContentId(Ljava/lang/String;)V
+.method public final setDirector(Ljava/lang/String;)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setOriginalCountry(Ljava/lang/String;)V
+.method public final setPosterList(Ljava/util/List;)V
+.method public final setProgramType(Ljava/lang/String;)V
+.method public final setReleaseTime(Ljava/lang/String;)V
+.method public final setTags(Ljava/lang/String;)V
+.method public final setType(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/Channel.smali ===
+[FIELDS]
+.field private alias:Ljava/lang/String;
+.field private channelCode:Ljava/lang/String;
+.field private channelNumber:I
+.field private fixedChannelNumber:Ljava/lang/String;
+.field private isFav:Z
+.field private isLock:Z
+.field private keyWords:Ljava/lang/String;
+.field private liveAddressList:Ljava/util/List;
+.field private mosaicChanneArray:Ljava/util/List;
+.field private mosaicChannelList:Ljava/lang/String;
+.field private name:Ljava/lang/String;
+.field private posterList:Ljava/util/List;
+.field private posterUrl:Ljava/lang/String;
+.field private quality:Ljava/lang/String;
+.field private restricted:Ljava/lang/String;
+.field private showChannelName:Ljava/lang/String;
+.field private showIconUrl:Ljava/lang/String;
+.field private showPosterUrl:Ljava/lang/String;
+.field private supportBusiness:Ljava/lang/String;
+.field private supportVideoType:Ljava/lang/String;
+.field private tags:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v4, "channelCode"
+    const-string v4, "name"
+    const-string v4, "tags"
+    const-string v1, ""
+    const-string v0, "channelCode"
+    const-string v0, "name"
+    const-string v0, "tags"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "Channel(channelCode="
+    const-string v1, ", name="
+    const-string v1, ", alias="
+    const-string v1, ", channelNumber="
+    const-string v1, ", fixedChannelNumber="
+    const-string v1, ", keyWords="
+    const-string v1, ", posterUrl="
+    const-string v1, ", supportVideoType="
+    const-string v1, ", restricted="
+    const-string v1, ", supportBusiness="
+    const-string v1, ", quality="
+    const-string v1, ", liveAddressList="
+    const-string v1, ", isFav="
+    const-string v1, ", isLock="
+    const-string v1, ", tags="
+    const-string v1, ", posterList="
+    const-string v1, ", mosaicChannelList="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZZLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
+.method public static synthetic copy$default(Lcom/request/result/Channel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZZLjava/lang/String;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/Channel;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
+.method public final component11()Ljava/lang/String;
+.method public final component12()Ljava/util/List;
+.method public final component13()Z
+.method public final component14()Z
+.method public final component15()Ljava/lang/String;
+.method public final component16()Ljava/util/List;
+.method public final component17()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()I
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZZLjava/lang/String;Ljava/util/List;Ljava/lang/String;)Lcom/request/result/Channel;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getAlias()Ljava/lang/String;
+.method public final getChannelCode()Ljava/lang/String;
+.method public final getChannelNumber()I
+.method public final getFixedChannelNumber()Ljava/lang/String;
+.method public final getKeyWords()Ljava/lang/String;
+.method public final getLiveAddressList()Ljava/util/List;
+.method public final getMosaicChannelList()Ljava/lang/String;
+.method public final getMosaicChannes()Ljava/util/List;
+.method public final getName()Ljava/lang/String;
+.method public final getPosterList()Ljava/util/List;
+.method public final getPosterUrl()Ljava/lang/String;
+.method public final getQuality()Ljava/lang/String;
+.method public final getRestricted()Ljava/lang/String;
+.method public final getShowChannelName()Ljava/lang/String;
+.method public final getShowIconUrl()Ljava/lang/String;
+.method public final getShowPosterUrl()Ljava/lang/String;
+.method public final getSupportBusiness()Ljava/lang/String;
+.method public final getSupportVideoType()Ljava/lang/String;
+.method public final getTags()Ljava/lang/String;
+.method public hashCode()I
+.method public final isFav()Z
+.method public final isLock()Z
+.method public final setAlias(Ljava/lang/String;)V
+.method public final setChannelCode(Ljava/lang/String;)V
+.method public final setChannelNumber(I)V
+.method public final setFav(Z)V
+.method public final setFixedChannelNumber(Ljava/lang/String;)V
+.method public final setKeyWords(Ljava/lang/String;)V
+.method public final setLiveAddressList(Ljava/util/List;)V
+.method public final setLock(Z)V
+.method public final setMosaicChannelList(Ljava/lang/String;)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setPosterList(Ljava/util/List;)V
+.method public final setPosterUrl(Ljava/lang/String;)V
+.method public final setQuality(Ljava/lang/String;)V
+.method public final setRestricted(Ljava/lang/String;)V
+.method public final setShowChannelName(Ljava/lang/String;)V
+.method public final setShowIconUrl(Ljava/lang/String;)V
+.method public final setShowPosterUrl(Ljava/lang/String;)V
+.method public final setSupportBusiness(Ljava/lang/String;)V
+.method public final setSupportVideoType(Ljava/lang/String;)V
+.method public final setTags(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/EpgResult.smali ===
+[FIELDS]
+.field private data:Lcom/request/result/EpgData;
+.field private errorMessage:Ljava/lang/String;
+.field private returnCode:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "returnCode"
+    const-string v0, "returnCode"
+    const-string v0, "<set-?>"
+    const-string v1, "EpgResult(returnCode="
+    const-string v1, ", errorMessage="
+    const-string v1, ", data="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/EpgData;)V
+.method public static synthetic copy$default(Lcom/request/result/EpgResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/EpgData;ILjava/lang/Object;)Lcom/request/result/EpgResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Lcom/request/result/EpgData;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/EpgData;)Lcom/request/result/EpgResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getData()Lcom/request/result/EpgData;
+.method public final getErrorMessage()Ljava/lang/String;
+.method public final getReturnCode()Ljava/lang/String;
+.method public hashCode()I
+.method public final setData(Lcom/request/result/EpgData;)V
+.method public final setErrorMessage(Ljava/lang/String;)V
+.method public final setReturnCode(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/StartPlayLiveResult.smali ===
+[FIELDS]
+.field private data:Lcom/request/result/StartPlayLiveResultData;
+.field private errorMessage:Ljava/lang/String;
+.field private returnCode:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "StartPlayLiveResult(returnCode="
+    const-string v1, ", errorMessage="
+    const-string v1, ", data="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)V
+.method public static synthetic copy$default(Lcom/request/result/StartPlayLiveResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;ILjava/lang/Object;)Lcom/request/result/StartPlayLiveResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Lcom/request/result/StartPlayLiveResultData;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayLiveResultData;)Lcom/request/result/StartPlayLiveResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getData()Lcom/request/result/StartPlayLiveResultData;
+.method public final getErrorMessage()Ljava/lang/String;
+.method public final getReturnCode()Ljava/lang/String;
+.method public hashCode()I
+.method public final setData(Lcom/request/result/StartPlayLiveResultData;)V
+.method public final setErrorMessage(Ljava/lang/String;)V
+.method public final setReturnCode(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/StartPlayBTVResult.smali ===
+[FIELDS]
+.field private data:Lcom/request/result/StartPlayBTVResultData;
+.field private errorMessage:Ljava/lang/String;
+.field private returnCode:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "StartPlayBTVResult(returnCode="
+    const-string v1, ", errorMessage="
+    const-string v1, ", data="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayBTVResultData;)V
+.method public static synthetic copy$default(Lcom/request/result/StartPlayBTVResult;Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayBTVResultData;ILjava/lang/Object;)Lcom/request/result/StartPlayBTVResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Lcom/request/result/StartPlayBTVResultData;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/request/result/StartPlayBTVResultData;)Lcom/request/result/StartPlayBTVResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getData()Lcom/request/result/StartPlayBTVResultData;
+.method public final getErrorMessage()Ljava/lang/String;
+.method public final getReturnCode()Ljava/lang/String;
+.method public hashCode()I
+.method public final setData(Lcom/request/result/StartPlayBTVResultData;)V
+.method public final setErrorMessage(Ljava/lang/String;)V
+.method public final setReturnCode(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/UrlListBeanResult.smali ===
+[FIELDS]
+.field private tag:Ljava/lang/String;
+.field private url:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "tag"
+    const-string v0, "url"
+    const-string v0, "tag"
+    const-string v0, "url"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "UrlListBeanResult(tag="
+    const-string v1, ", url="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public static synthetic copy$default(Lcom/request/result/UrlListBeanResult;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/UrlListBeanResult;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/UrlListBeanResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getTag()Ljava/lang/String;
+.method public final getUrl()Ljava/lang/String;
+.method public hashCode()I
+.method public final setTag(Ljava/lang/String;)V
+.method public final setUrl(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali/com/request/result/PcdnMediaInfoResult.smali ===
+[FIELDS]
+.field private bufferData:Ljava/lang/String;
+.field private bufferTime:Ljava/lang/Long;
+.field private headMoment:Ljava/lang/String;
+.field private mediaCode:Ljava/lang/String;
+.field private name:Ljava/lang/String;
+.field private playUrl:Ljava/lang/String;
+.field private protocol:Ljava/lang/String;
+.field private recvBytes:Ljava/lang/Long;
+.field private recvMoment:Ljava/lang/String;
+.field private sendBytes:Ljava/lang/Long;
+.field private sendMoment:Ljava/lang/String;
+.field private sourceUrl:Ljava/lang/String;
+.field private status:Ljava/lang/Integer;
+.field private tailMoment:Ljava/lang/String;
+.field private type:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "PcdnMediaInfoResult(name="
+    const-string v1, ", mediaCode="
+    const-string v1, ", type="
+    const-string v1, ", protocol="
+    const-string v1, ", sourceUrl="
+    const-string v1, ", playUrl="
+    const-string v1, ", status="
+    const-string v1, ", bufferTime="
+    const-string v1, ", bufferData="
+    const-string v1, ", recvBytes="
+    const-string v1, ", sendBytes="
+    const-string v1, ", headMoment="
+    const-string v1, ", recvMoment="
+    const-string v1, ", sendMoment="
+    const-string v1, ", tailMoment="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public static synthetic copy$default(Lcom/request/result/PcdnMediaInfoResult;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/request/result/PcdnMediaInfoResult;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/Long;
+.method public final component11()Ljava/lang/Long;
+.method public final component12()Ljava/lang/String;
+.method public final component13()Ljava/lang/String;
+.method public final component14()Ljava/lang/String;
+.method public final component15()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/Integer;
+.method public final component8()Ljava/lang/Long;
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/request/result/PcdnMediaInfoResult;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getBufferData()Ljava/lang/String;
+.method public final getBufferTime()Ljava/lang/Long;
+.method public final getHeadMoment()Ljava/lang/String;
+.method public final getMediaCode()Ljava/lang/String;
+.method public final getName()Ljava/lang/String;
+.method public final getPlayUrl()Ljava/lang/String;
+.method public final getProtocol()Ljava/lang/String;
+.method public final getRecvBytes()Ljava/lang/Long;
+.method public final getRecvMoment()Ljava/lang/String;
+.method public final getSendBytes()Ljava/lang/Long;
+.method public final getSendMoment()Ljava/lang/String;
+.method public final getSourceUrl()Ljava/lang/String;
+.method public final getStatus()Ljava/lang/Integer;
+.method public final getTailMoment()Ljava/lang/String;
+.method public final getType()Ljava/lang/String;
+.method public hashCode()I
+.method public final setBufferData(Ljava/lang/String;)V
+.method public final setBufferTime(Ljava/lang/Long;)V
+.method public final setHeadMoment(Ljava/lang/String;)V
+.method public final setMediaCode(Ljava/lang/String;)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setPlayUrl(Ljava/lang/String;)V
+.method public final setProtocol(Ljava/lang/String;)V
+.method public final setRecvBytes(Ljava/lang/Long;)V
+.method public final setRecvMoment(Ljava/lang/String;)V
+.method public final setSendBytes(Ljava/lang/Long;)V
+.method public final setSendMoment(Ljava/lang/String;)V
+.method public final setSourceUrl(Ljava/lang/String;)V
+.method public final setStatus(Ljava/lang/Integer;)V
+.method public final setTailMoment(Ljava/lang/String;)V
+.method public final setType(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali_classes3/com/titan/ranger/bean/Media.smali ===
+[FIELDS]
+.field private format:Ljava/lang/String;
+.field private lang:Ljava/lang/String;
+.field private license:Ljava/lang/String;
+.field private name:Ljava/lang/String;
+.field private quality:Ljava/lang/String;
+.field private vcodec:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "name"
+    const-string v0, "license"
+    const-string v0, "lang"
+    const-string v0, "quality"
+    const-string v0, "vcodec"
+    const-string v0, "format"
+    const-string v0, "name"
+    const-string v0, "license"
+    const-string v0, "lang"
+    const-string v0, "quality"
+    const-string v0, "vcodec"
+    const-string v0, "format"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "Media(name="
+    const-string v1, ", license="
+    const-string v1, ", lang="
+    const-string v1, ", quality="
+    const-string v1, ", vcodec="
+    const-string v1, ", format="
+    const-string v1, ")"
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public static synthetic copy$default(Lcom/titan/ranger/bean/Media;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/titan/ranger/bean/Media;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/titan/ranger/bean/Media;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getFormat()Ljava/lang/String;
+.method public final getLang()Ljava/lang/String;
+.method public final getLicense()Ljava/lang/String;
+.method public final getName()Ljava/lang/String;
+.method public final getQuality()Ljava/lang/String;
+.method public final getVcodec()Ljava/lang/String;
+.method public hashCode()I
+.method public final setFormat(Ljava/lang/String;)V
+.method public final setLang(Ljava/lang/String;)V
+.method public final setLicense(Ljava/lang/String;)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setQuality(Ljava/lang/String;)V
+.method public final setVcodec(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali_classes3/com/titan/ranger/bean/Program.smali ===
+[FIELDS]
+.field private buss:Ljava/lang/String;
+.field private cause:Ljava/lang/String;
+.field private episode:Ljava/lang/String;
+.field private from:Ljava/lang/String;
+.field private media:Ljava/lang/String;
+.field private medias:Ljava/util/List;
+.field private name:Ljava/lang/String;
+.field private start:J
+.field private title:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "name"
+    const-string v0, "buss"
+    const-string v0, "title"
+    const-string v0, "episode"
+    const-string v0, "from"
+    const-string v0, "cause"
+    const-string v0, "medias"
+    const-string v0, "media"
+    const-string v0, "name"
+    const-string v0, "buss"
+    const-string v0, "title"
+    const-string v0, "episode"
+    const-string v0, "from"
+    const-string v0, "cause"
+    const-string v0, "medias"
+    const-string v0, "media"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "Program(name="
+    const-string v1, ", buss="
+    const-string v1, ", title="
+    const-string v1, ", episode="
+    const-string v1, ", from="
+    const-string v1, ", cause="
+    const-string v1, ", medias="
+    const-string v1, ", media="
+    const-string v1, ", start="
+    const-string v1, ")"
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;J)V
+.method public static synthetic copy$default(Lcom/titan/ranger/bean/Program;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;JILjava/lang/Object;)Lcom/titan/ranger/bean/Program;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/util/List;
+.method public final component8()Ljava/lang/String;
+.method public final component9()J
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;J)Lcom/titan/ranger/bean/Program;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getBuss()Ljava/lang/String;
+.method public final getCause()Ljava/lang/String;
+.method public final getEpisode()Ljava/lang/String;
+.method public final getFrom()Ljava/lang/String;
+.method public final getMedia()Ljava/lang/String;
+.method public final getMedias()Ljava/util/List;
+.method public final getName()Ljava/lang/String;
+.method public final getStart()J
+.method public final getTitle()Ljava/lang/String;
+.method public hashCode()I
+.method public final setBuss(Ljava/lang/String;)V
+.method public final setCause(Ljava/lang/String;)V
+.method public final setEpisode(Ljava/lang/String;)V
+.method public final setFrom(Ljava/lang/String;)V
+.method public final setMedia(Ljava/lang/String;)V
+.method public final setMedias(Ljava/util/List;)V
+.method public final setName(Ljava/lang/String;)V
+.method public final setStart(J)V
+.method public final setTitle(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali_classes3/com/titan/ranger/bean/MediaFile.smali ===
+[FIELDS]
+.field private buss:Ljava/lang/String;
+.field private from:Ljava/lang/String;
+.field private media:Ljava/lang/String;
+.field private program:Ljava/lang/String;
+.field private title:Ljava/lang/String;
+.field private uri:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v0, "program"
+    const-string v0, "media"
+    const-string v0, "title"
+    const-string v0, "buss"
+    const-string v0, "from"
+    const-string v0, "uri"
+    const-string v0, "program"
+    const-string v0, "media"
+    const-string v0, "title"
+    const-string v0, "buss"
+    const-string v0, "from"
+    const-string v0, "uri"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "MediaFile(program="
+    const-string v1, ", media="
+    const-string v1, ", title="
+    const-string v1, ", buss="
+    const-string v1, ", from="
+    const-string v1, ", uri="
+    const-string v1, ")"
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public static synthetic copy$default(Lcom/titan/ranger/bean/MediaFile;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/titan/ranger/bean/MediaFile;
+.method public final component1()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/titan/ranger/bean/MediaFile;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getBuss()Ljava/lang/String;
+.method public final getFrom()Ljava/lang/String;
+.method public final getMedia()Ljava/lang/String;
+.method public final getProgram()Ljava/lang/String;
+.method public final getTitle()Ljava/lang/String;
+.method public final getUri()Ljava/lang/String;
+.method public hashCode()I
+.method public final setBuss(Ljava/lang/String;)V
+.method public final setFrom(Ljava/lang/String;)V
+.method public final setMedia(Ljava/lang/String;)V
+.method public final setProgram(Ljava/lang/String;)V
+.method public final setTitle(Ljava/lang/String;)V
+.method public final setUri(Ljava/lang/String;)V
+.method public toString()Ljava/lang/String;
+
+=== smali_classes3/com/titans/entity/PlayInfo.smali ===
+[FIELDS]
+.field Status:I
+.field app_ctx:Ljava/lang/String;
+.field archive_bytes:J
+.field auth:Ljava/lang/String;
+.field buffer_bytes:J
+.field buffer_duration:J
+.field cache:Ljava/lang/String;
+.field dashboard:Ljava/lang/String;
+.field delay:J
+.field desc:Ljava/lang/String;
+.field expire_bytes:J
+.field express:J
+.field format:Ljava/lang/String;
+.field gop_duration:J
+.field group:Ljava/lang/String;
+.field in_latency:J
+.field lang:Ljava/lang/String;
+.field license:Ljava/lang/String;
+.field live_pcdn_mode:Ljava/lang/String;
+.field local_ip:Ljava/lang/String;
+.field media:Ljava/lang/String;
+.field media_duration:J
+.field media_encrypt:Ljava/lang/String;
+.field media_spent:J
+.field media_url:Ljava/lang/String;
+.field out_latency:J
+.field p2p_err:J
+.field p2p_mode:Ljava/lang/String;
+.field peer_num:J
+.field play_duration:J
+.field play_url:Ljava/lang/String;
+.field player:Ljava/lang/String;
+.field priority:I
+.field program:Ljava/lang/String;
+.field protocol:Ljava/lang/String;
+.field quality:Ljava/lang/String;
+.field recv30s:J
+.field recv_bytes:J
+.field recv_duration:J
+.field recv_peer_bytes:J
+.field recv_server_bytes:J
+.field recvx30s:J
+.field rtt:J
+.field rule_id_code:Ljava/lang/String;
+.field schedule_spent:J
+.field send_peer_bytes:J
+.field send_player_bytes:J
+.field serial:I
+.field server_code:Ljava/lang/String;
+.field slb_code:Ljava/lang/String;
+.field snapinfo_url:Ljava/lang/String;
+.field snapshot_queue:Ljava/lang/String;
+.field snapshot_url:Ljava/lang/String;
+.field source_count:I
+.field source_id_code:Ljava/lang/String;
+.field source_url:Ljava/lang/String;
+.field source_weight_in_use:I
+.field tag:Ljava/lang/String;
+.field total_recv_peer_bytes:J
+.field total_recv_server_bytes:J
+.field total_send_peer_bytes:J
+.field trans_id:Ljava/lang/String;
+.field user_id:Ljava/lang/String;
+.field video_codec:Ljava/lang/String;
+[CONST_STRINGS]
+    const-string v1, "PlayInfo{program=\'"
+    const-string v2, ", desc=\'"
+    const-string v2, ", media=\'"
+    const-string v2, ", protocol=\'"
+    const-string v2, ", format=\'"
+    const-string v2, ", video_codec=\'"
+    const-string v2, ", player=\'"
+    const-string v2, ", tag=\'"
+    const-string v2, ", source_url=\'"
+    const-string v2, ", quality=\'"
+    const-string v2, ", lang=\'"
+    const-string v2, ", trans_id=\'"
+    const-string v2, ", media_url=\'"
+    const-string v2, ", snapinfo_url=\'"
+    const-string v2, ", snapshot_url=\'"
+    const-string v2, ", snapshot_queue=\'"
+    const-string v2, ", auth=\'"
+    const-string v2, ", license=\'"
+    const-string v2, ", slb_code=\'"
+    const-string v2, ", live_pcdn_mode=\'"
+    const-string v2, ", server_code=\'"
+    const-string v2, ", play_url=\'"
+    const-string v2, ", app_ctx=\'"
+    const-string v2, ", dashboard=\'"
+    const-string v2, ", group=\'"
+    const-string v2, ", p2p_mode=\'"
+    const-string v2, ", user_id=\'"
+    const-string v2, ", local_ip=\'"
+    const-string v2, ", media_encrypt=\'"
+    const-string v1, ", gop_duration="
+    const-string v1, ", source_count="
+    const-string v1, ", priority="
+    const-string v1, ", serial="
+    const-string v1, ", Status="
+    const-string v1, ", schedule_spent="
+    const-string v1, ", media_spent="
+    const-string v1, ", media_duration="
+    const-string v1, ", play_duration="
+    const-string v1, ", recv_duration="
+    const-string v1, ", recv_bytes="
+    const-string v1, ", archive_bytes="
+    const-string v1, ", expire_bytes="
+    const-string v1, ", recv30s="
+    const-string v1, ", recvx30s="
+    const-string v1, ", express="
+    const-string v1, ", p2p_err="
+    const-string v1, ", recv_peer_bytes="
+    const-string v1, ", send_peer_bytes="
+    const-string v1, ", send_player_bytes="
+    const-string v1, ", total_recv_peer_bytes="
+    const-string v1, ", total_send_peer_bytes="
+    const-string v1, ", recv_server_bytes="
+    const-string v1, ", total_recv_server_bytes="
+    const-string v1, ", peer_num="
+    const-string v1, ", buffer_duration="
+    const-string v1, ", buffer_bytes="
+    const-string v1, ", in_latency="
+    const-string v1, ", out_latency="
+    const-string v1, ", rtt="
+    const-string v1, ", cache="
+    const-string v1, ", source_id_code="
+    const-string v1, ", rule_id_code="
+    const-string v1, ", source_weights_in_use="
+[METHODS]
+.method public constructor <init>()V
+.method public clonePlayInfo()Lcom/titans/entity/PlayInfo;
+.method public getApp_ctx()Ljava/lang/String;
+.method public getArchive_bytes()J
+.method public getAuth()Ljava/lang/String;
+.method public getBuffer_bytes()J
+.method public getBuffer_duration()J
+.method public getCache()Ljava/lang/String;
+.method public getDashboard()Ljava/lang/String;
+.method public getDelay()J
+.method public getDesc()Ljava/lang/String;
+.method public getExpire_bytes()J
+.method public getExpress()J
+.method public getFormat()Ljava/lang/String;
+.method public getGop_duration()J
+.method public getGroup()Ljava/lang/String;
+.method public getIn_latency()J
+.method public getLang()Ljava/lang/String;
+.method public getLicense()Ljava/lang/String;
+.method public getLive_pcdn_mode()Ljava/lang/String;
+.method public getLocal_ip()Ljava/lang/String;
+.method public getMedia()Ljava/lang/String;
+.method public getMedia_duration()J
+.method public getMedia_encrypt()Ljava/lang/String;
+.method public getMedia_spent()J
+.method public getMedia_url()Ljava/lang/String;
+.method public getOut_latency()J
+.method public getP2p_err()J
+.method public getP2p_mode()Ljava/lang/String;
+.method public getPeer_num()J
+.method public getPlay_duration()J
+.method public getPlay_url()Ljava/lang/String;
+.method public getPlayer()Ljava/lang/String;
+.method public getPriority()I
+.method public getProgram()Ljava/lang/String;
+.method public getProtocol()Ljava/lang/String;
+.method public getQuality()Ljava/lang/String;
+.method public getRecv30s()J
+.method public getRecv_bytes()J
+.method public getRecv_duration()J
+.method public getRecv_peer_bytes()J
+.method public getRecv_server_bytes()J
+.method public getRecvx30s()J
+.method public getRtt()J
+.method public getRule_id_code()Ljava/lang/String;
+.method public getSchedule_spent()J
+.method public getSend_peer_bytes()J
+.method public getSend_player_bytes()J
+.method public getSerial()I
+.method public getServer_code()Ljava/lang/String;
+.method public getSlb_code()Ljava/lang/String;
+.method public getSnapinfo_url()Ljava/lang/String;
+.method public getSnapshot_queue()Ljava/lang/String;
+.method public getSnapshot_url()Ljava/lang/String;
+.method public getSource_count()I
+.method public getSource_id_code()Ljava/lang/String;
+.method public getSource_url()Ljava/lang/String;
+.method public getSource_weight_in_use()I
+.method public getStatus()I
+.method public getTag()Ljava/lang/String;
+.method public getTotal_recv_peer_bytes()J
+.method public getTotal_recv_server_bytes()J
+.method public getTotal_send_peer_bytes()J
+.method public getTrans_id()Ljava/lang/String;
+.method public getUser_id()Ljava/lang/String;
+.method public getVideo_codec()Ljava/lang/String;
+.method public setApp_ctx(Ljava/lang/String;)V
+.method public setArchive_bytes(J)V
+.method public setAuth(Ljava/lang/String;)V
+.method public setBuffer_bytes(J)V
+.method public setBuffer_duration(J)V
+.method public setCache(Ljava/lang/String;)V
+.method public setDashboard(Ljava/lang/String;)V
+.method public setDelay(J)V
+.method public setDesc(Ljava/lang/String;)V
+.method public setExpire_bytes(J)V
+.method public setExpress(I)V
+.method public setExpress(J)V
+.method public setFormat(Ljava/lang/String;)V
+.method public setGop_duration(J)V
+.method public setGroup(Ljava/lang/String;)V
+.method public setIn_latency(J)V
+.method public setLang(Ljava/lang/String;)V
+.method public setLicense(Ljava/lang/String;)V
+.method public setLive_pcdn_mode(Ljava/lang/String;)V
+.method public setLocal_ip(Ljava/lang/String;)V
+.method public setMedia(Ljava/lang/String;)V
+.method public setMedia_duration(J)V
+.method public setMedia_encrypt(Ljava/lang/String;)V
+.method public setMedia_spent(J)V
+.method public setMedia_url(Ljava/lang/String;)V
+.method public setOut_latency(J)V
+.method public setP2p_err(J)V
+.method public setP2p_mode(Ljava/lang/String;)V
+.method public setPeer_num(J)V
+.method public setPlay_duration(J)V
+.method public setPlay_url(Ljava/lang/String;)V
+.method public setPlayer(Ljava/lang/String;)V
+.method public setPriority(I)V
+.method public setProgram(Ljava/lang/String;)V
+.method public setProtocol(Ljava/lang/String;)V
+.method public setQuality(Ljava/lang/String;)V
+.method public setRecv30s(J)V
+.method public setRecv_bytes(J)V
+.method public setRecv_duration(J)V
+.method public setRecv_peer_bytes(J)V
+.method public setRecv_server_bytes(J)V
+.method public setRecvx30s(J)V
+.method public setRtt(J)V
+.method public setRule_id_code(Ljava/lang/String;)V
+.method public setSchedule_spent(J)V
+.method public setSend_peer_bytes(J)V
+.method public setSend_player_bytes(J)V
+.method public setSerial(I)V
+.method public setServer_code(Ljava/lang/String;)V
+.method public setSlb_code(Ljava/lang/String;)V
+.method public setSnapinfo_url(Ljava/lang/String;)V
+.method public setSnapshot_queue(Ljava/lang/String;)V
+.method public setSnapshot_url(Ljava/lang/String;)V
+.method public setSource_count(I)V
+
+=== smali_classes3/com/titans/entity/ProgramInfo.smali ===
+[FIELDS]
+.field private app_ctx:Ljava/lang/String;
+.field private buss:Ljava/lang/String;
+.field private delay:J
+.field private desc:Ljava/lang/String;
+.field private lang:Ljava/lang/String;
+.field private program_code:Ljava/lang/String;
+.field private quality:Ljava/lang/String;
+.field private sources:Ljava/util/List;
+.field private start:J
+.field private timeout:J
+[CONST_STRINGS]
+    const-string v0, "program_code"
+    const-string v0, "buss"
+    const-string v0, "desc"
+    const-string v0, "quality"
+    const-string v0, "sources"
+    const-string v0, "lang"
+    const-string v0, "app_ctx"
+    const-string v0, ""
+    const-string v0, "program_code"
+    const-string v0, "buss"
+    const-string v0, "desc"
+    const-string v0, "quality"
+    const-string v0, "sources"
+    const-string v0, "lang"
+    const-string v0, "app_ctx"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "ProgramInfo(program_code="
+    const-string v1, ", buss="
+    const-string v1, ", desc="
+    const-string v1, ", quality="
+    const-string v1, ", delay="
+    const-string v1, ", timeout="
+    const-string v1, ", sources="
+    const-string v1, ", start="
+    const-string v1, ", lang="
+    const-string v1, ", app_ctx="
+[METHODS]
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/util/List;JLjava/lang/String;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/util/List;JLjava/lang/String;Ljava/lang/String;ILne/g;)V
+.method public static synthetic copy$default(Lcom/titans/entity/ProgramInfo;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/util/List;JLjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/titans/entity/ProgramInfo;
+.method public final component1()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()J
+.method public final component6()J
+.method public final component7()Ljava/util/List;
+.method public final component8()J
+.method public final component9()Ljava/lang/String;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/util/List;JLjava/lang/String;Ljava/lang/String;)Lcom/titans/entity/ProgramInfo;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getApp_ctx()Ljava/lang/String;
+.method public final getBuss()Ljava/lang/String;
+.method public final getDelay()J
+.method public final getDesc()Ljava/lang/String;
+.method public final getLang()Ljava/lang/String;
+.method public final getProgram_code()Ljava/lang/String;
+.method public final getQuality()Ljava/lang/String;
+.method public final getSources()Ljava/util/List;
+.method public final getStart()J
+.method public final getTimeout()J
+.method public hashCode()I
+.method public final setApp_ctx(Ljava/lang/String;)V
+.method public final setBuss(Ljava/lang/String;)V
+.method public final setDelay(J)V
+.method public final setDesc(Ljava/lang/String;)V
+.method public final setLang(Ljava/lang/String;)V
+.method public final setProgram_code(Ljava/lang/String;)V
+.method public final setQuality(Ljava/lang/String;)V
+.method public final setSources(Ljava/util/List;)V
+.method public final setStart(J)V
+.method public final setTimeout(J)V
+.method public toString()Ljava/lang/String;
+
+=== smali_classes3/com/titans/entity/Sources.smali ===
+[FIELDS]
+.field private auth:Ljava/lang/String;
+.field private format:Ljava/lang/String;
+.field private id:Ljava/lang/String;
+.field private id_code:Ljava/lang/String;
+.field private lang:Ljava/lang/String;
+.field private license:Ljava/lang/String;
+.field private main_addr:Ljava/lang/String;
+.field private main_addr_code:Ljava/lang/String;
+.field private media_code:Ljava/lang/String;
+.field private priority:I
+.field private quality:Ljava/lang/String;
+.field private rule_id_code:Ljava/lang/String;
+.field private spared_addr:Ljava/lang/String;
+.field private spared_addr_code:Ljava/lang/String;
+.field private tag:Ljava/lang/String;
+.field private weight:I
+[CONST_STRINGS]
+    const-string v12, "media_code"
+    const-string v12, "main_addr"
+    const-string v12, "spared_addr"
+    const-string v12, "auth"
+    const-string v12, "license"
+    const-string v12, "tag"
+    const-string v12, "quality"
+    const-string v12, "main_addr_code"
+    const-string v12, "spared_addr_code"
+    const-string v12, "lang"
+    const-string v12, "id"
+    const-string v2, ""
+    const-string v0, "media_code"
+    const-string v0, "main_addr"
+    const-string v0, "spared_addr"
+    const-string v0, "auth"
+    const-string v0, "license"
+    const-string v0, "tag"
+    const-string v0, "quality"
+    const-string v0, "main_addr_code"
+    const-string v0, "spared_addr_code"
+    const-string v0, "lang"
+    const-string v0, "id"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v0, "<set-?>"
+    const-string v1, "Sources(priority="
+    const-string v1, ", media_code="
+    const-string v1, ", main_addr="
+    const-string v1, ", spared_addr="
+    const-string v1, ", auth="
+    const-string v1, ", license="
+    const-string v1, ", tag="
+    const-string v1, ", quality="
+    const-string v1, ", main_addr_code="
+    const-string v1, ", spared_addr_code="
+    const-string v1, ", lang="
+    const-string v1, ", id="
+    const-string v1, ", id_code="
+    const-string v1, ", rule_id_code="
+    const-string v1, ", weight="
+    const-string v1, ", format="
+[METHODS]
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+.method public synthetic constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ILne/g;)V
+.method public static synthetic copy$default(Lcom/titans/entity/Sources;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ILjava/lang/Object;)Lcom/titans/entity/Sources;
+.method public final component1()I
+.method public final component10()Ljava/lang/String;
+.method public final component11()Ljava/lang/String;
+.method public final component12()Ljava/lang/String;
+.method public final component13()Ljava/lang/String;
+.method public final component14()Ljava/lang/String;
+.method public final component15()I
+.method public final component16()Ljava/lang/String;
+.method public final component2()Ljava/lang/String;
+.method public final component3()Ljava/lang/String;
+.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
+.method public final component6()Ljava/lang/String;
+.method public final component7()Ljava/lang/String;
+.method public final component8()Ljava/lang/String;
+.method public final component9()Ljava/lang/String;
+.method public final copy(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Lcom/titans/entity/Sources;
+.method public equals(Ljava/lang/Object;)Z
+.method public final getAuth()Ljava/lang/String;
+.method public final getFormat()Ljava/lang/String;
+.method public final getId()Ljava/lang/String;
+.method public final getId_code()Ljava/lang/String;
+.method public final getLang()Ljava/lang/String;
+.method public final getLicense()Ljava/lang/String;
+.method public final getMain_addr()Ljava/lang/String;
+.method public final getMain_addr_code()Ljava/lang/String;
+.method public final getMedia_code()Ljava/lang/String;
+.method public final getPriority()I
+.method public final getQuality()Ljava/lang/String;
+.method public final getRule_id_code()Ljava/lang/String;
+.method public final getSpared_addr()Ljava/lang/String;
+.method public final getSpared_addr_code()Ljava/lang/String;
+.method public final getTag()Ljava/lang/String;
+.method public final getWeight()I
+.method public hashCode()I
+.method public final setAuth(Ljava/lang/String;)V
+.method public final setFormat(Ljava/lang/String;)V
+.method public final setId(Ljava/lang/String;)V
+.method public final setId_code(Ljava/lang/String;)V
+.method public final setLang(Ljava/lang/String;)V
+.method public final setLicense(Ljava/lang/String;)V
+.method public final setMain_addr(Ljava/lang/String;)V
+.method public final setMain_addr_code(Ljava/lang/String;)V
+.method public final setMedia_code(Ljava/lang/String;)V
+.method public final setPriority(I)V
+.method public final setQuality(Ljava/lang/String;)V
+.method public final setRule_id_code(Ljava/lang/String;)V
+.method public final setSpared_addr(Ljava/lang/String;)V
+.method public final setSpared_addr_code(Ljava/lang/String;)V
+.method public final setTag(Ljava/lang/String;)V
+.method public final setWeight(I)V
+.method public toString()Ljava/lang/String;
+
+[VOD_DOMAIN_CLASSES]
+smali/com/request/result/AssetData.smali
+smali/com/request/result/AssetList.smali
+smali/com/request/result/Channel$getMosaicChannes$type$1.smali
+smali/com/request/result/Channel.smali
+smali/com/request/result/ContentList.smali
+smali/com/request/result/EpgData.smali
+smali/com/request/result/EpgResult.smali
+smali/com/request/result/FilterByContentResult.smali
+smali/com/request/result/FilterByContentResultData.smali
+smali/com/request/result/GetAllbackProgramResult.smali
+smali/com/request/result/GetAllbackProgramResultData.smali
+smali/com/request/result/GetColumnContentsResult.smali
+smali/com/request/result/GetColumnContentsResultData.smali
+smali/com/request/result/GetPlayUrlResult.smali
+smali/com/request/result/LineupPlayer.smali
+smali/com/request/result/MatchChannel.smali
+smali/com/request/result/MosaicChannelBean.smali
+smali/com/request/result/MovieList.smali
+smali/com/request/result/PersonDetailInfo.smali
+smali/com/request/result/PersonSearchResult.smali
+smali/com/request/result/ProgramSearchResult.smali
+smali/com/request/result/RecommendColumnContentDataBean.smali
+smali/com/request/result/RecommendColumnContentResult.smali
+smali/com/request/result/ResourceSearchResult.smali
+smali/com/request/result/SameSeasonSeriesBean.smali
+smali/com/request/result/SearchByContentResult.smali
+smali/com/request/result/SearchByContentResultData.smali
+smali/com/request/result/SearchByNameResult.smali
+smali/com/request/result/SearchByNameResultData.smali
+smali/com/request/result/SearchItem.smali
+smali/com/request/result/SearchROrPData.smali
+smali/com/request/result/SearchROrPResult.smali
+smali/com/request/result/SeriesSearchResult.smali
+smali/com/request/result/SimpleProgramList.smali
+smali/com/request/result/StartPlayBTVResult.smali
+smali/com/request/result/StartPlayBTVResultData.smali
+smali/com/request/result/StartPlayBTVResultLicenseList.smali
+smali/com/request/result/StartPlayLiveResult.smali
+smali/com/request/result/StartPlayLiveResultData.smali
+smali/com/request/result/StartPlayVODResult.smali
+smali/com/request/result/StartPlayVODResultData.smali
+smali/com/request/result/StartPlayVODResultDataItem.smali
+smali/com/request/result/TotalMovieListItem.smali
+smali/com/request/result/UrlListBeanResult.smali
+smali/com/vod/ui/activity/VodDetailsActivity.smali
+smali_classes3/com/titan/ranger/bean/Program.smali
+smali_classes3/com/titan/ranger/bean/report/PlayError.smali
+smali_classes3/com/titan/ranger/bean/report/PlayFile.smali
+smali_classes3/com/titan/ranger/bean/report/PlayMedia.smali
+smali_classes3/com/titan/ranger/bean/report/PlayProgram.smali
+smali_classes3/com/titan/ranger/bean/report/PlayReq.smali
+smali_classes3/com/titan/ranger/bean/report/SwitchPlayer.smali
+smali_classes3/com/titans/entity/PlayInfo.smali
+smali_classes3/com/titans/entity/ProgramInfo.smali
+smali_classes3/com/titans/entity/RangerPlayTag.smali
+smali_classes3/com/titans/entity/Sources.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$a.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$b.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$c.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$d.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$e.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$f.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$g.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$h.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$i.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$j.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$k.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity$l.smali
+smali_classes3/com/vod/ui/activity/ActorDetailsActivity.smali
+smali_classes3/com/vod/ui/activity/NfSearchWatcher.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$a.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$b.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$c.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$d.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$e.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$f.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$g.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity$h.smali
+smali_classes3/com/vod/ui/activity/RestrictLevelSearchActivity.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$a.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$b.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$c.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$d.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$e.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$f.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$g.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$h.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$i.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$j$a.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$j.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$k.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$l.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$m.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity$n.smali
+smali_classes3/com/vod/ui/activity/VodDetailsActivity__TheRouter__Autowired.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$a.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$b.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$c.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$d.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$e.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$f.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$g.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$h.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$i.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity$j.smali
+smali_classes3/com/vod/ui/activity/VodSearchActivity.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView$a.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView$b.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView$c.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView$d.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView$e$a.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView$e.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView$f.smali
+smali_classes3/com/vod/view/VodDetailBottomScrollView.smali
+smali_classes3/com/vod/view/VodDetailLeftPanel$a.smali
+smali_classes3/com/vod/view/VodDetailLeftPanel$b.smali
+smali_classes3/com/vod/view/VodDetailLeftPanel$c.smali
+smali_classes3/com/vod/view/VodDetailLeftPanel$d.smali
+smali_classes3/com/vod/view/VodDetailLeftPanel.smali
+smali_classes3/com/vod/view/VodDetailMenuPanel$a.smali
+smali_classes3/com/vod/view/VodDetailMenuPanel$b.smali
+smali_classes3/com/vod/view/VodDetailMenuPanel$c.smali
+smali_classes3/com/vod/view/VodDetailMenuPanel.smali
+smali_classes3/com/vod/view/VodPlayerWindow.smali
