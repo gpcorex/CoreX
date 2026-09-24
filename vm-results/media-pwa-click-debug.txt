@@ -1,0 +1,119 @@
+MEDIA_PWA_CLICK_DEBUG
+timestamp=2026-09-24T17:34:25+00:00
+
+=== card/openPlayable/annotate markers ===
+216:function card(x,label){
+249:function annotatePlayableCards(){
+264:document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
+282:async function openPlayable(id){
+295:      modal.querySelector("#pmClose").onclick=()=>{const v=modal.querySelector("#pmVideo");v.pause();v.removeAttribute("src");v.load();modal.remove()};
+315:document.addEventListener("click",e=>{
+316:  const card=e.target.closest("[data-item-id]");
+317:  if(card) openPlayable(card.dataset.itemId);
+320:async function load(){
+334: annotatePlayableCards();
+336:load();
+
+=== card function context ===
+214-
+215-function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
+216:function card(x,label){
+217- const img=x.poster_url?'<img loading="lazy" src="'+esc(x.poster_url)+'" alt="">':'';
+218- const title=x.title||x.name||"Sin título";
+219- return '<article class="card" data-title="'+esc(title.toLowerCase())+'"><div class="poster">'+img+'<span class="badge">'+esc(label||x.kind||x.quality||"")+'</span></div><div class="meta"><strong>'+esc(title)+'</strong><span>'+esc(x.kind||x.quality||"")+'</span></div></article>';
+220-}
+221-function fill(id,arr,label){document.getElementById(id).innerHTML=arr.map(x=>card(x,label)).join("")}
+222-
+223-function render(){
+224- const movies=allVideos.filter(x=>x.kind==="movie");
+
+=== openPlayable context ===
+277-["searchTop","searchTv"].forEach(id=>{
+278- document.getElementById(id).addEventListener("keydown",e=>{if(e.key==="Enter") doSearch(e.target.value)});
+279-});
+280-
+281-
+282:async function openPlayable(id){
+283-  if(!id) return;
+284-  try{
+285-    const item=await fetch(API+"/video/item/"+encodeURIComponent(id)).then(r=>r.json());
+286-    const pb=await fetch(API+"/video/playback?type=item&id="+encodeURIComponent(id)).then(r=>r.json());
+287-    const src=(pb.sources||[]).find(x=>x.browser_direct&&x.playable_url);
+288-    let modal=document.getElementById("playModal");
+289-    if(!modal){
+290-      modal=document.createElement("div");
+291-      modal.id="playModal";
+292-      modal.style.cssText="position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:18px";
+293-      modal.innerHTML='<div style="width:min(920px,100%);background:#151923;border:1px solid #2b3240;border-radius:20px;padding:16px"><div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><div><div id="pmTitle" style="font-size:22px;font-weight:800"></div><div id="pmMeta" style="color:#aeb6c7;margin-top:4px"></div></div><button id="pmClose" style="border:0;border-radius:12px;padding:10px 14px;font-weight:800">Cerrar</button></div><div id="pmMsg" style="margin:14px 0;color:#c6cedd"></div><video id="pmVideo" controls playsinline preload="metadata" style="display:none;width:100%;max-height:70vh;background:#000;border-radius:14px"></video></div>';
+294-      document.body.appendChild(modal);
+295-      modal.querySelector("#pmClose").onclick=()=>{const v=modal.querySelector("#pmVideo");v.pause();v.removeAttribute("src");v.load();modal.remove()};
+296-    }
+297-    modal.querySelector("#pmTitle").textContent=item.title||item.name||id;
+298-    modal.querySelector("#pmMeta").textContent=(item.kind||"")+" · "+id;
+299-    const msg=modal.querySelector("#pmMsg");
+300-    const video=modal.querySelector("#pmVideo");
+301-    if(src){
+302-      msg.textContent="Fuente resuelta · "+(src.provider||"provider")+" · "+(src.format||"");
+303-      video.style.display="block";
+304-      video.src=src.playable_url;
+305-      video.play().catch(()=>{});
+306-    }else{
+307-      msg.textContent=(pb.count||0)+" fuente(s) encontradas, pero ninguna es directa y reproducible por navegador.";
+308-      video.style.display="none";
+309-    }
+310-  }catch(e){
+311-    alert("No se pudo abrir el contenido: "+e.message);
+312-  }
+313-}
+314-
+315-document.addEventListener("click",e=>{
+316-  const card=e.target.closest("[data-item-id]");
+317-  if(card) openPlayable(card.dataset.itemId);
+318-});
+319-
+320-async function load(){
+321- try{
+322-   const [h,v,l]=await Promise.all([
+323-     fetch(API+"/health").then(r=>r.json()),
+324-     fetch(API+"/video/items?limit=100").then(r=>r.json()),
+325-     fetch(API+"/live/channels").then(r=>r.json())
+326-   ]);
+327-   allVideos=v.items||[]; allLive=l.channels||[];
+328-   document.getElementById("dot").classList.add("ok");
+329-   document.getElementById("statusText").textContent="Conectado · "+h.video_items+" videos · "+h.live_channels+" canales";
+330- }catch(e){
+331-   document.getElementById("statusText").textContent="Modo diseño · API no disponible";
+332- }
+333- render();
+334- annotatePlayableCards();
+335-}
+336-load();
+337-if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+
+=== annotate context ===
+244- document.getElementById("animeCount").textContent=anime.length+" títulos";
+245- document.getElementById("liveCount").textContent=allLive.length+" canales";
+246-}
+247-
+248-
+249:function annotatePlayableCards(){
+250-  document.querySelectorAll(".card").forEach(el=>{
+251-    if(el.dataset.itemId) return;
+252-    const title=(el.querySelector(".title")||el.querySelector("h3")||el).textContent.trim();
+253-    const hit=allVideos.find(x=>(x.title||x.name||"").trim()===title);
+254-    if(hit&&hit.id) el.dataset.itemId=hit.id;
+255-  });
+256-}
+257-function setView(id){
+258- document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));
+259- document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===id));
+260- const names={home:"Inicio",movies:"Películas",series:"Series",searchView:"Buscar",liveView:"TV en vivo"};
+261- document.getElementById("tvTitle").textContent=names[id]||"Centro Multimedia";
+262- window.scrollTo({top:0,behavior:"smooth"});
+263-}
+264-document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
+265-
+266-function doSearch(q){
+267- q=q.trim().toLowerCase();
+268- setView("searchView");
+269- if(!q){
