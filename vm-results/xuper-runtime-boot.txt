@@ -1,0 +1,16 @@
+XUPER_RUNTIME_BOOT
+timestamp=2026-09-24T19:21:33+00:00
+
+=== RUNTIME SERVICES ===
+inactive
+inactive
+
+=== ADB ===
+/opt/corex/repo/central-ops/058-xuper-runtime-boot.sh: line 19: adb: command not found
+
+=== APK CANDIDATES ===
+/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/source/AU-20260923-104449-e62e2c-XuperTv-N0F4C3-v6.73.0.apk
+
+=== PACKAGE FROM MANIFEST ===
+manifest=/home/ubuntu/Central/projects/20260923-104504-xupertv-n0f4c3-v6-73-0-apk-e216ef/work/android-audit/decoded/AndroidManifest.xml
+package="com.android.mgstxNF"
