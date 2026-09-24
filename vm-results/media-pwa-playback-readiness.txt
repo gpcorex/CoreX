@@ -1,0 +1,43 @@
+MEDIA_PWA_PLAYBACK_READINESS
+timestamp=2026-09-24T17:15:13+00:00
+
+=== playback_source schema ===
+CREATE TABLE playback_source (
+  id TEXT PRIMARY KEY,
+  playable_type TEXT NOT NULL CHECK(playable_type IN ('item','episode')),
+  playable_id TEXT NOT NULL,
+  provider TEXT NOT NULL,
+  provider_media_code TEXT,
+  quality TEXT,
+  language TEXT,
+  format TEXT,
+  priority INTEGER NOT NULL DEFAULT 0,
+  weight INTEGER NOT NULL DEFAULT 0,
+  resolver_key TEXT NOT NULL,
+  resolver_ref TEXT,
+  drm_hint TEXT,
+  active INTEGER NOT NULL DEFAULT 1
+);
+CREATE INDEX idx_playback_playable ON playback_source(playable_type, playable_id, active);
+
+playback_source_count=0
+
+=== catalog service playback references ===
+53:        if u.path == "/video/items":
+99:        if u.path.startswith("/video/item/"):
+100:            item_id = u.path.split("/video/item/", 1)[1]
+114:        if u.path == "/live/channels":
+119:        if u.path.startswith("/live/channel/") and u.path.endswith("/epg"):
+120:            channel_id = u.path[len("/live/channel/"):-len("/epg")].rstrip("/")
+
+=== pwa player/detail references ===
+276:     fetch(API+"/video/items?limit=100").then(r=>r.json()),
+277:     fetch(API+"/live/channels").then(r=>r.json())
+
+=== local api health ===
+{"ok": true, "video_items": 0, "live_channels": 0}
+
+=== first item sample ===
+{"items": [], "count": 0}
+
+NOTE=read-only diagnostic; no catalog or PWA changes
