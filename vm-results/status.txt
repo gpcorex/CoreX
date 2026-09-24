@@ -1,12 +1,12 @@
 CONECTOR_STATUS_V2
-generated_at=2026-09-24T19:00:17+00:00
+generated_at=2026-09-24T19:01:17+00:00
 host=instance-20260918
 repo_head=1b1a3944a2d06e858a8e027272071b74a6c4ef78
 write_authority=openclaw
 
 [CONECTOR]
 conector-sync.timer=active
-conector-sync.service=failed
+conector-sync.service=inactive
 conector-central-ops.timer=active
 conector-central-ops.service=activating
 conector-api.service=active
