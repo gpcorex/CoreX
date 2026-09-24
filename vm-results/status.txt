@@ -1,12 +1,12 @@
 CONECTOR_STATUS_V2
-generated_at=2026-09-24T15:00:09+00:00
+generated_at=2026-09-24T15:01:10+00:00
 host=instance-20260918
 repo_head=aed13348cafe6bccf1801293188ddf22894d3657
 write_authority=openclaw
 
 [CONECTOR]
 conector-sync.timer=active
-conector-sync.service=failed
+conector-sync.service=inactive
 conector-central-ops.timer=active
 conector-central-ops.service=activating
 conector-api.service=active
@@ -19,8 +19,8 @@ corex-sync.timer=active
 corex-central-ops.timer=active
 
 [OPENCLAW]
-LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*          
-LISTEN 0      511            [::1]:18789         [::]:*          
+LISTEN 0      511             127.0.0.1:18789      0.0.0.0:*          
+LISTEN 0      511                 [::1]:18789         [::]:*          
 
 [CENTRAL]
 /srv/apps/central=present
@@ -66,12 +66,12 @@ simulado.py
 simulado.yaml
 
 [LISTENING]
-LISTEN 0      5          127.0.0.1:8790       0.0.0.0:*          
-LISTEN 0      511        127.0.0.1:8090       0.0.0.0:*          
-LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*          
-LISTEN 0      4096               *:80               *:*          
-LISTEN 0      511            [::1]:18789         [::]:*          
-LISTEN 0      4096               *:443              *:*          
+LISTEN 0      5               127.0.0.1:8790       0.0.0.0:*          
+LISTEN 0      511             127.0.0.1:8090       0.0.0.0:*          
+LISTEN 0      511             127.0.0.1:18789      0.0.0.0:*          
+LISTEN 0      4096                    *:80               *:*          
+LISTEN 0      511                 [::1]:18789         [::]:*          
+LISTEN 0      4096                    *:443              *:*          
 
 [RECENT_ERRORS]
 Sep 24 14:59:57 instance-20260918 systemd[1]: conector-sync.service: Failed with result 'exit-code'.
