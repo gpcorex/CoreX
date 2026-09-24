@@ -1,5 +1,5 @@
 MEDIA_PWA_PLAYER_V1_READY
-timestamp=2026-09-24T17:19:16+00:00
+timestamp=2026-09-24T17:20:13+00:00
 api_health={"ok": true, "video_items": 0, "live_channels": 0}
 playback_probe={"type": "item", "id": "missing-test", "sources": [], "count": 0}
 player_local_http=200
