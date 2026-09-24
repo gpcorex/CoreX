@@ -1,7 +1,7 @@
 CONECTOR_STATUS_V2
-generated_at=2026-09-24T17:03:27+00:00
+generated_at=2026-09-24T17:03:55+00:00
 host=instance-20260918
-repo_head=26c850302faa8003510372051a76ecae59bdb834
+repo_head=af6610141479297c1d4c1c07be46c4c0403db270
 write_authority=openclaw
 
 [CONECTOR]
@@ -84,3 +84,5 @@ Sep 24 17:00:07 instance-20260918 systemd[1]: conector-sync.service: Failed with
 Sep 24 17:00:07 instance-20260918 systemd[1]: Failed to start conector-sync.service - Conector deployment sync.
 Sep 24 17:00:07 instance-20260918 systemd[1]: conector-central-ops.service: Main process exited, code=killed, status=15/TERM
 Sep 24 17:00:07 instance-20260918 systemd[1]: conector-central-ops.service: Failed with result 'signal'.
+Sep 24 17:03:37 instance-20260918 systemd[1]: conector-sync.service: Failed with result 'exit-code'.
+Sep 24 17:03:37 instance-20260918 systemd[1]: Failed to start conector-sync.service - Conector deployment sync.
