@@ -1,5 +1,5 @@
 CONECTOR_STATUS_V2
-generated_at=2026-09-25T23:51:32+00:00
+generated_at=2026-09-26T00:13:38+00:00
 host=instance-20260918
 repo_head=01b6b1747808f58f3c4d398567620e0525326d2a
 write_authority=openclaw
@@ -29,7 +29,6 @@ LISTEN 0      511            [::1]:18789         [::]:*
 /var/log/conector=present
 
 [PROVIDER_KEY_FILES]
-.groq.py.swp
 __init__.cpython-312.pyc
 __init__.py
 cloudflare
