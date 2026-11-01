@@ -1,12 +1,12 @@
 CONECTOR_STATUS_V2
-generated_at=2026-11-01T08:03:48+00:00
+generated_at=2026-11-01T08:04:51+00:00
 host=instance-20260918
 repo_head=01b6b1747808f58f3c4d398567620e0525326d2a
 write_authority=openclaw
 
 [CONECTOR]
 conector-sync.timer=active
-conector-sync.service=inactive
+conector-sync.service=activating
 conector-central-ops.timer=active
 conector-central-ops.service=inactive
 conector-api.service=active
@@ -67,7 +67,7 @@ simulado.yaml
 LISTEN 0      5          127.0.0.1:8790       0.0.0.0:*          
 LISTEN 0      511        127.0.0.1:8090       0.0.0.0:*          
 LISTEN 0      4096               *:80               *:*          
-LISTEN 0      4096               *:443              *:*          
+LISTEN 2      4096               *:443              *:*          
 
 [RECENT_ERRORS]
 -- No entries --
